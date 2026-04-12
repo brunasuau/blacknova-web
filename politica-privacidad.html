@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad – Blacknova</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--white:#ffffff;--off-white:#f7f5f0;--black:#0d0d0d;--dark:#141414;--text:#1a1a1a;--muted:#666666;--gold:#b8965a;--gold2:#d4ad75;--border:#e2ddd4;--border-dark:#2a2a2a;}
+body{font-family:'Jost',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,13,13,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-dark);}
+.header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:80px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{width:38px;height:38px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;}
+.logo-mark svg{width:18px;height:18px;fill:var(--gold);}
+.logo-text{font-weight:700;font-size:15px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);}
+.logo-text span{color:var(--gold);}
+nav{display:flex;align-items:center;gap:36px;}
+nav a{font-size:12px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;position:relative;}
+nav a:hover{color:var(--white);}
+nav a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s;}
+nav a:hover::after{transform:scaleX(1);}
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 24px);left:50%;transform:translateX(-50%);background:var(--dark);border:1px solid var(--border-dark);min-width:200px;padding:12px 0;opacity:0;pointer-events:none;transition:all 0.2s;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:auto;}
+.nav-dropdown-menu a{display:block;padding:10px 20px;font-size:11px;letter-spacing:0.12em;color:rgba(255,255,255,0.6);}
+.nav-dropdown-menu a:hover{color:var(--gold);background:rgba(255,255,255,0.04);}
+.nav-dropdown-menu a::after{display:none;}
+.header-cta{font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:12px 28px;text-decoration:none;transition:background 0.2s;}
+.header-cta:hover{background:var(--gold2);}
+.legal-hero{padding:160px 0 80px;background:var(--dark);border-bottom:1px solid var(--border-dark);}
+.legal-hero .inner{max-width:1400px;margin:0 auto;padding:0 48px;}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+.eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,80px);font-weight:600;color:var(--white);line-height:1;}
+h1 em{font-style:italic;color:var(--gold);}
+.legal-content{max-width:860px;margin:0 auto;padding:80px 48px 120px;}
+.legal-content h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text);margin:48px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.legal-content h2:first-child{margin-top:0;}
+.legal-content p{font-size:15px;font-weight:300;line-height:1.9;color:var(--muted);margin-bottom:16px;}
+.legal-content ul{margin:0 0 16px 20px;}
+.legal-content ul li{font-size:15px;font-weight:300;line-height:1.9;color:var(--muted);margin-bottom:8px;}
+.legal-content a{color:var(--gold);text-decoration:none;}
+.legal-content a:hover{text-decoration:underline;}
+.legal-date{font-size:12px;font-weight:500;letter-spacing:0.1em;color:var(--gold);margin-bottom:48px;display:block;}
+footer{background:var(--black);color:rgba(255,255,255,0.55);padding:80px 0 40px;border-top:1px solid var(--border-dark);}
+.footer-inner{max-width:1400px;margin:0 auto;padding:0 48px;}
+.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:60px;padding-bottom:60px;border-bottom:1px solid var(--border-dark);margin-bottom:36px;}
+.footer-logo-text{font-weight:700;font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);display:block;margin-bottom:20px;}
+.footer-logo-text span{color:var(--gold);}
+.footer-desc{font-size:14px;font-weight:300;line-height:1.85;margin-bottom:24px;}
+.footer-col h5{font-size:11px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
+.footer-col ul a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-col ul a:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;}
+.footer-bottom a{color:rgba(255,255,255,0.35);text-decoration:none;}
+.footer-legal{display:flex;gap:24px;}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:40px}}
+@media(max-width:600px){.header-inner{padding:0 20px}nav,.header-cta{display:none}.legal-content{padding:40px 20px 80px}.legal-hero .inner{padding:0 20px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo"><div class="logo-mark"><svg viewBox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"/></svg></div><span class="logo-text">Blackno<span>va</span></span></a><nav><a href="index.html">Inicio</a><div class="nav-dropdown"><a href="talentos.html">Talentos</a><div class="nav-dropdown-menu"><a href="me-siento-talento.html">Me siento talento</a><a href="busco-talento.html">Busco talento</a></div></div><a href="sobre-nosotros.html">Sobre Nosotros</a><a href="que-hacemos.html">Que hacemos</a><a href="contacto.html">Contacto</a></nav><a href="contacto.html" class="header-cta">Contactar</a></div></header>
+
+<div class="legal-hero"><div class="inner">
+  <div class="eyebrow">Legal</div>
+  <h1>Política de <em>Privacidad</em></h1>
+</div></div>
+
+<div class="legal-content">
+  <span class="legal-date">Última actualización: abril 2025</span>
+
+  <h2>1. Responsable del tratamiento</h2>
+  <p>En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), le informamos que el responsable del tratamiento de sus datos personales es:</p>
+  <ul>
+    <li><strong>Razón social:</strong> Blacknova S.L.</li>
+    <li><strong>CIF:</strong> B23930381</li>
+    <li><strong>Domicilio social:</strong> Jordi Pere Cerdà 4, Sant Sadurní d'Anoia, Barcelona</li>
+    <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#22454751564b4d4c62404e4341494c4d54430c4751"><span class="__cf_email__" data-cfemail="8cebe9fff8e5e3e2cceee0edefe7e2e3faeda2e9ff">[email&#160;protected]</span></a></li>
+    <li><strong>Web:</strong> <a href="https://blacknova.es">https://blacknova.es</a></li>
+  </ul>
+
+  <h2>2. Datos que recopilamos</h2>
+  <p>A través del formulario de contacto de nuestra web, recopilamos los siguientes datos personales:</p>
+  <ul>
+    <li>Nombre y apellidos</li>
+    <li>Dirección de correo electrónico</li>
+    <li>Número de teléfono (opcional)</li>
+    <li>Información sobre su proyecto o consulta</li>
+  </ul>
+
+  <h2>3. Finalidad del tratamiento</h2>
+  <p>Los datos personales que nos facilite serán tratados con las siguientes finalidades:</p>
+  <ul>
+    <li>Atender y responder a las consultas y solicitudes de información recibidas a través del formulario de contacto.</li>
+    <li>Gestionar la relación comercial con clientes y potenciales clientes.</li>
+    <li>Enviar comunicaciones comerciales relacionadas con nuestros servicios, siempre que haya prestado su consentimiento.</li>
+  </ul>
+
+  <h2>4. Base jurídica del tratamiento</h2>
+  <p>La base jurídica para el tratamiento de sus datos es el consentimiento del interesado (art. 6.1.a RGPD), otorgado mediante el envío voluntario del formulario de contacto, así como el interés legítimo de Blacknova S.L. en atender las consultas recibidas (art. 6.1.f RGPD).</p>
+
+  <h2>5. Conservación de los datos</h2>
+  <p>Sus datos serán conservados durante el tiempo necesario para atender su consulta y, en su caso, durante el tiempo que dure la relación comercial. Una vez finalizada dicha relación, los datos se conservarán bloqueados durante los plazos de prescripción legalmente establecidos.</p>
+
+  <h2>6. Destinatarios de los datos</h2>
+  <p>Los datos no serán cedidos a terceros, salvo obligación legal. Utilizamos servicios de terceros para el envío de correos electrónicos (EmailJS), que actúa como encargado del tratamiento bajo las garantías adecuadas.</p>
+
+  <h2>7. Derechos del interesado</h2>
+  <p>Usted tiene derecho a ejercer los siguientes derechos respecto a sus datos personales:</p>
+  <ul>
+    <li><strong>Acceso:</strong> conocer qué datos tratamos sobre usted.</li>
+    <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos.</li>
+    <li><strong>Supresión:</strong> solicitar la eliminación de sus datos.</li>
+    <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos.</li>
+    <li><strong>Limitación:</strong> solicitar la limitación del tratamiento.</li>
+    <li><strong>Portabilidad:</strong> recibir sus datos en formato estructurado.</li>
+  </ul>
+  <p>Para ejercer estos derechos, puede dirigirse a <a href="/cdn-cgi/l/email-protection#53343620273a3c3d13313f3230383d3c25327d3620"><span class="__cf_email__" data-cfemail="c9aeacbabda0a6a789aba5a8aaa2a7a6bfa8e7acba">[email&#160;protected]</span></a> o a nuestra dirección postal. También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en <a href="https://www.aepd.es" target="_blank">www.aepd.es</a>.</p>
+
+  <h2>8. Seguridad</h2>
+  <p>Blacknova S.L. ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos.</p>
+
+  <h2>9. Modificaciones de la política de privacidad</h2>
+  <p>Blacknova S.L. se reserva el derecho a modificar la presente política de privacidad para adaptarla a novedades legislativas o jurisprudenciales. En dichos supuestos, anunciaremos en esta página los cambios introducidos con razonable antelación a su puesta en práctica.</p>
+</div>
+
+<footer><div class="footer-inner"><div class="footer-top"><div><span class="footer-logo-text">Blackno<span>va</span></span><p class="footer-desc">Innovación y profesionalidad en la gestión de proyectos. Metodología PMI y Agile. Barcelona, España.</p></div><div class="footer-col"><h5>Navegación</h5><ul><li><a href="index.html">Inicio</a></li><li><a href="talentos.html">Talentos</a></li><li><a href="sobre-nosotros.html">Sobre Nosotros</a></li><li><a href="que-hacemos.html">Que hacemos</a></li><li><a href="contacto.html">Contacto</a></li></ul></div><div class="footer-col"><h5>Servicios</h5><ul><li><a href="que-hacemos.html">Análisis de viabilidad</a></li><li><a href="que-hacemos.html">Gestión de proyectos</a></li><li><a href="que-hacemos.html">Coordinación RRHH</a></li><li><a href="que-hacemos.html">Gestión de naves</a></li></ul></div><div class="footer-col"><h5>Legal</h5><ul><li><a href="politica-privacidad.html">Política de Privacidad</a></li><li><a href="politica-cookies.html">Política de Cookies</a></li><li><a href="aviso-legal.html">Aviso Legal</a></li></ul></div></div><div class="footer-bot

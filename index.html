@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blacknova | Gestión de Activos Inmobiliarios y Proyectos en Catalunya</title><meta content="Blacknova es tu partner en gestión de activos inmobiliarios, naves industriales y proyectos de construcción en Catalunya. Metodología PMI y red de talento europea." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&amp;family=Jost:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --white: #ffffff; --off-white: #f7f5f0; --cream: #f0ece3;
+  --black: #0d0d0d; --dark: #141414; --text: #1a1a1a;
+  --muted: #666666; --muted2: #999999;
+  --gold: #b8965a; --gold2: #d4ad75;
+  --border: #e2ddd4; --border-dark: #2a2a2a;
+}
+body { font-family: 'Jost', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+
+/* HEADER */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(13,13,13,0.96); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-dark); transition: all 0.3s;
+}
+.header-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 80px;
+}
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark {
+  width: 38px; height: 38px; border: 1.5px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-mark svg { width: 18px; height: 18px; fill: var(--gold); }
+.logo-text { font-weight: 700; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); }
+.logo-text span { color: var(--gold); }
+nav { display: flex; align-items: center; gap: 36px; }
+nav a {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.7);
+  text-decoration: none; transition: color 0.2s; position: relative;
+}
+nav a:hover { color: var(--white); }
+nav a::after {
+  content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px;
+  background: var(--gold); transform: scaleX(0); transition: transform 0.25s;
+}
+nav a:hover::after { transform: scaleX(1); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 24px); left: 50%;
+  transform: translateX(-50%); background: var(--dark);
+  border: 1px solid var(--border-dark); min-width: 200px; padding: 12px 0;
+  opacity: 0; pointer-events: none; transition: all 0.2s;
+}
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: auto; }
+.nav-dropdown-menu a { display: block; padding: 10px 20px; font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.6); }
+.nav-dropdown-menu a:hover { color: var(--gold); background: rgba(255,255,255,0.04); }
+.nav-dropdown-menu a::after { display: none; }
+.header-cta {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  background: var(--gold); color: var(--black); padding: 12px 28px;
+  text-decoration: none; transition: background 0.2s;
+}
+.header-cta:hover { background: var(--gold2); }
+
+/* HERO */
+.hero { height: 100vh; min-height: 700px; position: relative; overflow: hidden; }
+.hero-slides { width: 100%; height: 100%; position: relative; }
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; display: flex; align-items: center; }
+.hero-slide.active { opacity: 1; }
+.hero-slide-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  transform: scale(1.06); transition: transform 8s ease;
+}
+.hero-slide.active .hero-slide-bg { transform: scale(1); }
+.hero-slide-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(110deg, rgba(13,13,13,0.82) 0%, rgba(13,13,13,0.45) 60%, rgba(13,13,13,0.2) 100%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; padding: 0 48px; width: 100%; }
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+  opacity: 0; transform: translateY(20px); transition: all 0.8s 0.3s;
+}
+.hero-slide.active .hero-eyebrow { opacity: 1; transform: translateY(0); }
+.hero-eyebrow::before { content: ''; display: block; width: 48px; height: 1px; background: var(--gold); }
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(56px, 7.5vw, 110px); font-weight: 600;
+  line-height: 0.95; color: var(--white); letter-spacing: -0.01em; margin-bottom: 28px;
+  opacity: 0; transform: translateY(30px); transition: all 0.9s 0.5s;
+}
+.hero-slide.active .hero-title { opacity: 1; transform: translateY(0); }
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-desc {
+  font-size: 16px; font-weight: 300; line-height: 1.85;
+  color: rgba(255,255,255,0.72); max-width: 540px; margin-bottom: 44px;
+  opacity: 0; transform: translateY(20px); transition: all 0.8s 0.7s;
+}
+.hero-slide.active .hero-desc { opacity: 1; transform: translateY(0); }
+.hero-actions { display: flex; align-items: center; gap: 20px; opacity: 0; transition: all 0.8s 0.9s; }
+.hero-slide.active .hero-actions { opacity: 1; }
+.btn-gold {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--black); background: var(--gold); padding: 15px 36px;
+  text-decoration: none; display: inline-block; transition: background 0.2s;
+}
+.btn-gold:hover { background: var(--gold2); }
+.btn-ghost {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--white); border: 1px solid rgba(255,255,255,0.35); padding: 15px 36px;
+  text-decoration: none; display: inline-block; transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.hero-controls {
+  position: absolute; bottom: 52px; left: 0; right: 0; z-index: 10;
+  max-width: 1400px; margin: 0 auto; padding: 0 48px;
+  display: flex; align-items: center; gap: 24px;
+}
+.hero-dots { display: flex; gap: 10px; }
+.hero-dot {
+  width: 40px; height: 2px; background: rgba(255,255,255,0.25);
+  cursor: pointer; transition: background 0.3s; border: none; padding: 0;
+}
+.hero-dot.active { background: var(--gold); }
+.hero-counter { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; color: rgba(255,255,255,0.45); }
+.hero-counter strong { color: var(--gold); font-weight: 600; }
+.hero-scroll-hint {
+  position: absolute; right: 48px; bottom: 52px; z-index: 10;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.35em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+}
+.hero-scroll-line {
+  width: 1px; height: 56px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:0.3}50%{opacity:1} }
+
+/* TICKER */
+.ticker { background: var(--gold); overflow: hidden; padding: 16px 0; display: flex; }
+.ticker-inner { display: flex; animation: tickerMove 30s linear infinite; white-space: nowrap; }
+.ticker-item {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--black); padding: 0 44px; display: flex; align-items: center; gap: 22px;
+}
+.ticker-item::after { content: '◆'; font-size: 7px; opacity: 0.5; }
+@keyframes tickerMove { from{transform:translateX(0)}to{transform:translateX(-50%)} }
+
+/* SECTION COMMON */
+.section-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+.section-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+}
+.section-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.section-title-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 4.5vw, 64px); font-weight: 600;
+  line-height: 1.05; letter-spacing: -0.01em; color: var(--text);
+}
+.section-title-main em { font-style: italic; color: var(--gold); }
+
+/* SERVICES */
+.services-section { background: var(--white); padding: 120px 0 100px; }
+.services-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
+.link-arrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px;
+  border-bottom: 1px solid var(--text); padding-bottom: 4px; transition: color 0.2s, border-color 0.2s;
+}
+.link-arrow:hover { color: var(--gold); border-color: var(--gold); }
+.link-arrow::after { content: '→'; }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  border: 1px solid var(--border); border-right: none; border-bottom: none;
+}
+.service-card {
+  padding: 52px 44px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden; transition: background 0.3s;
+}
+.service-card:hover { background: var(--off-white); }
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.5s;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px; font-weight: 300; color: var(--cream); line-height: 1; margin-bottom: 28px;
+}
+.service-heading {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text); margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+}
+.service-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.service-list li {
+  font-size: 14px; font-weight: 300; color: var(--muted);
+  padding-left: 18px; position: relative; line-height: 1.5;
+}
+.service-list li::before {
+  content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 1px; background: var(--gold);
+}
+
+/* COUNTERS */
+.counters-section { background: var(--dark); padding: 80px 0; border-top: 1px solid var(--border-dark); }
+.counters-grid {
+  max-width: 1400px; margin: 0 auto; padding: 0 48px;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  border-left: 1px solid var(--border-dark);
+}
+.counter-item { padding: 40px 48px; text-align: center; border-right: 1px solid var(--border-dark); }
+.counter-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 10px;
+}
+.counter-label { font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+/* MARQUEE */
+.marquee-section {
+  padding: 80px 0; overflow: hidden; background: var(--white);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.marquee-track { display: flex; animation: marqueeScroll 20s linear infinite; white-space: nowrap; }
+.marquee-word {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px,8vw,100px); font-weight: 300; font-style: italic;
+  color: transparent; -webkit-text-stroke: 1px var(--border); padding: 0 60px; flex-shrink: 0;
+}
+.marquee-word.filled { -webkit-text-stroke: none; color: var(--text); }
+@keyframes marqueeScroll { from{transform:translateX(0)}to{transform:translateX(-50%)} }
+
+/* ABOUT */
+.about-section { background: var(--white); padding: 120px 0; }
+.about-layout {
+  max-width: 1400px; margin: 0 auto; padding: 0 48px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;
+}
+.about-images { position: relative; height: 640px; }
+.about-img-1 { position: absolute; top: 0; left: 0; width: 72%; height: 72%; object-fit: cover; }
+.about-img-2 { position: absolute; bottom: 0; right: 0; width: 56%; height: 56%; object-fit: cover; border: 5px solid var(--white); }
+.about-badge-wrap {
+  position: absolute; top: 50%; left: 56%; transform: translate(-50%,-50%);
+  z-index: 3; background: var(--gold); width: 130px; height: 130px; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.about-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: var(--black); line-height: 1; }
+.about-badge-text { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); line-height: 1.3; }
+.about-back-link {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  margin-bottom: 40px; transition: color 0.2s;
+}
+.about-back-link:hover { color: var(--gold); }
+.about-back-link::before { content: '←'; }
+.about-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 400; font-style: italic;
+  color: var(--text); margin-bottom: 36px; line-height: 1.2;
+}
+.about-tabs-nav { display: flex; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
+.about-tab-btn {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted2); background: none; border: none; padding: 12px 18px;
+  cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s;
+}
+.about-tab-btn:hover { color: var(--text); }
+.about-tab-btn.active { color: var(--text); border-bottom-color: var(--gold); }
+.about-tab-panel { display: none; }
+.about-tab-panel.active { display: block; }
+.about-tab-panel p { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--muted); margin-bottom: 20px; }
+.about-qualities { display: flex; gap: 32px; margin-top: 36px; }
+.quality-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.quality-icon { width: 50px; height: 50px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.quality-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+/* GALLERY */
+.gallery-section { background: var(--off-white); padding: 100px 0 0; }
+.gallery-header { max-width: 1400px; margin: 0 auto; padding: 0 48px 64px; }
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(2,260px); gap: 4px;
+}
+.gallery-item { overflow: hidden; cursor: zoom-in; }
+.gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* PROCESS */
+.process-section { background: var(--dark); padding: 120px 0; }
+.process-steps {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  border-left: 1px solid var(--border-dark); margin-top: 72px;
+}
+.process-step {
+  padding: 48px 36px; border-right: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark); position: relative;
+}
+.process-step::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.5s;
+}
+.process-step:hover::before { transform: scaleX(1); }
+.process-step-num { font-family: 'Cormorant Garamond', serif; font-size: 88px; font-weight: 300; color: rgba(184,150,90,0.12); line-height: 1; margin-bottom: 20px; }
+.process-step-title { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 16px; }
+.process-step-desc { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.85; }
+
+/* PROJECTS */
+.projects-section { background: var(--white); padding: 120px 0; }
+.projects-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
+.projects-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px,3vw,36px); font-weight: 400; font-style: italic;
+  color: var(--text); max-width: 560px; line-height: 1.3; margin-top: 12px;
+}
+.projects-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-auto-rows: 360px; gap: 4px; }
+.project-item { position: relative; overflow: hidden; cursor: pointer; }
+.project-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+.project-item:hover .project-img { transform: scale(1.06); }
+.project-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(13,13,13,0.88) 0%, rgba(13,13,13,0.1) 50%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 36px 32px;
+}
+.project-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.project-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--white); margin-bottom: 16px; line-height: 1.1; }
+.project-view {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 8px;
+  transform: translateY(10px); opacity: 0; transition: all 0.35s;
+}
+.project-view::after { content: '→'; }
+.project-item:hover .project-view { transform: translateY(0); opacity: 1; }
+
+/* LEGACY BANNER */
+.legacy-banner {
+  background: var(--dark); padding: 96px 48px;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark);
+}
+.legacy-banner blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px,4.5vw,64px); font-weight: 400; font-style: italic;
+  color: var(--white); line-height: 1.15; max-width: 900px;
+}
+
+/* NEWS */
+.news-section { background: var(--off-white); padding: 120px 0; }
+.news-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
+.news-subtitle { font-size: 14px; font-weight: 300; font-style: italic; color: var(--muted); max-width: 440px; line-height: 1.8; }
+.news-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4px; }
+.news-card { background: var(--white); overflow: hidden; cursor: pointer; }
+.news-img-wrap { overflow: hidden; aspect-ratio: 16/9; }
+.news-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.news-card:hover .news-card-img { transform: scale(1.04); }
+.news-body { padding: 28px 28px 32px; }
+.news-meta { display: flex; gap: 14px; margin-bottom: 12px; align-items: center; }
+.news-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+.news-date { font-size: 12px; color: var(--muted2); }
+.news-title-link {
+  font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
+  color: var(--text); text-decoration: none; line-height: 1.25; display: block; transition: color 0.2s;
+}
+.news-title-link:hover { color: var(--gold); }
+.news-card:not(:first-child) .news-title-link { font-size: 17px; }
+
+/* TEAM */
+.team-section { background: var(--white); padding: 120px 0; }
+.team-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
+.team-subtitle { font-size: 14px; font-weight: 300; font-style: italic; color: var(--muted); max-width: 480px; line-height: 1.8; }
+.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 4px; }
+.team-member { position: relative; overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
+.team-member img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: grayscale(35%); transition: all 0.6s; }
+.team-member:hover img { filter: grayscale(0%); transform: scale(1.03); }
+.team-info { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(13,13,13,0.88), transparent); padding: 40px 28px 28px; }
+.team-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+.team-role { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+
+/* FOOTER */
+footer { background: var(--black); color: rgba(255,255,255,0.55); padding: 80px 0 40px; border-top: 1px solid var(--border-dark); }
+.footer-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+.footer-top { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--border-dark); margin-bottom: 36px; }
+.footer-logo-text { font-weight: 700; font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); display: block; margin-bottom: 20px; }
+.footer-logo-text span { color: var(--gold); }
+.footer-desc { font-size: 14px; font-weight: 300; line-height: 1.85; margin-bottom: 24px; }
+.footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+.footer-col ul a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--white); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+.footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: var(--gold); }
+.footer-legal { display: flex; gap: 24px; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .header-inner,.hero-content,.section-inner,.footer-inner{padding-left:32px;padding-right:32px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .counters-grid{grid-template-columns:repeat(2,1fr);padding:0 32px}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .projects-grid{grid-template-columns:1fr 1fr}
+  .about-layout{grid-template-columns:1fr;gap:60px}
+  .about-images{height:420px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,220px)}
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 1}
+  .news-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .header-inner{padding:0 20px;height:64px}
+  nav,.header-cta{display:none}
+  .hero-content{padding:0 20px}
+  .services-grid,.process-steps,.projects-grid,.counters-grid,.team-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:220px}
+  .gallery-item:nth-child(1){grid-column:span 1}
+  .about-images{height:320px}
+  .hero-controls,.hero-scroll-hint{display:none}
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header id="header">
+<div class="header-inner">
+<a class="logo" href="#">
+<div class="logo-mark">
+<svg viewbox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"></polygon></svg>
+</div>
+<span class="logo-text">Blackno<span>va</span></span>
+</a>
+<nav>
+<a href="index.html">Inicio</a>
+<div class="nav-dropdown">
+<a href="talentos.html">Talentos</a>
+<div class="nav-dropdown-menu">
+<a href="me-siento-talento.html">Me siento talento</a>
+<a href="busco-talento.html">Busco talento</a>
+</div>
+</div>
+<a href="sobre-nosotros.html">Sobre Nosotros</a>
+<a href="que-hacemos.html">Que hacemos</a>
+<a href="contacto.html">Contacto</a>
+</nav>
+<a class="header-cta" href="contacto.html">Contactar</a>
+</div>
+</header>
+<!-- HERO SLIDER -->
+<section class="hero">
+<div class="hero-slides">
+<div class="hero-slide active" id="slide-0">
+<div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&amp;q=85')"></div>
+<div class="hero-slide-overlay"></div>
+<div class="hero-content">
+<div class="hero-eyebrow">Gestión de Proyectos · PMI · Agile · Barcelona</div>
+<h1 class="hero-title">Proyectos<br/><em>con Propósito</em></h1>
+<p class="hero-desc">En Blacknova gestionamos proyectos complejos con metodología PMI y Agile, convertimos activos inmobiliarios en oportunidades reales y ofrecemos espacios industriales adaptados a tu negocio. Todo desde Barcelona.</p>
+<div class="hero-actions">
+<a class="btn-gold" href="que-hacemos.html">Descubrir más</a>
+<a class="btn-ghost" href="contacto.html">Contactar</a>
+</div>
+</div>
+</div>
+<div class="hero-slide" id="slide-1">
+<div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1800&amp;q=85')"></div>
+<div class="hero-slide-overlay"></div>
+<div class="hero-content">
+<div class="hero-eyebrow">Naves Industriales · Trasteros · Arrendamiento</div>
+<h1 class="hero-title">Espacios<br/><em>que Trabajan</em></h1>
+<p class="hero-desc">Alquiler de naves industriales y subarriendos de trasteros gestionados con profesionalidad. Soluciones flexibles para empresas y particulares en el área metropolitana de Barcelona.</p>
+<div class="hero-actions">
+<a class="btn-gold" href="que-hacemos.html">Ver servicios</a>
+<a class="btn-ghost" href="sobre-nosotros.html">Sobre nosotros</a>
+</div>
+</div>
+</div>
+<div class="hero-slide" id="slide-2">
+<div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1800&amp;q=85')"></div>
+<div class="hero-slide-overlay"></div>
+<div class="hero-content">
+<div class="hero-eyebrow">Compraventa · Activos Inmobiliarios · Intermediación</div>
+<h1 class="hero-title">Tu Activo,<br/><em>Nuestra Misión</em></h1>
+<p class="hero-desc">Intermediamos en la compraventa de activos inmobiliarios con rigor, discreción y conocimiento del mercado. Acompañamos a compradores y vendedores en cada fase de la operación.</p>
+<div class="hero-actions">
+<a class="btn-gold" href="contacto.html">Iniciar operación</a>
+<a class="btn-ghost" href="que-hacemos.html">Qué hacemos</a>
+</div>
+</div>
+</div>
+<div class="hero-slide" id="slide-3">
+<div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&amp;q=85')"></div>
+<div class="hero-slide-overlay"></div>
+<div class="hero-content">
+<div class="hero-eyebrow">Barcelona · Confianza · Resultados</div>
+<h1 class="hero-title">Blacknova,<br/><em>a tu lado</em></h1>
+<p class="hero-desc">Un equipo compacto, experto y comprometido. En Blacknova construimos relaciones a largo plazo basadas en la confianza, la transparencia y la entrega de resultados reales.</p>
+<div class="hero-actions">
+<a class="btn-gold" href="sobre-nosotros.html">Conoce el equipo</a>
+<a class="btn-ghost" href="contacto.html">Contactar</a>
+</div>
+</div>
+</div>
+</div>
+<div class="hero-controls">
+<div class="hero-dots">
+<button class="hero-dot active" onclick="goToSlide(0)"></button>
+<button class="hero-dot" onclick="goToSlide(1)"></button>
+<button class="hero-dot" onclick="goToSlide(2)"></button>
+<button class="hero-dot" onclick="goToSlide(3)"></button>
+</div>
+<span class="hero-counter"><strong id="slideNum">01</strong> / 04</span>
+</div>
+<div class="hero-scroll-hint">
+<div class="hero-scroll-line"></div>
+    Scroll
+  </div>
+</section>
+<!-- TICKER -->
+<div class="ticker">
+<div class="ticker-inner">
+<span class="ticker-item">Project Management</span><span class="ticker-item">Barcelona</span>
+<span class="ticker-item">Naves Industriales</span><span class="ticker-item">Activos Inmobiliarios</span>
+<span class="ticker-item">Metodología PMI</span><span class="ticker-item">Trasteros</span>
+<span class="ticker-item">Compraventa</span><span class="ticker-item">Agile</span>
+<span class="ticker-item">Project Management</span><span class="ticker-item">Barcelona</span>
+<span class="ticker-item">Naves Industriales</span><span class="ticker-item">Activos Inmobiliarios</span>
+<span class="ticker-item">Metodología PMI</span><span class="ticker-item">Trasteros</span>
+<span class="ticker-item">Compraventa</span><span class="ticker-item">Agile</span>
+</div>
+</div>
+<!-- SERVICES -->
+<section class="services-section">
+<div class="section-inner">
+<div class="services-header-row reveal">
+<div>
+<div class="section-eyebrow">Especialización</div>
+<h2 class="section-title-main">Nos <em>Especializamos</em></h2>
+</div>
+<a class="link-arrow" href="#">Todos los servicios</a>
+</div>
+<div class="services-grid reveal">
+<div class="service-card">
+<div class="service-num">01</div>
+<div class="service-heading">Project Management</div>
+<ul class="service-list">
+<li>Gestión integral de proyectos con metodología PMI y Agile</li>
+<li>Planificación, seguimiento y control de alcance, plazo y coste</li>
+<li>Coordinación de equipos multidisciplinares</li>
+<li>Reporting ejecutivo y gestión de riesgos</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-num">02</div>
+<div class="service-heading">Alquiler de Naves &amp; Trasteros</div>
+<ul class="service-list">
+<li>Alquiler de naves industriales en el área de Barcelona</li>
+<li>Subarriendo de trasteros para particulares y empresas</li>
+<li>Gestión completa de contratos y comunidades</li>
+<li>Asesoramiento en necesidades de espacio logístico</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-num">03</div>
+<div class="service-heading">Intermediación Inmobiliaria</div>
+<ul class="service-list">
+<li>Intermediación en compraventa de activos inmobiliarios</li>
+<li>Due diligence y valoración de activos</li>
+<li>Acompañamiento en negociación y cierre de operaciones</li>
+<li>Asesoramiento a compradores y vendedores particulares y empresas</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- COUNTERS -->
+<div class="counters-section">
+<div class="counters-grid reveal">
+<div class="counter-item">
+<div class="counter-val">50+</div>
+<div class="counter-label">Clientes Satisfechos</div>
+</div>
+<div class="counter-item">
+<div class="counter-val">80+</div>
+<div class="counter-label">Proyectos Gestionados</div>
+</div>
+<div class="counter-item">
+<div class="counter-val">15+</div>
+<div class="counter-label">Activos Intermediados</div>
+</div>
+<div class="counter-item">
+<div class="counter-val">BCN</div>
+<div class="counter-label">Base de Operaciones</div>
+</div>
+</div>
+</div>
+<!-- MARQUEE -->
+<div class="marquee-section">
+<div class="marquee-track">
+<span class="marquee-word">Barcelona</span><span class="marquee-word filled">Proyectos</span>
+<span class="marquee-word">Naves</span><span class="marquee-word filled">Inmobiliario</span>
+<span class="marquee-word">Confianza</span><span class="marquee-word filled">Resultados</span>
+<span class="marquee-word">Barcelona</span><span class="marquee-word filled">Proyectos</span>
+<span class="marquee-word">Naves</span><span class="marquee-word filled">Inmobiliario</span>
+<span class="marquee-word">Confianza</span><span class="marquee-word filled">Resultados</span>
+</div>
+</div>
+<!-- ABOUT -->
+<section class="about-section">
+<div class="about-layout">
+<div class="about-images reveal">
+<img alt="Oficinas Barcelona" class="about-img-1" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&amp;q=80"/>
+<img alt="Nave industrial" class="about-img-2" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&amp;q=80"/>
+<div class="about-badge-wrap">
+<div class="about-badge-num">BCN</div>
+<div class="about-badge-text">Base de<br/>Operaciones</div>
+</div>
+</div>
+<div class="reveal">
+<a class="about-back-link" href="sobre-nosotros.html">Sobre Nosotros</a>
+<h3 class="about-headline">"Conoce nuestra historia"</h3>
+<div class="about-tabs-nav">
+<button class="about-tab-btn active" onclick="showAboutTab('historia',this)">Historia</button>
+<button class="about-tab-btn" onclick="showAboutTab('valores',this)">Valores</button>
+<button class="about-tab-btn" onclick="showAboutTab('crecimiento',this)">Crecimiento</button>
+<button class="about-tab-btn" onclick="showAboutTab('mision',this)">Misión</button>
+<button class="about-tab-btn" onclick="showAboutTab('vision',this)">Visión</button>
+</div>
+<div class="about-tab-panel active" id="tab-historia">
+<p>Blacknova nace en Barcelona de la mano de profesionales con amplia experiencia en gestión de proyectos, el sector inmobiliario y la gestión de espacios industriales. Nuestro objetivo es ofrecer un servicio integral, ágil y transparente en tres áreas clave: project management, alquiler de naves y trasteros, e intermediación inmobiliaria.</p>
+<p>Desde Barcelona operamos para clientes de toda Cataluña, aportando rigor metodológico, conocimiento del mercado local y un trato cercano y personalizado.</p>
+</div>
+<div class="about-tab-panel" id="tab-valores">
+<p>En Blacknova creemos en la transparencia como base de toda relación comercial. No prometemos lo que no podemos cumplir, y cumplimos lo que prometemos. La integridad, la profesionalidad y el compromiso con el cliente guían cada decisión que tomamos.</p>
+<p>Valoramos la agilidad sin sacrificar la calidad, y la innovación sin perder de vista los resultados tangibles. Cada operación, cada proyecto y cada espacio gestionado es tratado con la misma exigencia.</p>
+</div>
+<div class="about-tab-panel" id="tab-crecimiento">
+<p>Blacknova crece a través de relaciones duraderas con sus clientes. Nuestro modelo se basa en la confianza ganada operación a operación, proyecto a proyecto. La satisfacción de quienes trabajan con nosotros es nuestra mejor carta de presentación.</p>
+<p>Apostamos por consolidar nuestra presencia en el área metropolitana de Barcelona, ampliando nuestra cartera de servicios y nuestro ecosistema de socios estratégicos.</p>
+</div>
+<div class="about-tab-panel" id="tab-mision">
+<p>La misión de Blacknova es generar valor real para nuestros clientes en cada una de sus tres líneas de negocio: gestionando proyectos con metodología y eficiencia, ofreciendo espacios industriales y de almacenamiento adaptados a cada necesidad, e intermediando con rigor en operaciones inmobiliarias.</p>
+<p>Nos comprometemos a ser el socio de confianza que nuestros clientes necesitan en cada etapa de sus proyectos y operaciones.</p>
+</div>
+<div class="about-tab-panel" id="tab-vision">
+<p>Visualizamos Blacknova como la referencia en Barcelona para empresas y particulares que buscan un socio sólido en gestión de proyectos, activos inmobiliarios y espacios industriales. Una empresa compacta, experta y con vocación de servicio a largo plazo.</p>
+<p>Nuestra visión es seguir creciendo desde la excelencia operativa, construyendo un portfolio de clientes fidelizados y de operaciones de alto valor en el mercado barcelonés.</p>
+</div>
+<div class="about-qualities">
+<div class="quality-item">
+<div class="quality-icon">⚡</div>
+<div class="quality-label">Agilidad</div>
+</div>
+<div class="quality-item">
+<div class="quality-icon">⚙️</div>
+<div class="quality-label">Rigor</div>
+</div>
+<div class="quality-item">
+<div class="quality-icon">🛡️</div>
+<div class="quality-label">Confianza</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- GALLERY -->
+<section class="gallery-section">
+<div class="gallery-header reveal">
+<div class="section-eyebrow">Galería</div>
+<h2 class="section-title-main">Nuestros <em>Proyectos</em></h2>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item"><img alt="Oficinas Barcelona" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1000&amp;q=80"/></div>
+<div class="gallery-item"><img alt="Sala de reuniones" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&amp;q=80"/></div>
+<div class="gallery-item"><img alt="Activo inmobiliario" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&amp;q=80"/></div>
+<div class="gallery-item"><img alt="Espacio de trabajo" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&amp;q=80"/></div>
+<div class="gallery-item"><img alt="Nave industrial" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&amp;q=80"/></div>
+<div class="gallery-item"><img alt="Gestión de proyectos" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&amp;q=80"/></div>
+<div class="gallery-item"><img alt="Almacén logístico" src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&amp;q=80"/></div>
+</div>
+</section>
+<!-- PROCESS -->
+<section class="process-section">
+<div class="section-inner">
+<div class="reveal">
+<div class="section-eyebrow" style="color:var(--gold)">Metodología</div>
+<h2 class="section-title-main" style="color:var(--white)">Cómo <em>Trabajamos</em></h2>
+</div>
+<div class="process-steps reveal">
+<div class="process-step">
+<div class="process-step-num">1.</div>
+<div class="process-step-title">Primera consulta gratuita</div>
+<p class="process-step-desc">Nos reunimos contigo para entender tus necesidades: si buscas gestionar un proyecto, alquilar un espacio industrial o vender/comprar un activo inmobiliario. Sin compromiso.</p>
+</div>
+<div class="process-step">
+<div class="process-step-num">2.</div>
+<div class="process-step-title">Propuesta a medida</div>
+<p class="process-step-desc">Elaboramos una propuesta personalizada con alcance, honorarios y metodología claramente definidos. Transparencia total desde el primer momento.</p>
+</div>
+<div class="process-step">
+<div class="process-step-num">3.</div>
+<div class="process-step-title">Ejecución y seguimiento</div>
+<p class="process-step-desc">Ponemos en marcha el servicio con reportes periódicos, comunicación directa y total disponibilidad. Tu tranquilidad es nuestra prioridad operativa.</p>
+</div>
+<div class="process-step">
+<div class="process-step-num">4.</div>
+<div class="process-step-title">Cierre y soporte continuo</div>
+<p class="process-step-desc">Entregamos resultados, cerramos la operación o el proyecto, y seguimos disponibles. Construimos relaciones a largo plazo, no transacciones puntuales.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- LEGACY BANNER -->
+<div class="legacy-banner reveal">
+<blockquote>"Construyendo valor, operación a operación"</blockquote>
+</div>
+<!-- TEAM -->
+<section class="team-section">
+<div class="section-inner">
+<div class="team-header-row reveal">
+<div>
+<div class="section-eyebrow">El Equipo</div>
+<h2 class="section-title-main">"El equipo <em>detrás de Blacknova</em>"</h2>
+</div>
+<p class="team-subtitle">"Un equipo compacto, experto y comprometido. Profesionales con experiencia en gestión de proyectos, mercado inmobiliario y espacios industriales."</p>
+</div>
+<div class="team-grid reveal">
+<div class="team-member">
+<img alt="Berta Suau" src="berta.jpg"/>
+<div class="team-info">
+<div class="team-name">Berta Suau</div>
+<div class="team-role">Directora General</div>
+</div>
+</div>
+<div class="team-member">
+<img alt="Bruna Suau" src="bruna.jpg"/>
+<div class="team-info">
+<div class="team-name">Bruna Suau</div>
+<div class="team-role">Socia</div>
+</div>
+</div>
+<div class="team-member">
+<img alt="Jana Suau" src="jana.jpg"/>
+<div class="team-info">
+<div class="team-name">Jana Suau</div>
+<div class="team-role">Socia</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<span class="footer-logo-text">Blackno<span>va</span></span>
+<p class="footer-desc">Gestión de proyectos, alquiler de naves industriales, subarriendo de trasteros e intermediación en compraventa de activos inmobiliarios. Barcelona, Cataluña.</p>
+</div>
+<div class="footer-col">
+<h5>Navegación</h5>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="talentos.html">Talentos</a></li>
+<li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+<li><a href="que-hacemos.html">Que hacemos</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Servicios</h5>
+<ul>
+<li><a href="que-hacemos.html">Project Management</a></li>
+<li><a href="que-hacemos.html">Alquiler de Naves</a></li>
+<li><a href="que-hacemos.html">Subarriendo de Trasteros</a></li>
+<li><a href="que-hacemos.html">Intermediación Inmobiliaria</a></li>
+<li><a href="contacto.html">Consulta gratuita</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Legal</h5>
+<ul>
+<li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+<li><a href="politica-cookies.html">Política de Cookies</a></li>
+<li><a href="aviso-legal.html">Aviso Legal</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>Blacknova ©2025</span>
+<div class="footer-legal">
+<a href="politica-privacidad.html">Política de Privacidad</a>
+<a href="politica-cookies.html">Política de Cookies</a>
+<a href="aviso-legal.html">Aviso Legal</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+// HERO SLIDER
+let cur = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.hero-dot');
+const nums = ['01','02','03','04'];
+function goToSlide(n){
+  slides[cur].classList.remove('active');
+  dots[cur].classList.remove('active');
+  cur = n;
+  slides[cur].classList.add('active');
+  dots[cur].classList.add('active');
+  document.getElementById('slideNum').textContent = nums[cur];
+}
+setInterval(()=>goToSlide((cur+1)%slides.length), 6000);
+
+// ABOUT TABS
+function showAboutTab(id, btn){
+  document.querySelectorAll('.about-tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.about-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// SCROLL REVEAL
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('in'), i*70); obs.unobserve(e.target); }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
