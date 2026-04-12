@@ -1,0 +1,84 @@
+============================================================
+BLACKNOVA — INFORME SEO AUTOMÁTICO
+Fecha: 12/04/2026 22:59
+============================================================
+
+RESUMEN EJECUTIVO:
+  Puntuación media: 90/100
+  Errores críticos: 0
+  Avisos: 14
+
+──────────────────────────────────────────────────
+index — 85/100
+  ⚠ Title largo (69 chars)
+  ⚠ Meta description larga (163 chars)
+  ⚠ Múltiples H1 (4)
+  ✓ Velocidad OK: 0.48s
+  → Keywords a añadir: gestión activos inmobiliarios Catalunya, naves industriales Catalunya, project manager Catalunya
+
+──────────────────────────────────────────────────
+sobre-nosotros.html — 95/100
+  ⚠ Title largo (66 chars)
+  ✓ Meta description OK (157 chars)
+  ✓ H1 correcto
+  ✓ Velocidad OK: 0.18s
+  → Keywords a añadir: gestión activos inmobiliarios Catalunya, naves industriales Catalunya, project manager Catalunya
+
+──────────────────────────────────────────────────
+que-hacemos.html — 90/100
+  ⚠ Title largo (69 chars)
+  ⚠ Meta description larga (172 chars)
+  ✓ H1 correcto
+  ✓ Velocidad OK: 0.14s
+  → Keywords a añadir: gestión activos inmobiliarios Catalunya, naves industriales Catalunya, project manager Catalunya
+
+──────────────────────────────────────────────────
+talentos.html — 90/100
+  ⚠ Title largo (75 chars)
+  ⚠ Meta description larga (177 chars)
+  ✓ H1 correcto
+  ✓ Velocidad OK: 0.15s
+  → Keywords a añadir: gestión activos inmobiliarios Catalunya, naves industriales Catalunya, project manager Catalunya
+
+──────────────────────────────────────────────────
+me-siento-talento.html — 90/100
+  ⚠ Title largo (78 chars)
+  ⚠ Meta description larga (176 chars)
+  ✓ H1 correcto
+  ✓ Velocidad OK: 0.15s
+  → Keywords a añadir: gestión activos inmobiliarios Catalunya, naves industriales Catalunya, project manager Catalunya
+
+──────────────────────────────────────────────────
+busco-talento.html — 90/100
+  ⚠ Title largo (71 chars)
+  ⚠ Meta description larga (170 chars)
+  ✓ H1 correcto
+  ✓ Velocidad OK: 0.15s
+  → Keywords a añadir: gestión activos inmobiliarios Catalunya, naves industriales Catalunya, project manager Catalunya
+
+──────────────────────────────────────────────────
+contacto.html — 90/100
+  ⚠ Title largo (71 chars)
+  ⚠ Meta description larga (166 chars)
+  ✓ H1 correcto
+  ✓ Velocidad OK: 0.15s
+  → Keywords a añadir: gestión activos inmobiliarios Catalunya, naves industriales Catalunya, project manager Catalunya
+
+============================================================
+ACCIONES PRIORITARIAS:
+────────────────────────────────────────
+1. Keywords más ausentes en la web:
+   → 'gestión activos inmobiliarios Catalunya' falta en 7 páginas
+   → 'naves industriales Catalunya' falta en 7 páginas
+   → 'project manager Catalunya' falta en 7 páginas
+   → 'gestión proyectos PMI Barcelona' falta en 7 páginas
+   → 'selección talento ingeniería Catalunya' falta en 7 páginas
+
+2. Artículos de blog generados para mejorar keywords:
+   → blog/gestion-activos-inmobiliarios-catalunya.html
+   → blog/naves-industriales-catalunya-guia.html
+   → blog/project-manager-catalunya.html
+
+3. Sube los artículos del blog a Netlify para indexación inmediata
+4. Registra cada artículo en Google Search Console
+5. Comparte cada artículo en LinkedIn e Instagram
