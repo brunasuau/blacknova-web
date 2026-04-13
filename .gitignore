@@ -1,0 +1,18 @@
+# Scripts Python
+*.py
+
+# Informes y datos
+*.pdf
+*.txt
+*.json
+
+# Carpetas de trabajo
+seo_reports/
+posts_instagram/
+
+# Mac
+.DS_Store
+
+# Archivos temporales
+__pycache__/
+*.pyc
