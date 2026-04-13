@@ -3,7 +3,6 @@
 
 # Informes y datos
 *.pdf
-*.txt
 *.json
 
 # Carpetas de trabajo
