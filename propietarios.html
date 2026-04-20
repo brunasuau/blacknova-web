@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de Naves Industriales para Propietarios | Blacknova</title>
+<meta name="description" content="¿Tienes una nave industrial o activo inmobiliario? Blacknova gestiona tu activo de forma profesional. Primera consulta gratuita y sin compromiso.">
+<meta name="keywords" content="rentabilizar nave industrial, gestión nave industrial propietario, gestión patrimonio inmobiliario, activos industriales España">
+<link rel="canonical" href="https://blacknova.es/propietarios.html">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTP5WXLB81"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DTP5WXLB81');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --white: #ffffff; --off-white: #f7f5f0; --cream: #f0ece3;
+  --black: #0d0d0d; --dark: #141414; --text: #1a1a1a;
+  --muted: #666666; --muted2: #999999;
+  --gold: #b8965a; --gold2: #d4ad75;
+  --border: #e2ddd4; --border-dark: #2a2a2a;
+}
+body { font-family: 'Jost', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13,13,13,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-dark); }
+.header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 80px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center; }
+.logo-mark svg { width: 18px; height: 18px; fill: var(--gold); }
+.logo-text { font-weight: 700; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); }
+.logo-text span { color: var(--gold); }
+nav { display: flex; align-items: center; gap: 36px; }
+nav a { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; position: relative; }
+nav a:hover { color: var(--white); }
+nav a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform 0.25s; }
+nav a:hover::after { transform: scaleX(1); }
+.header-cta { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; background: var(--gold); color: var(--black); padding: 12px 28px; text-decoration: none; transition: background 0.2s; }
+.header-cta:hover { background: var(--gold2); }
+.hero { min-height: 100vh; background: var(--dark); display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1800&q=80'); background-size: cover; background-position: center; opacity: 0.12; }
+.hero-inner { max-width: 1400px; margin: 0 auto; padding: 140px 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; width: 100%; }
+.hero-eyebrow { display: flex; align-items: center; gap: 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+.hero-eyebrow::before { content: ''; display: block; width: 48px; height: 1px; background: var(--gold); }
+.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 5vw, 80px); font-weight: 600; line-height: 1; color: var(--white); margin-bottom: 28px; }
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-desc { font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 48px; max-width: 480px; }
+.hero-cta { display: inline-block; background: var(--gold); color: var(--black); padding: 18px 48px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+.hero-cta:hover { background: var(--gold2); }
+.form-card { background: var(--white); padding: 48px; }
+.form-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--black); margin-bottom: 8px; }
+.form-sub { font-size: 13px; color: var(--muted); margin-bottom: 32px; line-height: 1.6; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 16px; border: 1px solid var(--border); font-family: 'Jost', sans-serif; font-size: 14px; color: var(--text); background: var(--off-white); transition: border-color 0.2s; outline: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: var(--white); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.submit-btn { width: 100%; background: var(--gold); color: var(--black); border: none; padding: 18px; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+.submit-btn:hover { background: var(--gold2); }
+.form-note { font-size: 12px; color: var(--muted2); text-align: center; margin-top: 16px; }
+.form-success { text-align: center; padding: 48px 0; }
+.form-success-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--black); margin-bottom: 16px; }
+.form-success-line { width: 48px; height: 1px; background: var(--gold); margin: 24px auto; }
+.form-success-desc { font-size: 15px; color: var(--muted); line-height: 1.8; }
+.problems { padding: 100px 48px; background: var(--off-white); }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-eyebrow { display: flex; align-items: center; gap: 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.section-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 60px; }
+.section-title em { font-style: italic; color: var(--gold); }
+.problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.problem-card { background: var(--white); padding: 40px 32px; border-left: 3px solid transparent; transition: border-color 0.2s; }
+.problem-card:hover { border-left-color: var(--gold); }
+.problem-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--border); font-weight: 300; margin-bottom: 16px; }
+.problem-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+.problem-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.solutions { padding: 100px 48px; background: var(--dark); }
+.solutions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px; }
+.solution-item { display: flex; gap: 24px; }
+.solution-icon { width: 48px; height: 48px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.solution-icon svg { width: 20px; height: 20px; fill: var(--gold); }
+.solution-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+.solution-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+.process { padding: 100px 48px; background: var(--white); }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 60px; position: relative; }
+.process-steps::before { content: ''; position: absolute; top: 24px; left: 10%; right: 10%; height: 1px; background: var(--border); }
+.step { text-align: center; position: relative; }
+.step-num { width: 48px; height: 48px; background: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--black); }
+.step-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.cta-section { padding: 120px 48px; background: var(--dark); text-align: center; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 5vw, 72px); color: var(--white); font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
+.cta-title em { font-style: italic; color: var(--gold); }
+.cta-desc { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 600px; margin: 0 auto 48px; line-height: 1.8; }
+.cta-btn { display: inline-block; background: var(--gold); color: var(--black); padding: 20px 56px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+.cta-btn:hover { background: var(--gold2); }
+.cta-note { font-size: 13px; color: rgba(255,255,255,0.3); margin-top: 20px; }
+footer { background: var(--black); padding: 60px 48px; border-top: 1px solid var(--border-dark); }
+.footer-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-weight: 700; font-size: 16px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-links a:hover { color: var(--gold); }
+@media(max-width: 1024px) { .hero-inner { grid-template-columns: 1fr; gap: 48px; } .problems-grid { grid-template-columns: 1fr 1fr; } .solutions-grid { grid-template-columns: 1fr; } .process-steps { grid-template-columns: repeat(2, 1fr); } .process-steps::before { display: none; } }
+@media(max-width: 768px) { .header-inner { padding: 0 24px; } nav { display: none; } .hero-inner { padding: 120px 24px 60px; } .form-card { padding: 32px 24px; } .form-row { grid-template-columns: 1fr; } .problems { padding: 60px 24px; } .problems-grid { grid-template-columns: 1fr; } .solutions { padding: 60px 24px; } .process { padding: 60px 24px; } .process-steps { grid-template-columns: 1fr; } .cta-section { padding: 80px 24px; } footer { padding: 40px 24px; } .footer-inner { flex-direction: column; gap: 24px; text-align: center; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"/></svg></div>
+      <span class="logo-text">Blackno<span>va</span></span>
+    </a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="que-hacemos.html">Servicios</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <a href="#consulta" class="header-cta">Consulta gratuita</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Para propietarios e inversores</div>
+      <h1 class="hero-title">¿Tu nave industrial<br>podría rendir <em>más?</em></h1>
+      <p class="hero-desc">Gestionamos tu activo inmobiliario industrial de forma profesional. Tú eres el propietario — nosotros hacemos que funcione.</p>
+      <a href="#consulta" class="hero-cta">Primera consulta gratuita →</a>
+    </div>
+    <div class="form-card" id="consulta">
+      <div class="form-title">Primera consulta gratuita</div>
+      <div class="form-sub">Sin compromiso. Te contactamos en menos de 24 horas.</div>
+      <div id="form-content">
+        <div class="form-group">
+          <label>Nombre y apellidos</label>
+          <input type="text" id="f-nombre" placeholder="Tu nombre completo">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" id="f-telefono" placeholder="+34 600 000 000">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="f-email" placeholder="tu@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tipo de activo</label>
+            <select id="f-tipo">
+              <option>Nave industrial</option>
+              <option>Almacén logístico</option>
+              <option>Edificio industrial</option>
+              <option>Cartera de activos</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Superficie aproximada</label>
+            <select id="f-superficie">
+              <option>Menos de 500 m²</option>
+              <option>500 - 1.000 m²</option>
+              <option>1.000 - 5.000 m²</option>
+              <option>5.000 - 10.000 m²</option>
+              <option>Más de 10.000 m²</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Provincia / Comunidad</label>
+          <input type="text" id="f-provincia" placeholder="Ej: Barcelona, Madrid, Valencia...">
+        </div>
+        <div class="form-group">
+          <label>Situación actual</label>
+          <select id="f-situacion">
+            <option>Nave vacía — busco inquilino</option>
+            <option>Nave alquilada — quiero gestión profesional</option>
+            <option>Quiero invertir en naves industriales</option>
+            <option>Tengo varios activos — busco gestión integral</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cuéntanos más (opcional)</label>
+          <textarea id="f-mensaje" placeholder="Describe brevemente tu activo y qué necesitas..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="enviarConsulta()">Solicitar consulta gratuita →</button>
+        <p class="form-note">Primera consulta 100% gratuita · Sin compromiso · Respuesta en 24h</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problems">
+  <div class="section-inner">
+    <div class="section-eyebrow">¿Te identificas?</div>
+    <h2 class="section-title">Los problemas más comunes<br>de los <em>propietarios</em></h2>
+    <div class="problems-grid">
+      <div class="problem-card"><div class="problem-num">01</div><div class="problem-title">Nave vacía demasiado tiempo</div><p class="problem-desc">Cada mes sin inquilino es dinero perdido. Sin una comercialización activa y una red de contactos, los períodos de vacío se alargan innecesariamente.</p></div>
+      <div class="problem-card"><div class="problem-num">02</div><div class="problem-title">Renta por debajo del mercado</div><p class="problem-desc">El mercado industrial en España está en máximos. Si tu contrato no se ha revisado en los últimos 2 años, casi con seguridad estás cobrando menos de lo que deberías.</p></div>
+      <div class="problem-card"><div class="problem-num">03</div><div class="problem-title">Problemas con inquilinos</div><p class="problem-desc">Retrasos en el pago, incumplimientos contractuales, daños en el activo. Sin gestión profesional, tú eres quien tiene que lidiar con todo esto directamente.</p></div>
+      <div class="problem-card"><div class="problem-num">04</div><div class="problem-title">Mantenimiento que se acumula</div><p class="problem-desc">Sin un plan preventivo, los problemas pequeños se convierten en reparaciones costosas que devalúan el activo y complican la relación con el inquilino.</p></div>
+      <div class="problem-card"><div class="problem-num">05</div><div class="problem-title">Normativa que no controlas</div><p class="problem-desc">Licencias de actividad, normativa de seguridad, inspecciones técnicas. El incumplimiento puede generarte responsabilidades legales serias.</p></div>
+      <div class="problem-card"><div class="problem-num">06</div><div class="problem-title">Sin tiempo ni datos claros</div><p class="problem-desc">Gestionas tu activo además de tu actividad principal. Sin datos claros de rendimiento, el activo nunca llega a su potencial real.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="solutions">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color:var(--gold)">Nuestra solución</div>
+    <h2 class="section-title" style="color:var(--white)">Gestión integral de tu activo.<br><em>Tú solo decides.</em></h2>
+    <div class="solutions-grid">
+      <div class="solution-item"><div class="solution-icon"><svg viewBox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"/></svg></div><div><div class="solution-title">Comercialización activa</div><p class="solution-desc">Buscamos inquilinos de forma proactiva en nuestra red de empresas industriales y logísticas. Reducimos el tiempo de vacío al mínimo posible.</p></div></div>
+      <div class="solution-item"><div class="solution-icon"><svg viewBox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"/></svg></div><div><div class="solution-title">Negociación de contratos</div><p class="solution-desc">Negociamos rentas a precio de mercado, revisiones anuales, garantías sólidas y cláusulas que protegen tus intereses como propietario.</p></div></div>
+      <div class="solution-item"><div class="solution-icon"><svg viewBox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"/></svg></div><div><div class="solution-title">Mantenimiento coordinado</div><p class="solution-desc">Plan de mantenimiento preventivo y gestión de todas las incidencias. Tu activo siempre en perfectas condiciones.</p></div></div>
+      <div class="solution-item"><div class="solution-icon"><svg viewBox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"/></svg></div><div><div class="solution-title">Control normativo</div><p class="solution-desc">Verificamos el cumplimiento de todas las licencias, normativas de seguridad y requisitos urbanísticos. Sin sorpresas.</p></div></div>
+      <div class="solution-item"><div class="solution-icon"><svg viewBox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"/></svg></div><div><div class="solution-title">Reporting mensual</div><p class="solution-desc">Informe mensual con la situación del activo, incidencias y recomendaciones. Siempre informado, sin esfuerzo.</p></div></div>
+      <div class="solution-item"><div class="solution-icon"><svg viewBox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"/></svg></div><div><div class="solution-title">Asesoramiento estratégico</div><p class="solution-desc">Te ayudamos a tomar las mejores decisiones: cuándo renovar, cuándo subir la renta, cuándo ampliar la cartera.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="section-inner">
+    <div class="section-eyebrow">Cómo funciona</div>
+    <h2 class="section-title">Empezamos en <em>4 pasos</em></h2>
+    <div class="process-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-title">Consulta gratuita</div><p class="step-desc">Hablamos sobre tu activo — situación actual, objetivos y qué necesitas mejorar. Sin compromiso.</p></div>
+      <div class="step"><div class="step-num">2</div><div class="step-title">Propuesta en 48h</div><p class="step-desc">Plan de gestión con acciones concretas y honorarios claros. Sin letra pequeña.</p></div>
+      <div class="step"><div class="step-num">3</div><div class="step-title">Arrancamos</div><p class="step-desc">Tomamos la gestión del activo. Nos encargamos de todo — tú no tienes que hacer nada más.</p></div>
+      <div class="step"><div class="step-num">4</div><div class="step-title">Informe mensual</div><p class="step-desc">Recibes un informe detallado cada mes con todo lo que pasa en tu activo. Total transparencia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-eyebrow" style="color:var(--gold);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:20px;">Sin compromiso</div>
+  <h2 class="cta-title">¿Hablamos sobre<br>tu <em>activo?</em></h2>
+  <p class="cta-desc">Primera consulta completamente gratuita y sin compromiso. Cuéntanos qué tienes y te decimos cómo podemos ayudarte.</p>
+  <a href="#consulta" class="cta-btn">Solicitar consulta gratuita →</a>
+  <p class="cta-note">Sin compromiso · Sin letra pequeña · Respuesta en 24h</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Blackno<span>va</span></div>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <a href="que-hacemos.html">Servicios</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.3)">© 2026 Blacknova</div>
+  </div>
+</footer>
+
+<script>
+function enviarConsulta() {
+  var nombre = document.getElementById('f-nombre').value.trim();
+  var telefono = document.getElementById('f-telefono').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var tipo = document.getElementById('f-tipo').value;
+  var superficie = document.getElementById('f-superficie').value;
+  var provincia = document.getElementById('f-provincia').value.trim();
+  var situacion = document.getElementById('f-situacion').value;
+  var mensaje = document.getElementById('f-mensaje').value.trim();
+  if (!nombre || !telefono || !email) {
+    alert('Por favor rellena los campos obligatorios: nombre, teléfono y email.');
+    return;
+  }
+  var asunto = encodeURIComponent('Consulta gratuita - ' + nombre + ' - ' + tipo);
+  var cuerpo = encodeURIComponent(
+    'NUEVA CONSULTA GRATUITA - BLACKNOVA\n\n' +
+    'Nombre: ' + nombre + '\n' +
+    'Teléfono: ' + telefono + '\n' +
+    'Email: ' + email + '\n\n' +
+    'Tipo de activo: ' + tipo + '\n' +
+    'Superficie: ' + superficie + '\n' +
+    'Provincia: ' + provincia + '\n' +
+    'Situación: ' + situacion + '\n\n' +
+    'Mensaje:\n' + (mensaje || 'Sin mensaje adicional') + '\n\n' +
+    '---\nEnviado desde blacknova.es/propietarios.html'
+  );
+  window.location.href = 'mailto:gestion@blacknova.es?subject=' + asunto + '&body=' + cuerpo;
+  gtag('event', 'consulta_gratuita', {'event_category': 'leads', 'event_label': 'propietarios_landing'});
+  document.getElementById('form-content').innerHTML =
+    '<div class="form-success">' +
+    '<div class="form-success-title">Solicitud enviada</div>' +
+    '<div class="form-success-line"></div>' +
+    '<p class="form-success-desc">Gracias ' + nombre + '.<br>Nuestro equipo revisará tu consulta<br>y te contactará en menos de 24 horas.</p>' +
+    '</div>';
+}
+</script>
+</body>
+</html>
