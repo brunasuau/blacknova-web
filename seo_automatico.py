@@ -3,19 +3,20 @@ from bs4 import BeautifulSoup
 import json
 import os
 import time
+import hashlib
 from datetime import datetime
 
-# ─── CONFIGURACIÓN ───────────────────────────────────────────
+# CONFIGURACION
 WEB = "https://blacknova.es"
 KEYWORDS = [
-    "gestión activos inmobiliarios Catalunya",
-    "naves industriales Catalunya",
-    "project manager Catalunya",
-    "gestión proyectos PMI Barcelona",
-    "selección talento ingeniería Catalunya",
-    "construcción industrial Barcelona",
-    "gestión naves industriales Barcelona",
-    "project management industrial España",
+    "alquiler trasteros Barcelona",
+    "trasteros Barcelona precio",
+    "trastero empresa Barcelona",
+    "almacenamiento flexible Barcelona",
+    "rentabilizar nave industrial",
+    "gestion nave industrial propietario",
+    "alquilar nave industrial Barcelona",
+    "gestion activos inmobiliarios",
 ]
 PAGINAS = [
     "https://blacknova.es/",
@@ -31,127 +32,231 @@ OUTPUT_DIR = "seo_reports"
 BLOG_DIR = "blog_articles"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(BLOG_DIR, exist_ok=True)
-# ─────────────────────────────────────────────────────────────
+GA_ID = "G-DTP5WXLB81"
 
 ARTICULOS_BLOG = [
+    # ─── TRASTEROS ───────────────────────────────────────────
     {
-        "slug": "gestion-activos-inmobiliarios-catalunya",
-        "titulo": "Gestión de Activos Inmobiliarios en Catalunya: Guía Completa 2026",
-        "descripcion": "Todo lo que necesitas saber sobre la gestión profesional de activos inmobiliarios industriales en Catalunya. Metodología, normativa y mejores prácticas.",
-        "keywords_principales": ["gestión activos inmobiliarios Catalunya", "activos industriales Catalunya"],
-        "contenido": """
-        <h2>¿Qué es la gestión de activos inmobiliarios industriales?</h2>
-        <p>La gestión de activos inmobiliarios industriales en Catalunya es el conjunto de procesos y metodologías orientados a maximizar el rendimiento de naves industriales, polígonos y propiedades de uso industrial. En un mercado tan dinámico como el catalán, contar con una gestión profesional marca la diferencia entre un activo rentable y uno que pierde valor.</p>
-        <p>En Blacknova aplicamos una metodología basada en el estándar PMI para la gestión integral de activos inmobiliarios en Catalunya, garantizando transparencia, rigor y resultados medibles para propietarios e inversores.</p>
-
-        <h2>¿Por qué Catalunya es clave en el mercado industrial español?</h2>
-        <p>Catalunya concentra el 25% del PIB industrial de España. El corredor mediterráneo, el Puerto de Barcelona y la red de autopistas hacen de Catalunya el hub logístico e industrial más importante de la Península Ibérica. La demanda de naves industriales en polígonos como el Baix Llobregat, Martorell, Tarragona y Girona no para de crecer.</p>
-        <p>La rentabilidad bruta de las naves industriales en Catalunya oscila entre el 6% y el 8% anual, muy por encima del 3-4% del sector residencial. Sin embargo, esta rentabilidad solo se consigue con una gestión profesional del activo.</p>
-
-        <h2>Servicios de gestión de activos inmobiliarios de Blacknova</h2>
-        <p>En Blacknova ofrecemos una gestión integral de activos inmobiliarios industriales en Catalunya que incluye:</p>
-        <ul>
-            <li><strong>Auditoría técnica inicial:</strong> Evaluación del estado del activo, identificación de problemas y oportunidades de mejora.</li>
-            <li><strong>Gestión de contratos de arrendamiento:</strong> Negociación, redacción y seguimiento de contratos con inquilinos.</li>
-            <li><strong>Mantenimiento preventivo y correctivo:</strong> Coordinación de todos los servicios de mantenimiento.</li>
-            <li><strong>Control normativo:</strong> Verificación continua del cumplimiento de licencias, normativa de seguridad y urbanismo.</li>
-            <li><strong>Reporting periódico:</strong> Informes mensuales al propietario sobre el estado y rendimiento del activo.</li>
-            <li><strong>Optimización de rentabilidad:</strong> Análisis de mercado y propuestas para maximizar el rendimiento del activo.</li>
-        </ul>
-
-        <h2>¿Cuánto cuesta la gestión profesional de una nave industrial?</h2>
-        <p>Los honorarios de gestión de activos inmobiliarios industriales en Catalunya suelen oscilar entre el 5% y el 10% de la renta mensual del activo. Una inversión que se amortiza rápidamente gracias a la optimización de la rentabilidad, la reducción de períodos de vacío y la prevención de problemas técnicos y legales.</p>
-
-        <h2>Contacta con Blacknova para la gestión de tu activo</h2>
-        <p>Si tienes una nave industrial en Catalunya y quieres gestionarla de forma profesional, contacta con nosotros. Primera consulta gratuita y sin compromiso en <a href="https://blacknova.es/contacto.html">blacknova.es</a>.</p>
-        """,
+        "slug": "alquiler-trasteros-barcelona-guia",
+        "titulo": "Alquiler de Trasteros en Barcelona: Guia Completa 2026",
+        "descripcion": "Todo lo que necesitas saber para alquilar un trastero en Barcelona. Precios, zonas, que mirar antes de firmar y como Blacknova te ayuda a encontrar el espacio perfecto.",
+        "keywords_principales": ["alquiler trasteros Barcelona", "trasteros Barcelona precio"],
+        "h1": "Alquiler de Trasteros en Barcelona: Guia Completa",
+        "intro": "Alquilar un trastero en Barcelona es una de las soluciones mas practicas para ganar espacio en casa o en la empresa. Con los pisos cada vez mas pequenos y el precio del metro cuadrado al alza, los trasteros se han convertido en una necesidad real para miles de familias y empresas en el area metropolitana de Barcelona. En Blacknova gestionamos trasteros en Barcelona con contratos flexibles y trato directo.",
+        "secciones": [
+            {
+                "titulo": "Cuanto cuesta alquilar un trastero en Barcelona",
+                "texto": "El precio de un trastero en Barcelona depende principalmente de la ubicacion, el tamano y las instalaciones del edificio. En el area metropolitana de Barcelona los precios oscilan entre 40€ y 150€ al mes segun el tamano. Un trastero pequeno de 3-5 m2 cuesta entre 40€ y 70€ al mes. Un trastero mediano de 6-10 m2 oscila entre 70€ y 120€ mensuales. Los trasteros grandes de mas de 10 m2 pueden superar los 120€ al mes. En Blacknova ofrecemos trasteros con precios competitivos y contratos flexibles sin permanencia minima."
+            },
+            {
+                "titulo": "Que mirar antes de alquilar un trastero en Barcelona",
+                "lista": [
+                    "Acceso y horario: verifica si puedes acceder las 24 horas o solo en horario comercial.",
+                    "Seguridad: alarma, camaras de vigilancia y cerradura individual son imprescindibles.",
+                    "Condiciones de humedad: un trastero humedo puede danar lo que almacenas.",
+                    "Contrato: revisa el plazo minimo, las condiciones de salida y quien se hace cargo del mantenimiento.",
+                    "Tamano real: mide bien lo que necesitas antes de contratar. Es mejor ir un poco mas grande.",
+                ]
+            },
+            {
+                "titulo": "Trasteros para empresas en Barcelona",
+                "texto": "Las empresas tambien alquilan trasteros en Barcelona para almacenar material de oficina, stock de producto, archivo documental o equipamiento temporal durante reformas. Blacknova ofrece trasteros adaptados a las necesidades de empresas: factura, contratos anuales con opcion de renovacion y trato directo sin intermediarios."
+            }
+        ],
+        "cta": "Si buscas trastero en Barcelona, contacta con Blacknova. Primera consulta gratuita y sin compromiso en gestion@blacknova.es"
     },
     {
-        "slug": "naves-industriales-catalunya-guia",
-        "titulo": "Naves Industriales en Catalunya: Todo lo que Necesitas Saber en 2026",
-        "descripcion": "Guía completa sobre naves industriales en Catalunya: tipos, zonas, precios, normativa y cómo elegir la nave perfecta para tu empresa.",
-        "keywords_principales": ["naves industriales Catalunya", "alquiler naves industriales Barcelona"],
-        "contenido": """
-        <h2>El mercado de naves industriales en Catalunya en 2026</h2>
-        <p>Catalunya es el mercado de naves industriales más activo de España. La demanda logística impulsada por el e-commerce, la proximidad al Puerto de Barcelona y el corredor mediterráneo hacen de Catalunya la primera opción para empresas que necesitan instalaciones industriales en el sur de Europa.</p>
-        <p>En 2026, la tasa de disponibilidad de naves industriales en el área metropolitana de Barcelona se sitúa por debajo del 4%, lo que refleja una demanda muy superior a la oferta disponible.</p>
-
-        <h2>Tipos de naves industriales en Catalunya</h2>
-        <p>Antes de buscar una nave industrial en Catalunya, es importante conocer los diferentes tipos disponibles según el uso:</p>
-        <ul>
-            <li><strong>Naves logísticas:</strong> Diseñadas para almacenamiento y distribución. Altura libre mínima de 8 metros, múltiples muelles de carga y buena accesibilidad para camiones.</li>
-            <li><strong>Naves productivas:</strong> Para fabricación e industria. Requieren alta potencia eléctrica, suelos reforzados y ventilación específica.</li>
-            <li><strong>Naves mixtas:</strong> Combinan producción y almacenamiento. Las más habituales en los polígonos industriales de Catalunya.</li>
-            <li><strong>Naves frigoríficas:</strong> Con control de temperatura para productos alimentarios o farmacéuticos.</li>
-        </ul>
-
-        <h2>Las mejores zonas para naves industriales en Catalunya</h2>
-        <p>La ubicación es el factor más importante al elegir una nave industrial en Catalunya. Estas son las principales zonas:</p>
-        <ul>
-            <li><strong>Corredor del Baix Llobregat:</strong> El Prat, Gavà, Viladecans. Acceso directo al aeropuerto y Puerto de Barcelona. Precios más altos pero máxima conectividad.</li>
-            <li><strong>Martorell y Sant Andreu de la Barca:</strong> Gran concentración industrial. Acceso directo a la A-2 y autopistas hacia Madrid.</li>
-            <li><strong>Tarragona:</strong> Hub petroquímico e industrial. Puerto propio y precios competitivos.</li>
-            <li><strong>Girona:</strong> Crecimiento logístico fuerte. Acceso a Francia y norte de Europa.</li>
-            <li><strong>Vic y Manresa:</strong> Precios más competitivos para empresas que no necesitan acceso al puerto.</li>
-        </ul>
-
-        <h2>¿Cómo elegir la nave industrial correcta en Catalunya?</h2>
-        <p>En Blacknova ayudamos a empresas a encontrar y gestionar la nave industrial perfecta en Catalunya. Nuestro proceso incluye análisis de necesidades, búsqueda de opciones, auditoría técnica previa a la firma y gestión integral del activo.</p>
-        <p>Contacta con nosotros para una consulta gratuita en <a href="https://blacknova.es/contacto.html">blacknova.es</a>.</p>
-        """,
+        "slug": "cuanto-cuesta-trastero-barcelona",
+        "titulo": "Cuanto Cuesta un Trastero en Barcelona en 2026",
+        "descripcion": "Precios reales de trasteros en Barcelona por zonas y tamanos. Descubre cuanto cuesta alquilar un trastero en el area metropolitana de Barcelona y que factores influyen en el precio.",
+        "keywords_principales": ["trasteros Barcelona precio", "alquiler trasteros Barcelona"],
+        "h1": "Cuanto Cuesta un Trastero en Barcelona",
+        "intro": "El precio de un trastero en Barcelona varia mucho segun la zona, el tamano y las instalaciones. En este articulo te damos los precios reales del mercado en 2026 para que puedas comparar y tomar la mejor decision.",
+        "secciones": [
+            {
+                "titulo": "Precios de trasteros en Barcelona por tamano",
+                "lista": [
+                    "Trastero mini (1-3 m2): entre 30€ y 50€ al mes. Ideal para maletas, bicicletas o cajas de documentos.",
+                    "Trastero pequeno (3-6 m2): entre 50€ y 80€ al mes. El mas demandado para uso particular.",
+                    "Trastero mediano (6-12 m2): entre 80€ y 130€ al mes. Perfecto para muebles o stock de empresa.",
+                    "Trastero grande (mas de 12 m2): desde 130€ al mes. Para empresas con necesidades de almacenaje importantes.",
+                ]
+            },
+            {
+                "titulo": "Factores que influyen en el precio",
+                "lista": [
+                    "Ubicacion: los trasteros en zonas centrales de Barcelona son mas caros que en el area metropolitana.",
+                    "Acceso 24 horas: los trasteros con acceso ilimitado tienen un coste mayor.",
+                    "Seguridad: alarma individual, vigilancia y CCTV incrementan el precio pero dan tranquilidad.",
+                    "Condiciones del edificio: climatizacion, ascensor de carga y buena iluminacion justifican precios mas altos.",
+                    "Flexibilidad del contrato: contratos sin permanencia minima suelen ser algo mas caros pero mas convenientes.",
+                ]
+            },
+            {
+                "titulo": "Como ahorrar en el alquiler de un trastero",
+                "texto": "Para obtener el mejor precio en un trastero en Barcelona te recomendamos comparar varias opciones, negociar el precio si vas a firmar un contrato largo, y considerar zonas del area metropolitana como L'Hospitalet, Cornella o Sant Boi donde los precios son mas competitivos que en la ciudad. En Blacknova ofrecemos precios transparentes sin costes ocultos."
+            }
+        ],
+        "cta": "Consulta disponibilidad y precios de trasteros en Barcelona contactando con Blacknova en gestion@blacknova.es. Primera consulta gratuita."
     },
     {
-        "slug": "project-manager-catalunya",
-        "titulo": "Project Manager en Catalunya: Cuándo y Por Qué Contratar Uno",
-        "descripcion": "Descubre cuándo necesitas un Project Manager en Catalunya, qué hace exactamente y cómo Blacknova gestiona proyectos industriales con metodología PMI.",
-        "keywords_principales": ["project manager Catalunya", "gestión proyectos PMI Barcelona"],
-        "contenido": """
-        <h2>¿Qué es un Project Manager industrial?</h2>
-        <p>Un Project Manager industrial es el profesional responsable de planificar, ejecutar y controlar proyectos de construcción, ingeniería o gestión de activos industriales. En Catalunya, la figura del Project Manager es cada vez más demandada por empresas que quieren garantizar el éxito de sus proyectos sin dedicar recursos internos a su gestión.</p>
-        <p>En Blacknova, nuestros Project Managers cuentan con certificación PMP y años de experiencia en proyectos industriales en Catalunya y toda Europa.</p>
-
-        <h2>¿Cuándo necesitas un Project Manager externo en Catalunya?</h2>
-        <p>Contratar un Project Manager externo en Catalunya tiene sentido cuando:</p>
-        <ul>
-            <li>Tu proyecto supera los 500.000€ de inversión</li>
-            <li>Implica más de 3 proveedores o subcontratas diferentes</li>
-            <li>Tienes un plazo de entrega crítico que no puedes incumplir</li>
-            <li>Tu equipo interno no tiene experiencia en gestión de proyectos industriales</li>
-            <li>El proyecto tiene componentes técnicos complejos</li>
-            <li>Necesitas reporting regular para inversores o dirección</li>
-        </ul>
-
-        <h2>Metodología PMI aplicada a proyectos industriales en Catalunya</h2>
-        <p>En Blacknova aplicamos la metodología PMI (Project Management Institute) en todos nuestros proyectos en Catalunya. Esta metodología internacional garantiza una gestión estructurada en 5 fases: inicio, planificación, ejecución, control y cierre.</p>
-        <p>El resultado es proyectos que se entregan en plazo, dentro del presupuesto y con la calidad que el cliente merece.</p>
-
-        <h2>El ROI de contratar un Project Manager en Catalunya</h2>
-        <p>Los honorarios de un Project Manager representan entre el 3% y el 8% del presupuesto total del proyecto. En un proyecto de 1 millón de euros, eso son entre 30.000 y 80.000 euros. Sin embargo, los proyectos sin gestión profesional sufren sobrecostes medios del 30-40%, es decir, 300.000-400.000 euros adicionales.</p>
-        <p>El ROI de contratar un Project Manager en Catalunya es evidente.</p>
-
-        <h2>Contrata tu Project Manager en Catalunya con Blacknova</h2>
-        <p>Primera consulta gratuita y sin compromiso. Contacta con nosotros en <a href="https://blacknova.es/contacto.html">blacknova.es</a>.</p>
-        """,
+        "slug": "trasteros-para-empresas-barcelona",
+        "titulo": "Trasteros para Empresas en Barcelona: Almacenamiento Flexible",
+        "descripcion": "Soluciones de almacenamiento flexible para empresas en Barcelona. Trasteros con contrato, factura y trato profesional para pymes, e-commerce y autónomos en el area metropolitana.",
+        "keywords_principales": ["trastero empresa Barcelona", "almacenamiento flexible Barcelona"],
+        "h1": "Trasteros para Empresas en Barcelona",
+        "intro": "Cada vez mas empresas en Barcelona alquilan trasteros para resolver necesidades puntuales o continuas de almacenamiento. Stock de producto, archivo documental, material de oficina, equipamiento durante reformas... Un trastero bien gestionado es una solucion practica y economica para empresas que no quieren pagar el precio de una nave industrial para pequeñas necesidades de espacio.",
+        "secciones": [
+            {
+                "titulo": "Que tipo de empresas alquilan trasteros en Barcelona",
+                "lista": [
+                    "E-commerce y tiendas online: necesitan almacenar stock sin pagar el coste de una nave industrial.",
+                    "Autonomos y profesionales: guardan herramientas, muestras o material de trabajo.",
+                    "Empresas en reforma: almacenan mobiliario y equipamiento durante la renovacion de oficinas.",
+                    "Startups y pymes: archivo documental fisico y material de marketing.",
+                    "Empresas de eventos: almacenamiento de material entre eventos.",
+                ]
+            },
+            {
+                "titulo": "Ventajas de alquilar trastero en lugar de nave industrial",
+                "lista": [
+                    "Precio mucho mas bajo: desde 50€ al mes frente a los 800-2000€ de una nave.",
+                    "Contratos mas flexibles: sin las exigencias de una nave industrial.",
+                    "Sin obras ni adaptaciones: el trastero esta listo para usar desde el primer dia.",
+                    "Factura mensual: deducible como gasto de empresa.",
+                    "Escalabilidad: puedes ampliar o reducir espacio segun tus necesidades.",
+                ]
+            },
+            {
+                "titulo": "Que ofrece Blacknova para empresas",
+                "texto": "En Blacknova gestionamos trasteros en Barcelona especialmente adaptados para empresas: factura mensual, contratos flexibles con opcion de renovacion anual, acceso comodo y seguridad garantizada. Trato directo con el equipo gestor sin intermediarios ni burocracia innecesaria."
+            }
+        ],
+        "cta": "Si tu empresa necesita espacio de almacenamiento en Barcelona, contacta con Blacknova. Primera consulta gratuita en gestion@blacknova.es"
+    },
+    {
+        "slug": "como-elegir-trastero-barcelona",
+        "titulo": "Como Elegir el Trastero Perfecto en Barcelona: Guia Practica",
+        "descripcion": "Guia practica para elegir el trastero adecuado en Barcelona. Tamano, ubicacion, seguridad, precio y contrato: todo lo que debes revisar antes de firmar.",
+        "keywords_principales": ["alquiler trasteros Barcelona", "trasteros Barcelona precio"],
+        "h1": "Como Elegir el Trastero Perfecto en Barcelona",
+        "intro": "Elegir un trastero en Barcelona sin pensarlo bien puede costarte caro. Un trastero demasiado pequeno, mal ubicado o con condiciones de humedad puede convertirse en un problema en lugar de una solucion. En esta guia te explicamos paso a paso como elegir el trastero perfecto para tus necesidades.",
+        "secciones": [
+            {
+                "titulo": "Paso 1: Define cuanto espacio necesitas realmente",
+                "texto": "Antes de buscar trastero, haz una lista de todo lo que quieres almacenar y calcula el volumen aproximado. Recuerda que en un trastero puedes apilar en altura, lo que multiplica el espacio util. Como regla general: para cajas y objetos pequenos con 3-5 m2 es suficiente. Para muebles o stock de empresa necesitaras entre 6 y 12 m2."
+            },
+            {
+                "titulo": "Paso 2: Elige bien la ubicacion",
+                "lista": [
+                    "Cerca de tu casa o empresa: reduciras el tiempo y coste de cada visita.",
+                    "Con buen acceso en coche o furgoneta: fundamental si vas a llevar muebles o cajas grandes.",
+                    "En zona segura: el precio mas bajo no vale si el entorno no te da confianza.",
+                ]
+            },
+            {
+                "titulo": "Paso 3: Revisa las condiciones del contrato",
+                "lista": [
+                    "Plazo minimo: idealmente sin permanencia o con un mes minimo.",
+                    "Preaviso de salida: cuantos dias debes avisar antes de dejar el trastero.",
+                    "Fianza: lo habitual es un mes de fianza.",
+                    "Que incluye el precio: si hay gastos de comunidad o seguros adicionales.",
+                    "Condiciones de renovacion: si el precio puede subir y con cuanta antelacion te avisan.",
+                ]
+            },
+            {
+                "titulo": "Paso 4: Comprueba la seguridad",
+                "texto": "Un buen trastero debe tener cerradura individual, sistema de alarma, camaras de vigilancia en zonas comunes e iluminacion adecuada. Visita siempre el trastero antes de firmar para comprobar el estado real del espacio y las instalaciones."
+            }
+        ],
+        "cta": "En Blacknova te ayudamos a encontrar el trastero adecuado en Barcelona. Contacta con nosotros en gestion@blacknova.es para una primera consulta gratuita."
+    },
+    # ─── NAVES INDUSTRIALES ──────────────────────────────────
+    {
+        "slug": "rentabilizar-nave-industrial",
+        "titulo": "Como Rentabilizar tu Nave Industrial: Guia para Propietarios 2026",
+        "descripcion": "Descubre como maximizar el rendimiento de tu nave industrial como propietario. Gestion profesional, estrategias de alquiler y optimizacion de activos industriales en Barcelona.",
+        "keywords_principales": ["rentabilizar nave industrial", "gestion nave industrial propietario"],
+        "h1": "Como Rentabilizar tu Nave Industrial",
+        "intro": "Muchos propietarios de naves industriales en Barcelona dejan dinero sobre la mesa cada mes. Ya sea por tener la nave vacia mas tiempo del necesario, por no negociar correctamente los contratos de arrendamiento, o por no gestionar el mantenimiento de forma eficiente. En Blacknova ayudamos a propietarios a rentabilizar su nave industrial de forma profesional.",
+        "secciones": [
+            {
+                "titulo": "5 estrategias para rentabilizar tu nave industrial",
+                "lista": [
+                    "Gestion profesional del arrendamiento: Un gestor profesional encuentra inquilinos solventes mas rapido y reduce los periodos de vacio.",
+                    "Mantenimiento preventivo: Una nave bien mantenida atrae mejores inquilinos y se puede arrendar a precios mas altos.",
+                    "Optimizacion energetica: Instalar paneles solares e iluminacion LED puede reducir costes operativos hasta un 40%.",
+                    "Revision periodica de rentas: El mercado industrial en Barcelona esta al alza. Sin revisiones anuales, pierdes rentabilidad.",
+                    "Auditoria tecnica y legal: Verificar que la nave cumple toda la normativa evita multas y problemas con inquilinos.",
+                ]
+            },
+            {
+                "titulo": "Cuanto puede ganar un propietario de nave industrial en Barcelona",
+                "texto": "Una nave industrial bien ubicada en el area metropolitana de Barcelona puede generar entre 6.000 y 15.000 euros mensuales de renta segun la superficie. Con gestion profesional que minimice periodos de vacio y optimice condiciones de arrendamiento, la rentabilidad anual puede superar el 7%."
+            }
+        ],
+        "cta": "En Blacknova nos encargamos de todo: busqueda de inquilinos, contratos, mantenimiento y reporting mensual. Primera consulta gratuita en gestion@blacknova.es"
+    },
+    {
+        "slug": "alquiler-naves-industriales-barcelona",
+        "titulo": "Alquiler de Naves Industriales en Barcelona: Guia 2026",
+        "descripcion": "Guia completa para alquilar una nave industrial en Barcelona. Zonas, precios, que revisar antes de firmar y como Blacknova te acompana en todo el proceso.",
+        "keywords_principales": ["alquilar nave industrial Barcelona", "naves industriales Barcelona"],
+        "h1": "Alquiler de Naves Industriales en Barcelona",
+        "intro": "Barcelona y su area metropolitana concentran una de las mayores demandas de espacio industrial de Espana. El crecimiento del e-commerce, la logistica y la industria manufacturera han disparado la busqueda de naves industriales bien ubicadas. En Blacknova acompanamos a empresas en todo el proceso de busqueda y alquiler de naves industriales en Barcelona.",
+        "secciones": [
+            {
+                "titulo": "Mejores zonas para alquilar nave industrial en Barcelona",
+                "lista": [
+                    "Baix Llobregat: acceso directo al aeropuerto y Puerto de Barcelona. La zona mas demandada para logistica.",
+                    "Martorell y Sant Andreu de la Barca: acceso a la A-2 y autopistas hacia Madrid. Gran concentracion industrial.",
+                    "Zona Franca: ubicacion estrategica en Barcelona ciudad. Ideal para empresas que necesitan estar cerca del centro.",
+                    "Sant Boi y Cornella: precios mas competitivos con buena conectividad.",
+                    "Granollers y Montmelo: acceso al corredor del Valles. Zona en crecimiento.",
+                ]
+            },
+            {
+                "titulo": "Que revisar antes de firmar el contrato de una nave industrial",
+                "lista": [
+                    "Altura libre interior: minimo 6 metros para uso industrial, 8 metros para logistica.",
+                    "Acceso de camiones: comprueba el radio de giro y los muelles de carga disponibles.",
+                    "Potencia electrica: muchas naves no tienen suficiente para maquinaria industrial pesada.",
+                    "Licencia de actividad: verifica que tu actividad esta permitida en esa nave.",
+                    "Estado de la cubierta: una cubierta en mal estado puede generar problemas desde el primer dia.",
+                ]
+            }
+        ],
+        "cta": "Si buscas nave industrial en Barcelona, contacta con Blacknova. Primera consulta gratuita y sin compromiso en gestion@blacknova.es"
     },
 ]
 
 
 def crear_articulo_html(articulo):
-    """Genera un archivo HTML completo para el artículo de blog"""
     fecha = datetime.now().strftime("%d de %B de %Y")
+
+    secciones_html = ""
+    for seccion in articulo.get("secciones", []):
+        secciones_html += f"<h2>{seccion['titulo']}</h2>"
+        if "lista" in seccion:
+            secciones_html += "<ul>"
+            for item in seccion["lista"]:
+                partes = item.split(":", 1)
+                if len(partes) == 2:
+                    secciones_html += f"<li><strong>{partes[0]}:</strong>{partes[1]}</li>"
+                else:
+                    secciones_html += f"<li>{item}</li>"
+            secciones_html += "</ul>"
+        if "texto" in seccion:
+            secciones_html += f"<p>{seccion['texto']}</p>"
+
     html = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{articulo['titulo']} | Blacknova Blog</title>
+<title>{articulo['titulo']} | Blacknova</title>
 <meta name="description" content="{articulo['descripcion']}">
-<meta name="keywords" content="{', '.join(articulo['keywords_principales'])}">
-<link rel="canonical" href="https://blacknova.es/blog/{articulo['slug']}.html">
-<meta property="og:title" content="{articulo['titulo']}">
-<meta property="og:description" content="{articulo['descripcion']}">
-<meta property="og:url" content="https://blacknova.es/blog/{articulo['slug']}.html">
-<meta property="og:type" content="article">
+<link rel="canonical" href="https://blacknova.es/blog_articles/{articulo['slug']}.html">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -160,11 +265,16 @@ def crear_articulo_html(articulo):
   "description": "{articulo['descripcion']}",
   "author": {{"@type": "Organization", "name": "Blacknova"}},
   "publisher": {{"@type": "Organization", "name": "Blacknova", "url": "https://blacknova.es"}},
-  "datePublished": "{datetime.now().strftime('%Y-%m-%d')}",
-  "mainEntityOfPage": "https://blacknova.es/blog/{articulo['slug']}.html"
+  "datePublished": "{datetime.now().strftime('%Y-%m-%d')}"
 }}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', '{GA_ID}');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{{margin:0;padding:0;box-sizing:border-box}}
@@ -175,25 +285,24 @@ header{{background:var(--black);padding:20px 48px;display:flex;align-items:cente
 .logo span{{color:var(--gold)}}
 nav a{{color:rgba(255,255,255,0.7);text-decoration:none;margin-left:32px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase}}
 nav a:hover{{color:var(--white)}}
-.article-hero{{background:var(--black);padding:80px 48px 60px;text-align:center}}
-.article-category{{color:var(--gold);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:16px}}
-.article-title{{font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--white);line-height:1.2;max-width:800px;margin:0 auto 20px}}
-.article-meta{{color:rgba(255,255,255,0.5);font-size:13px}}
-.article-body{{max-width:800px;margin:0 auto;padding:60px 24px}}
-.article-body h2{{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--black);margin:48px 0 16px;padding-bottom:8px;border-bottom:1px solid #e2ddd4}}
-.article-body p{{font-size:16px;margin-bottom:20px;color:#333;line-height:1.9}}
-.article-body ul{{margin:16px 0 24px 24px}}
-.article-body li{{margin-bottom:10px;font-size:16px;color:#333}}
-.article-body strong{{color:var(--black);font-weight:600}}
-.article-body a{{color:var(--gold);text-decoration:none}}
-.article-body a:hover{{text-decoration:underline}}
-.cta-box{{background:var(--black);color:var(--white);padding:48px;margin:60px 0;text-align:center;border-left:4px solid var(--gold)}}
-.cta-box h3{{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:12px}}
-.cta-box p{{color:rgba(255,255,255,0.7);margin-bottom:24px}}
-.cta-btn{{background:var(--gold);color:var(--black);padding:14px 32px;text-decoration:none;font-weight:600;font-size:13px;letter-spacing:0.1em;text-transform:uppercase}}
+.hero{{background:var(--black);padding:80px 48px 60px;text-align:center}}
+.cat{{color:var(--gold);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:16px}}
+h1{{font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--white);line-height:1.2;max-width:800px;margin:0 auto 20px}}
+.meta{{color:rgba(255,255,255,0.5);font-size:13px}}
+.body{{max-width:800px;margin:0 auto;padding:60px 24px}}
+.body h2{{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--black);margin:48px 0 16px;padding-bottom:8px;border-bottom:1px solid #e2ddd4}}
+.body p{{font-size:16px;margin-bottom:20px;color:#333;line-height:1.9}}
+.body ul{{margin:16px 0 24px 24px}}
+.body li{{margin-bottom:10px;font-size:16px;color:#333}}
+.body strong{{color:var(--black);font-weight:600}}
+.body a{{color:var(--gold);text-decoration:none}}
+.cta{{background:var(--black);color:var(--white);padding:48px;margin:60px 0;text-align:center;border-left:4px solid var(--gold)}}
+.cta h3{{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:12px}}
+.cta p{{color:rgba(255,255,255,0.7);margin-bottom:24px}}
+.cta a{{background:var(--gold);color:var(--black);padding:14px 32px;text-decoration:none;font-weight:600;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;display:inline-block}}
 footer{{background:var(--black);padding:40px 48px;text-align:center;color:rgba(255,255,255,0.5);font-size:13px;margin-top:80px}}
 footer span{{color:var(--gold)}}
-@media(max-width:768px){{header{{padding:16px 24px}}.article-hero{{padding:60px 24px 40px}}.article-title{{font-size:32px}}.article-body{{padding:40px 24px}}}}
+@media(max-width:768px){{header{{padding:16px 24px}}h1{{font-size:32px}}.hero{{padding:60px 24px 40px}}.body{{padding:40px 24px}}}}
 </style>
 </head>
 <body>
@@ -202,34 +311,88 @@ footer span{{color:var(--gold)}}
   <nav>
     <a href="https://blacknova.es">Inicio</a>
     <a href="https://blacknova.es/que-hacemos.html">Servicios</a>
-    <a href="https://blacknova.es/talentos.html">Talentos</a>
+    <a href="https://blacknova.es/blog.html">Blog</a>
     <a href="https://blacknova.es/contacto.html">Contacto</a>
   </nav>
 </header>
-
-<div class="article-hero">
-  <div class="article-category">Blog · Gestión de Proyectos · Catalunya</div>
-  <h1 class="article-title">{articulo['titulo']}</h1>
-  <div class="article-meta">Blacknova · {fecha}</div>
+<div class="hero">
+  <div class="cat">Blog · Blacknova · Barcelona</div>
+  <h1>{articulo['h1']}</h1>
+  <div class="meta">Blacknova · {fecha}</div>
 </div>
-
-<div class="article-body">
-  {articulo['contenido']}
-
-  <div class="cta-box">
-    <h3>¿Necesitas gestión profesional en Catalunya?</h3>
-    <p>Primera consulta gratuita y sin compromiso. Analizamos tu proyecto o activo en 45 minutos.</p>
-    <a href="https://blacknova.es/contacto.html" class="cta-btn">Contactar con Blacknova →</a>
+<div class="body">
+  <p>{articulo['intro']}</p>
+  {secciones_html}
+  <div class="cta">
+    <h3>Podemos ayudarte</h3>
+    <p>{articulo['cta']}</p>
+    <a href="https://blacknova.es/contacto.html">Contactar con Blacknova</a>
   </div>
 </div>
-
 <footer>
-  <p><span>BLACKNOVA</span> · Gestión de proyectos y activos inmobiliarios en Catalunya · <a href="https://blacknova.es" style="color:var(--gold)">blacknova.es</a></p>
-  <p style="margin-top:8px">© {datetime.now().year} Blacknova · Todos los derechos reservados</p>
+  <p><span>BLACKNOVA</span> · Trasteros y naves industriales en Barcelona · <a href="https://blacknova.es" style="color:var(--gold)">blacknova.es</a></p>
+  <p style="margin-top:8px">{datetime.now().year} Blacknova · Todos los derechos reservados</p>
 </footer>
 </body>
 </html>"""
     return html
+
+
+def extraer_texto_html(html):
+    soup = BeautifulSoup(html, "html.parser")
+    for tag in soup(["script", "style", "nav", "header", "footer"]):
+        tag.decompose()
+    texto = soup.get_text(separator=" ")
+    return " ".join(texto.split())
+
+
+def verificar_originalidad(texto, titulo):
+    print(f"      Verificando originalidad...", end=" ", flush=True)
+    palabras = texto.split()
+    coincidencias = 0
+    total = 0
+    for i in range(0, min(len(palabras), 300), 100):
+        fragmento = " ".join(palabras[i:i+15])
+        try:
+            url = f"https://api.duckduckgo.com/?q=%22{requests.utils.quote(fragmento)}%22&format=json&no_html=1"
+            r = requests.get(url, timeout=10, headers=HEADERS)
+            if r.status_code == 200:
+                data = r.json()
+                if data.get("RelatedTopics") or data.get("AbstractURL"):
+                    coincidencias += 1
+            total += 1
+            time.sleep(1)
+        except:
+            total += 1
+    porcentaje = max(0, 100 - (coincidencias / max(total, 1)) * 100)
+    hash_id = hashlib.md5(texto.encode()).hexdigest()[:8]
+    if porcentaje >= 70:
+        print(f"OK {porcentaje:.0f}% original")
+        return True, porcentaje, hash_id
+    else:
+        print(f"AVISO {porcentaje:.0f}% original")
+        return False, porcentaje, hash_id
+
+
+def guardar_registro_copyright(articulos):
+    ruta = os.path.join(OUTPUT_DIR, "copyright_registro.json")
+    registro = []
+    if os.path.exists(ruta):
+        try:
+            with open(ruta, "r", encoding="utf-8") as f:
+                registro = json.load(f)
+        except:
+            pass
+    for art in articulos:
+        registro.append({
+            "fecha": datetime.now().strftime("%d/%m/%Y %H:%M"),
+            "articulo": art["slug"],
+            "originalidad": art["originalidad"],
+            "hash": art["hash"],
+            "publicado": art["publicado"]
+        })
+    with open(ruta, "w", encoding="utf-8") as f:
+        json.dump(registro, f, ensure_ascii=False, indent=2)
 
 
 def auditar_pagina(url):
@@ -238,7 +401,6 @@ def auditar_pagina(url):
         r = requests.get(url, headers=HEADERS, timeout=10)
         resultado["tiempo"] = round(r.elapsed.total_seconds(), 2)
         soup = BeautifulSoup(r.text, "html.parser")
-
         title = soup.find("title")
         if not title or not title.text.strip():
             resultado["errores"].append("Sin title")
@@ -251,7 +413,6 @@ def auditar_pagina(url):
                 resultado["avisos"].append(f"Title largo ({len(t)} chars)")
             else:
                 resultado["ok"].append(f"Title OK ({len(t)} chars)")
-
         meta = soup.find("meta", attrs={"name": "description"})
         if not meta or not meta.get("content", "").strip():
             resultado["errores"].append("Sin meta description")
@@ -263,31 +424,26 @@ def auditar_pagina(url):
                 resultado["avisos"].append(f"Meta description larga ({len(m)} chars)")
             else:
                 resultado["ok"].append(f"Meta description OK ({len(m)} chars)")
-
         h1s = soup.find_all("h1")
         if not h1s:
             resultado["errores"].append("Sin H1")
         elif len(h1s) > 1:
-            resultado["avisos"].append(f"Múltiples H1 ({len(h1s)})")
+            resultado["avisos"].append(f"Multiples H1 ({len(h1s)})")
         else:
             resultado["ok"].append("H1 correcto")
-
         texto = soup.get_text().lower()
         for kw in KEYWORDS:
             if kw.lower() in texto:
                 resultado["keywords_ok"].append(kw)
             else:
                 resultado["keywords_faltantes"].append(kw)
-
         imgs_sin_alt = [i for i in soup.find_all("img") if not i.get("alt", "").strip()]
         if imgs_sin_alt:
-            resultado["avisos"].append(f"{len(imgs_sin_alt)} imágenes sin alt")
-
+            resultado["avisos"].append(f"{len(imgs_sin_alt)} imagenes sin alt")
         if resultado["tiempo"] > 3:
             resultado["avisos"].append(f"Carga lenta: {resultado['tiempo']}s")
         else:
             resultado["ok"].append(f"Velocidad OK: {resultado['tiempo']}s")
-
     except Exception as e:
         resultado["errores"].append(f"Error: {str(e)}")
     return resultado
@@ -304,109 +460,72 @@ def calcular_puntuacion(r):
 def generar_informe_seo(resultados):
     fecha = datetime.now().strftime("%Y%m%d_%H%M")
     nombre = f"{OUTPUT_DIR}/seo_informe_{fecha}.txt"
-
     puntuacion_media = round(sum(calcular_puntuacion(r) for r in resultados) / len(resultados))
     total_errores = sum(len(r["errores"]) for r in resultados)
     total_avisos = sum(len(r["avisos"]) for r in resultados)
-
     with open(nombre, "w", encoding="utf-8") as f:
-        f.write("=" * 60 + "\n")
-        f.write(f"BLACKNOVA — INFORME SEO AUTOMÁTICO\n")
-        f.write(f"Fecha: {datetime.now().strftime('%d/%m/%Y %H:%M')}\n")
-        f.write("=" * 60 + "\n\n")
-        f.write(f"RESUMEN EJECUTIVO:\n")
-        f.write(f"  Puntuación media: {puntuacion_media}/100\n")
-        f.write(f"  Errores críticos: {total_errores}\n")
-        f.write(f"  Avisos: {total_avisos}\n\n")
-
+        f.write("BLACKNOVA — INFORME SEO\n")
+        f.write(f"Fecha: {datetime.now().strftime('%d/%m/%Y %H:%M')}\n\n")
+        f.write(f"Puntuacion media: {puntuacion_media}/100\n")
+        f.write(f"Errores criticos: {total_errores}\n")
+        f.write(f"Avisos: {total_avisos}\n\n")
         for r in resultados:
             nombre_pag = r["url"].split("/")[-1] or "index"
             punt = calcular_puntuacion(r)
-            f.write(f"{'─'*50}\n")
             f.write(f"{nombre_pag} — {punt}/100\n")
             for e in r["errores"]:
-                f.write(f"  ✗ {e}\n")
+                f.write(f"  ERROR: {e}\n")
             for a in r["avisos"]:
-                f.write(f"  ⚠ {a}\n")
-            for o in r["ok"]:
-                f.write(f"  ✓ {o}\n")
+                f.write(f"  AVISO: {a}\n")
             if r["keywords_faltantes"]:
-                f.write(f"  → Keywords a añadir: {', '.join(r['keywords_faltantes'][:3])}\n")
+                f.write(f"  Keywords a anadir: {', '.join(r['keywords_faltantes'][:3])}\n")
             f.write("\n")
-
-        f.write("=" * 60 + "\n")
-        f.write("ACCIONES PRIORITARIAS:\n")
-        f.write("─" * 40 + "\n")
-
-        todas_faltantes = {}
-        for r in resultados:
-            for kw in r["keywords_faltantes"]:
-                todas_faltantes[kw] = todas_faltantes.get(kw, 0) + 1
-        top_kw = sorted(todas_faltantes.items(), key=lambda x: x[1], reverse=True)[:5]
-
-        f.write("1. Keywords más ausentes en la web:\n")
-        for kw, count in top_kw:
-            f.write(f"   → '{kw}' falta en {count} páginas\n")
-        f.write("\n2. Artículos de blog generados para mejorar keywords:\n")
-        for art in ARTICULOS_BLOG:
-            f.write(f"   → blog/{art['slug']}.html\n")
-        f.write("\n3. Sube los artículos del blog a Netlify para indexación inmediata\n")
-        f.write("4. Registra cada artículo en Google Search Console\n")
-        f.write("5. Comparte cada artículo en LinkedIn e Instagram\n")
-
     return nombre, puntuacion_media
 
 
-def ejecutar_auditoria_completa():
+if __name__ == "__main__":
     print("=" * 60)
-    print("BLACKNOVA — Sistema SEO Automático")
+    print("BLACKNOVA — Sistema SEO Automatico")
     print(f"Fecha: {datetime.now().strftime('%d/%m/%Y %H:%M')}")
     print("=" * 60)
 
-    # 1. Auditoría SEO
-    print("\n🔍 Auditando páginas de blacknova.es...")
+    print("\nAuditando paginas...")
     resultados = []
     for url in PAGINAS:
         nombre = url.split("/")[-1] or "index"
         print(f"   {nombre}...", end=" ", flush=True)
         r = auditar_pagina(url)
         punt = calcular_puntuacion(r)
-        print(f"{'✅' if punt >= 80 else '⚠️' if punt >= 60 else '❌'} {punt}/100")
+        print(f"{'OK' if punt >= 80 else 'AVISO'} {punt}/100")
         resultados.append(r)
         time.sleep(0.5)
 
-    # 2. Informe SEO
-    print("\n📊 Generando informe SEO...")
+    print("\nGenerando informe...")
     informe, puntuacion_media = generar_informe_seo(resultados)
-    print(f"   ✅ {informe}")
-    print(f"   Puntuación media: {puntuacion_media}/100")
+    print(f"   OK {informe} — Puntuacion: {puntuacion_media}/100")
 
-    # 3. Artículos de blog
-    print("\n✍️  Generando artículos de blog SEO...")
-    blog_dir = os.path.join(BLOG_DIR)
-    os.makedirs(blog_dir, exist_ok=True)
+    print("\nGenerando articulos de blog...")
+    articulos_verificados = []
     for art in ARTICULOS_BLOG:
+        print(f"   {art['slug']}.html")
         html = crear_articulo_html(art)
-        ruta = os.path.join(blog_dir, f"{art['slug']}.html")
+        texto = extraer_texto_html(html)
+        es_original, porcentaje, hash_id = verificar_originalidad(texto, art["titulo"])
+        ruta = os.path.join(BLOG_DIR, f"{art['slug']}.html")
         with open(ruta, "w", encoding="utf-8") as f:
             f.write(html)
-        print(f"   ✅ {art['slug']}.html")
+        articulos_verificados.append({
+            "slug": art["slug"],
+            "originalidad": porcentaje,
+            "hash": hash_id,
+            "publicado": True
+        })
 
-    # 4. Resumen final
+    guardar_registro_copyright(articulos_verificados)
+
     print("\n" + "=" * 60)
-    print("RESUMEN:")
-    print(f"  Puntuación SEO actual: {puntuacion_media}/100")
-    print(f"  Artículos de blog generados: {len(ARTICULOS_BLOG)}")
-    print(f"  Informe guardado en: {informe}")
-    print()
-    print("PRÓXIMOS PASOS:")
-    print("  1. Copia la carpeta 'blog_articles' a tu carpeta blacknova-marketing")
-    print("  2. Haz git add + commit + push para publicar en Netlify")
-    print("  3. Registra las URLs del blog en Google Search Console")
-    print("  4. Comparte los artículos en LinkedIn e Instagram")
-    print("  5. Ejecuta este script cada semana para monitorizar la evolución")
+    print(f"Puntuacion SEO: {puntuacion_media}/100")
+    print(f"Articulos generados: {len(ARTICULOS_BLOG)}")
+    print("\nPROXIMO PASO:")
+    print("  git add blog_articles/*.html && git commit -m 'Blog actualizado' && git push")
     print("=" * 60)
-
-
-if __name__ == "__main__":
-    ejecutar_auditoria_completa()
