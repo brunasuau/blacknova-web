@@ -1,14 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://blacknova.es/</loc><priority>1.0</priority></url>
-  <url><loc>https://blacknova.es/sobre-nosotros.html</loc><priority>0.8</priority></url>
-  <url><loc>https://blacknova.es/que-hacemos.html</loc><priority>0.8</priority></url>
-  <url><loc>https://blacknova.es/talentos.html</loc><priority>0.8</priority></url>
-  <url><loc>https://blacknova.es/me-siento-talento.html</loc><priority>0.7</priority></url>
-  <url><loc>https://blacknova.es/busco-talento.html</loc><priority>0.7</priority></url>
-  <url><loc>https://blacknova.es/contacto.html</loc><priority>0.7</priority></url>
-  <url><loc>https://blacknova.es/blog.html</loc><priority>0.8</priority></url>
-  <url><loc>https://blacknova.es/blog_articles/gestion-activos-inmobiliarios-catalunya.html</loc><priority>0.9</priority></url>
-  <url><loc>https://blacknova.es/blog_articles/naves-industriales-catalunya-guia.html</loc><priority>0.9</priority></url>
-  <url><loc>https://blacknova.es/blog_articles/project-manager-catalunya.html</loc><priority>0.9</priority></url>
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://blacknova.es/</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- NUEVA: Trasteros Calafell — prioridad SEO alta -->
+  <url>
+    <loc>https://blacknova.es/trasteros</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Servicios / Qué hacemos -->
+  <url>
+    <loc>https://blacknova.es/que-hacemos</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sobre nosotros -->
+  <url>
+    <loc>https://blacknova.es/sobre-nosotros</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Contacto -->
+  <url>
+    <loc>https://blacknova.es/contacto</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Blog principal -->
+  <url>
+    <loc>https://blacknova.es/blog</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artículos de blog -->
+  <url>
+    <loc>https://blacknova.es/blog_articles/project-manager-catalunya.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blacknova.es/blog_articles/gestion-activos-inmobiliarios-catalunya.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blacknova.es/blog_articles/rentabilizar-nave-industrial.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blacknova.es/blog_articles/invertir-naves-industriales-espana.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blacknova.es/blog_articles/naves-industriales-catalunya-guia.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blacknova.es/blog_articles/gestion-patrimonio-inmobiliario.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blacknova.es/blog_articles/gestion-profesional-nave-industrial-propietario.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Propietarios -->
+  <url>
+    <loc>https://blacknova.es/propietarios</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://blacknova.es/faq</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Legal (prioridad baja, necesarias) -->
+  <url>
+    <loc>https://blacknova.es/politica-privacidad</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://blacknova.es/politica-cookies</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://blacknova.es/aviso-legal</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
