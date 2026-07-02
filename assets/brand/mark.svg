@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="novaGrad" x1="2" y1="2" x2="98" y2="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F0B15C"/>
+      <stop offset="0.55" stop-color="#C9822E"/>
+      <stop offset="1" stop-color="#8A4A22"/>
+    </linearGradient>
+  </defs>
+  <path d="M50,2 L59.9,40.1 L98,50 L59.9,59.9 L50,98 L40.1,59.9 L2,50 L40.1,40.1 Z" fill="url(#novaGrad)"/>
+</svg>

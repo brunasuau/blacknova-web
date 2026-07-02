@@ -1,200 +1,309 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Blog | Blacknova — Gestión de Activos Inmobiliarios y Naves Industriales</title>
-<meta content="Blog de Blacknova sobre rentabilizar naves industriales, gestión de patrimonio inmobiliario y activos industriales en España. Guías y consejos para propietarios e inversores." name="description"/>
-<script>
-  // Google Analytics con consentimiento RGPD: solo carga si el usuario acepta
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  function bnLoadAnalytics(){
-    if(document.getElementById('ga-script')) return;
-    var s=document.createElement('script');
-    s.id='ga-script';s.async=true;
-    s.src='https://www.googletagmanager.com/gtag/js?id=G-DTP5WXLB81';
-    document.head.appendChild(s);
-    gtag('js', new Date());
-    gtag('config', 'G-DTP5WXLB81');
-  }
-  if(localStorage.getItem('bn_cookie_consent')==='all'){ bnLoadAnalytics(); }
-</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600&amp;family=Jost:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog | Naves industriales, trasteros y project management · Blacknova</title>
+<meta name="description" content="Artículos sobre naves industriales, trasteros en Calafell y el Penedès, y project management en Catalunya. Guías prácticas y actualizadas."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://blacknova.es/blog.html"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+
+<meta property="og:title" content="Blog · Blacknova"/>
+<meta property="og:description" content="Guías sobre naves industriales, trasteros y project management en Catalunya."/>
+<meta property="og:url" content="https://blacknova.es/blog.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_ES"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/base.css"/>
+
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#b8965a;--gold2:#d4ad75;--black:#0d0d0d;--dark:#141414;--white:#ffffff;--text:#1a1a1a;--muted:#666;--border:#e2ddd4;--border-dark:#2a2a2a}
-body{font-family:'Jost',sans-serif;background:var(--white);color:var(--text)}
-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,13,13,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-dark)}
-.header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:80px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-mark{width:38px;height:38px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center}
-.logo-mark svg{width:18px;height:18px;fill:var(--gold)}
-.logo-text{font-weight:700;font-size:15px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white)}
-.logo-text span{color:var(--gold)}
-nav{display:flex;align-items:center;gap:36px}
-nav a{font-size:12px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
-nav a:hover,nav a.active{color:var(--white)}
-.header-cta{font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:12px 28px;text-decoration:none}
-.page-hero{padding:160px 48px 80px;background:var(--dark);text-align:center}
-.page-eyebrow{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:var(--white);line-height:1.1}
-.page-title em{color:var(--gold);font-style:italic}
-.blog-count{font-size:13px;color:rgba(255,255,255,0.4);margin-top:16px}
-.blog-grid{max-width:1200px;margin:0 auto;padding:80px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-.blog-card{border:1px solid var(--border);transition:border-color 0.2s}
-.blog-card:hover{border-color:var(--gold)}
-.blog-card-img{width:100%;height:200px;background:var(--dark);display:flex;align-items:center;justify-content:center}
-.blog-card-img svg{width:60px;height:60px;fill:var(--gold);opacity:0.4}
-.blog-card-body{padding:28px}
-.blog-card-cat{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.blog-card-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.3}
-.blog-card-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px}
-.blog-card-link{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:600}
-footer{background:var(--dark);padding:60px 48px;text-align:center;border-top:1px solid var(--border-dark)}
-.footer-logo{font-weight:700;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);margin-bottom:12px}
-.footer-logo span{color:var(--gold)}
-footer p{color:rgba(255,255,255,0.4);font-size:13px}
-@media(max-width:900px){.blog-grid{grid-template-columns:1fr;padding:40px 24px}.page-hero{padding:120px 24px 60px}.page-title{font-size:42px}.header-inner{padding:0 24px}nav{gap:20px}}
+.page-hero { position: relative; background: var(--bn-black); color: var(--bn-cream); padding: 170px 0 80px; overflow: hidden; }
+.page-hero .nova-glow { width: 560px; height: 560px; top: -200px; right: -180px; }
+.page-hero h1 { font-size: clamp(34px,5vw,54px); color: var(--bn-white); max-width: 16ch; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+@media (max-width: 980px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .blog-grid { grid-template-columns: 1fr; } }
+.blog-card { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--bn-border); transition: all .3s var(--ease); }
+.blog-card:hover { border-color: transparent; box-shadow: var(--shadow-soft); transform: translateY(-4px); }
+.blog-card .tag { display: inline-block; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bn-amber-dark); margin-bottom: 12px; }
+.blog-card-body { padding: 30px; }
+.blog-card h2 { font-size: 19px; margin-bottom: 12px; line-height:1.3; }
+.blog-card p { color: var(--bn-muted); font-size: 13.5px; margin-bottom: 18px; }
+.blog-card a.read { font-size: 13px; color: var(--bn-ink); font-weight: 500; }
 </style>
 </head>
 <body>
-<header>
-<div class="header-inner">
-<a class="logo" href="index.html">
-<img alt="Blacknova" src="logo_blacknova.jpeg" style="height:38px;width:auto;object-fit:contain;"/>
-<span class="logo-text">Blackno<span>va</span></span>
-</a>
-<nav>
-<a href="index.html">Inicio</a>
-<a href="que-hacemos.html">Servicios</a>
-<a href="talentos.html">Talentos</a>
-<a href="sobre-nosotros.html">Nosotros</a>
-<a class="active" href="blog.html">Blog</a>
-<a href="propietarios.html">Propietarios</a><a href="faq.html">FAQ</a><a href="contacto.html">Contacto</a>
-</nav>
-<a class="header-cta" href="contacto.html">Contactar</a>
-</div>
-</header>
-<div class="page-hero">
-<div class="page-eyebrow">Conocimiento · Activos · Patrimonio</div>
-<h1 class="page-title">Nuestro<br/><em>Blog</em></h1>
-<p class="blog-count">7 artículos publicados · Actualizado semanalmente</p>
-</div>
-<div class="blog-grid">
-<div class="blog-card">
-<div class="blog-card-img"><svg viewbox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"></polygon></svg></div>
-<div class="blog-card-body">
-<div class="blog-card-cat">Activos Inmobiliarios</div>
-<h2 class="blog-card-title">Gestión de Activos Inmobiliarios en Catalunya: Guía Completa 2026</h2>
-<p class="blog-card-desc">Todo lo que necesitas saber sobre la gestión profesional de activos inmobiliarios industriales en Catalunya. Metodología...</p>
-<a class="blog-card-link" href="blog_articles/gestion-activos-inmobiliarios-catalunya.html">Leer artículo →</a>
-</div>
-</div>
-<div class="blog-card">
-<div class="blog-card-img"><svg viewbox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"></polygon></svg></div>
-<div class="blog-card-body">
-<div class="blog-card-cat">Patrimonio Inmobiliario</div>
-<h2 class="blog-card-title">Gestion de Patrimonio Inmobiliario Industrial</h2>
-<p class="blog-card-desc">Como gestionar tu patrimonio inmobiliario industrial de forma profesional para maximizar rentabilidad, reducir riesgos y...</p>
-<a class="blog-card-link" href="blog_articles/gestion-patrimonio-inmobiliario.html">Leer artículo →</a>
-</div>
-</div>
-<div class="blog-card">
-<div class="blog-card-img"><svg viewbox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"></polygon></svg></div>
-<div class="blog-card-body">
-<div class="blog-card-cat">Gestión Profesional</div>
-<h2 class="blog-card-title">Por Que los Propietarios de Naves Industriales Necesitan Gestion Profesional</h2>
-<p class="blog-card-desc">Descubre por que delegar la gestion de tu nave industrial a profesionales como Blacknova aumenta tu rentabilidad y elimi...</p>
-<a class="blog-card-link" href="blog_articles/gestion-profesional-nave-industrial-propietario.html">Leer artículo →</a>
-</div>
-</div>
-<div class="blog-card">
-<div class="blog-card-img"><svg viewbox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"></polygon></svg></div>
-<div class="blog-card-body">
-<div class="blog-card-cat">Inversión Industrial</div>
-<h2 class="blog-card-title">Invertir en Naves Industriales en Espana</h2>
-<p class="blog-card-desc">Guia completa para invertir en naves industriales en Espana. Rentabilidades, zonas, riesgos y como gestionar tu inversio...</p>
-<a class="blog-card-link" href="blog_articles/invertir-naves-industriales-espana.html">Leer artículo →</a>
-</div>
-</div>
-<div class="blog-card">
-<div class="blog-card-img"><svg viewbox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"></polygon></svg></div>
-<div class="blog-card-body">
-<div class="blog-card-cat">Naves Industriales</div>
-<h2 class="blog-card-title">Naves Industriales en Catalunya: Todo lo que Necesitas Saber en 2026</h2>
-<p class="blog-card-desc">Guía completa sobre naves industriales en Catalunya: tipos, zonas, precios, normativa y cómo elegir la nave perfecta par...</p>
-<a class="blog-card-link" href="blog_articles/naves-industriales-catalunya-guia.html">Leer artículo →</a>
-</div>
-</div>
-<div class="blog-card">
-<div class="blog-card-img"><svg viewbox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"></polygon></svg></div>
-<div class="blog-card-body">
-<div class="blog-card-cat">Gestión de Proyectos</div>
-<h2 class="blog-card-title">Project Manager en Catalunya: Cuándo y Por Qué Contratar Uno</h2>
-<p class="blog-card-desc">Descubre cuándo necesitas un Project Manager en Catalunya, qué hace exactamente y cómo Blacknova gestiona proyectos indu...</p>
-<a class="blog-card-link" href="blog_articles/project-manager-catalunya.html">Leer artículo →</a>
-</div>
-</div>
-<div class="blog-card">
-<div class="blog-card-img"><svg viewbox="0 0 20 20"><polygon points="10,1 19,7 19,13 10,19 1,13 1,7"></polygon></svg></div>
-<div class="blog-card-body">
-<div class="blog-card-cat">Naves Industriales</div>
-<h2 class="blog-card-title">Como Rentabilizar tu Nave Industrial</h2>
-<p class="blog-card-desc">Descubre como maximizar el rendimiento de tu nave industrial como propietario. Gestion profesional, estrategias de alqui...</p>
-<a class="blog-card-link" href="blog_articles/rentabilizar-nave-industrial.html">Leer artículo →</a>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-logo">Blackno<span>va</span></div>
-<p>Gestión de activos inmobiliarios y naves industriales · <a href="https://blacknova.es" style="color:var(--gold)">blacknova.es</a></p>
-<p style="margin-top:8px">© 2026 Blacknova · Todos los derechos reservados</p>
-</footer>
-<!-- COOKIE BANNER RGPD/LSSI-CE -->
-<style>
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0d0d0d;border-top:1px solid #2a2a2a;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;box-shadow:0 -4px 32px rgba(0,0,0,0.4);font-family:'Jost',sans-serif;}
-#cookie-banner.hidden{display:none;}
-#cookie-banner .cookie-text{font-size:13px;font-weight:300;color:rgba(255,255,255,0.7);line-height:1.7;max-width:700px;}
-#cookie-banner .cookie-text a{color:#b8965a;text-decoration:none;}
-#cookie-banner .cookie-text a:hover{text-decoration:underline;}
-#cookie-banner .cookie-text strong{color:#fff;font-weight:500;}
-#cookie-banner .cookie-btns{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;}
-#cookie-banner .cookie-btn-accept{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;background:#b8965a;color:#0d0d0d;border:none;padding:12px 28px;cursor:pointer;transition:background 0.2s;white-space:nowrap;}
-#cookie-banner .cookie-btn-accept:hover{background:#d4ad75;}
-#cookie-banner .cookie-btn-reject{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;background:none;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);padding:12px 24px;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
-#cookie-banner .cookie-btn-reject:hover{border-color:rgba(255,255,255,0.5);color:#fff;}
-#cookie-banner .cookie-btn-config{font-size:11px;font-weight:400;letter-spacing:0.1em;background:none;color:rgba(255,255,255,0.35);border:none;padding:12px 16px;cursor:pointer;text-decoration:underline;white-space:nowrap;}
-#cookie-banner .cookie-btn-config:hover{color:rgba(255,255,255,0.7);}
-.whatsapp-float{position:fixed;bottom:88px;right:28px;z-index:8000;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;}
-.whatsapp-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,0.55);}
-.whatsapp-float svg{width:28px;height:28px;fill:#fff;}
-@media(max-width:600px){#cookie-banner{padding:16px 20px;}#cookie-banner .cookie-btns{width:100%;}#cookie-banner .cookie-btn-accept,#cookie-banner .cookie-btn-reject{flex:1;text-align:center;}.whatsapp-float{bottom:80px;right:16px;width:50px;height:50px;}}
-</style>
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
-  <p class="cookie-text">
-    <strong>Usamos cookies</strong> propias y de terceros para mejorar tu experiencia de navegación y analizar el tráfico de la web. Puedes aceptar todas las cookies, rechazar las no esenciales o gestionar tus preferencias. Más información en nuestra <a href="politica-cookies.html">Política de Cookies</a> y <a href="politica-privacidad.html">Política de Privacidad</a>.
-  </p>
-  <div class="cookie-btns">
-    <button class="cookie-btn-config" onclick="bnOpenCookieConfig()">Configurar</button>
-    <button class="cookie-btn-reject" onclick="bnRejectCookies()">Solo esenciales</button>
-    <button class="cookie-btn-accept" onclick="bnAcceptCookies()">Aceptar todas</button>
+
+<a class="skip-link" href="#main">Ir al contenido principal</a>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros para analizar el uso del sitio y mejorar tu experiencia. Puedes aceptarlas, rechazar las no esenciales o consultar nuestra <a href="politica-cookies.html" style="text-decoration:underline">política de cookies</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-primary" id="cookieAccept">Aceptar todas</button>
+    <button class="btn btn-outline" id="cookieReject">Solo esenciales</button>
   </div>
 </div>
-<a class="whatsapp-float" href="https://wa.me/34630879206?text=Hola%2C%20me%20interesa%20info%20de%20Blacknova" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-<script>
-(function(){
-  var K='bn_cookie_consent';
-  window.bnAcceptCookies=function(){localStorage.setItem(K,'all');document.getElementById('cookie-banner').classList.add('hidden');if(typeof bnLoadAnalytics==='function'){bnLoadAnalytics();}};
-  window.bnRejectCookies=function(){localStorage.setItem(K,'essential');document.getElementById('cookie-banner').classList.add('hidden');};
-  window.bnOpenCookieConfig=function(){window.location.href='politica-cookies.html';};
-  if(localStorage.getItem(K)){document.getElementById('cookie-banner').classList.add('hidden');}
-})();
-</script>
 
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html" aria-label="Blacknova — Inicio">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="navGrad" x1="2" y1="2" x2="98" y2="98" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F0B15C"/><stop offset="0.55" stop-color="#C9822E"/><stop offset="1" stop-color="#8A4A22"/></linearGradient></defs><path d="M50,2 L59.9,40.1 L98,50 L59.9,59.9 L50,98 L40.1,59.9 L2,50 L40.1,40.1 Z" fill="url(#navGrad)"/></svg>
+      <span class="logo-word">Black<b>nova</b></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="que-hacemos.html">Qué hacemos</a>
+      <a href="trasteros.html">Trasteros</a>
+      <a href="propietarios.html">Propietarios</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-phone" href="tel:+34630879206">📞 630 87 92 06</a>
+      <a class="btn btn-gold" href="contacto.html">Consulta gratuita</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+  <a href="index.html">Inicio</a>
+  <a href="que-hacemos.html">Qué hacemos</a>
+  <a href="trasteros.html">Trasteros</a>
+  <a href="propietarios.html">Propietarios</a>
+  <a href="sobre-nosotros.html">Sobre nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="nova-glow"></div>
+  <div class="container">
+    <div class="breadcrumbs" style="color:rgba(247,244,238,0.5)"><a href="index.html" style="color:rgba(247,244,238,0.5)">Inicio</a> / Blog</div>
+    <div class="eyebrow" data-animate>Blog</div>
+    <h1 data-animate>Naves, trasteros y gestión de proyectos</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="blog-grid" data-animate>
+
+      <a class="blog-card" href="blog_articles/naves-industriales-catalunya-guia.html">
+        <div class="blog-card-body">
+          <span class="tag">Naves industriales</span>
+          <h2>Naves industriales en Catalunya: todo lo que necesitas saber en 2026</h2>
+          <p>Guía general sobre el mercado de naves industriales en Catalunya: zonas, rentabilidad y gestión.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/alquiler-naves-industriales-barcelona.html">
+        <div class="blog-card-body">
+          <span class="tag">Naves industriales</span>
+          <h2>Alquiler de naves industriales en Barcelona: guía 2026</h2>
+          <p>Zonas, precios, qué revisar antes de firmar y cómo te acompañamos en el proceso.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/naves-industriales-calafell-penedes.html">
+        <div class="blog-card-body">
+          <span class="tag">Naves industriales</span>
+          <h2>Naves industriales en Calafell y el Penedès: guía 2026</h2>
+          <p>Precios, polígonos y conectividad de una de las mejores zonas para instalarse en Catalunya.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/contratos-alquiler-naves-industriales.html">
+        <div class="blog-card-body">
+          <span class="tag">Naves industriales</span>
+          <h2>Contratos de alquiler de naves industriales: cláusulas clave</h2>
+          <p>Cláusulas esenciales, plazos, fianzas y errores a evitar antes de firmar.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/invertir-naves-industriales-espana.html">
+        <div class="blog-card-body">
+          <span class="tag">Inversión industrial</span>
+          <h2>Invertir en naves industriales en España</h2>
+          <p>Rentabilidades, zonas, riesgos y cómo gestionar tu inversión de forma profesional.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/rentabilizar-nave-industrial.html">
+        <div class="blog-card-body">
+          <span class="tag">Gestión profesional</span>
+          <h2>Cómo rentabilizar tu nave industrial</h2>
+          <p>Estrategias de gestión, alquiler y optimización para propietarios.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/gestion-profesional-nave-industrial-propietario.html">
+        <div class="blog-card-body">
+          <span class="tag">Gestión profesional</span>
+          <h2>Por qué los propietarios de naves industriales necesitan gestión profesional</h2>
+          <p>Cómo delegar la gestión aumenta la rentabilidad y elimina problemas del día a día.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/gestion-patrimonio-inmobiliario.html">
+        <div class="blog-card-body">
+          <span class="tag">Patrimonio inmobiliario</span>
+          <h2>Gestión de patrimonio inmobiliario industrial</h2>
+          <p>Cómo gestionar tu cartera de activos para maximizar rentabilidad y reducir riesgos.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/gestion-activos-inmobiliarios-catalunya.html">
+        <div class="blog-card-body">
+          <span class="tag">Activos inmobiliarios</span>
+          <h2>Gestión de activos inmobiliarios en Catalunya: guía completa</h2>
+          <p>Metodología y buenas prácticas para la gestión profesional de activos industriales.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/project-manager-catalunya.html">
+        <div class="blog-card-body">
+          <span class="tag">Project Management</span>
+          <h2>Project Manager en Catalunya: cuándo y por qué contratar uno</h2>
+          <p>Señales de que tu proyecto necesita un project manager, y qué esperar del servicio.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/trasteros-calafell.html">
+        <div class="blog-card-body">
+          <span class="tag">Trasteros</span>
+          <h2>Trasteros en Calafell: contrato, precios y zonas</h2>
+          <p>Todo sobre alquilar trastero en Calafell Platja, Segur de Calafell y Calafell Poble.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/alquiler-trasteros-barcelona-guia.html">
+        <div class="blog-card-body">
+          <span class="tag">Trasteros</span>
+          <h2>Alquiler de trasteros en Barcelona: guía completa</h2>
+          <p>Precios, zonas y qué revisar antes de firmar un contrato de trastero.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/como-elegir-trastero-barcelona.html">
+        <div class="blog-card-body">
+          <span class="tag">Trasteros</span>
+          <h2>Cómo elegir el trastero perfecto en Barcelona</h2>
+          <p>Tamaño, ubicación, seguridad, precio y contrato: qué revisar antes de firmar.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/cuanto-cuesta-trastero-barcelona.html">
+        <div class="blog-card-body">
+          <span class="tag">Trasteros</span>
+          <h2>¿Cuánto cuesta un trastero en Barcelona?</h2>
+          <p>Precios reales por zonas y tamaños en el área metropolitana de Barcelona.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/trasteros-para-empresas-barcelona.html">
+        <div class="blog-card-body">
+          <span class="tag">Trasteros</span>
+          <h2>Trasteros para empresas en Barcelona</h2>
+          <p>Almacenamiento flexible con contrato y factura para pymes, e-commerce y autónomos.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog_articles/trasteros-penedes-tarragona.html">
+        <div class="blog-card-body">
+          <span class="tag">Trasteros</span>
+          <h2>Trasteros en el Penedès y Tarragona: guía completa</h2>
+          <p>Precios y recomendaciones para alquilar trastero en Vendrell, Calafell y alrededores.</p>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:18px;">
+          <svg viewBox="0 0 100 100" aria-hidden="true" width="30" height="30"><path d="M50,2 L59.9,40.1 L98,50 L59.9,59.9 L50,98 L40.1,59.9 L2,50 L40.1,40.1 Z" fill="#C9822E"/></svg>
+          <span class="logo-word">Black<b>nova</b></span>
+        </a>
+        <p style="font-size:14px; max-width:34ch; margin-top:14px; color:rgba(247,244,238,0.6)">Project management, trasteros e intermediación inmobiliaria en Barcelona y Catalunya.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/blacknova" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.linkedin.com/company/blacknova" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+        </div>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="que-hacemos.html">Project Management</a></li>
+          <li><a href="trasteros.html">Trasteros en Calafell</a></li>
+          <li><a href="propietarios.html">Naves industriales</a></li>
+          <li><a href="propietarios.html">Intermediación inmobiliaria</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">Preguntas frecuentes</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+34630879206">+34 630 87 92 06</a></li>
+          <li><a href="mailto:direccion@blacknova.es">direccion@blacknova.es</a></li>
+          <li>Sant Sadurní d'Anoia, Barcelona</li>
+          <li>Lun–Vie 9:00–19:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Blacknova S.L. Todos los derechos reservados.</span>
+      <span style="display:flex; gap:18px; flex-wrap:wrap;">
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="politica-privacidad.html">Privacidad</a>
+        <a href="politica-cookies.html">Cookies</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34630879206?text=Hola%20Blacknova%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.5 4 3.83 7.66 3.83 12.2c0 1.44.38 2.85 1.1 4.08L3.75 20.5l4.35-1.14a8.83 8.83 0 0 0 4.2 1.07h0c4.55 0 8.22-3.66 8.22-8.2a8.17 8.17 0 0 0-2.92-5.9Z"/></svg>
+</a>
+
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

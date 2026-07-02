@@ -2,1157 +2,404 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Blacknova | Project Management y Trasteros en Calafell · Barcelona</title>
-<meta name="description" content="Blacknova: expertos en Project Management con metodología PMI y Agile en Barcelona, y alquiler de trasteros en Calafell. Consulta gratuita sin compromiso."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blacknova | Project Management, Trasteros e Intermediación Inmobiliaria en Barcelona</title>
+<meta name="description" content="Blacknova: gestión de proyectos con metodología PMI/Agile, alquiler de trasteros en Calafell e intermediación de naves industriales en Barcelona y Catalunya. Consulta gratuita."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://blacknova.es/"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="es" href="https://blacknova.es/"/>
 
-<!-- Open Graph -->
-<meta property="og:title" content="Blacknova | Project Management y Trasteros en Calafell · Barcelona"/>
-<meta property="og:description" content="Gestión de proyectos con PMI/Agile y trasteros en alquiler en Calafell. Tu socio de confianza en Barcelona y Cataluña."/>
+<meta property="og:title" content="Blacknova | Project Management, Trasteros e Intermediación Inmobiliaria"/>
+<meta property="og:description" content="Gestión de proyectos con PMI/Agile, trasteros en alquiler en Calafell e intermediación de naves industriales en Barcelona y Catalunya."/>
 <meta property="og:url" content="https://blacknova.es/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="es_ES"/>
+<meta property="og:site_name" content="Blacknova"/>
+<meta name="twitter:card" content="summary_large_image"/>
 
-<!-- Schema.org LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Blacknova",
-  "description": "Gestión de proyectos con metodología PMI y Agile, alquiler de trasteros en Calafell e intermediación inmobiliaria en Barcelona y Cataluña.",
+  "legalName": "Blacknova S.L.",
+  "description": "Gestión de proyectos con metodología PMI y Agile, alquiler de trasteros en Calafell e intermediación de naves industriales en Barcelona y Catalunya.",
   "url": "https://blacknova.es",
   "telephone": "+34630879206",
+  "email": "direccion@blacknova.es",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Barcelona",
-    "addressRegion": "Cataluña",
+    "streetAddress": "Carrer Jordi Pere Cerdà 4",
+    "addressLocality": "Sant Sadurní d'Anoia",
+    "addressRegion": "Barcelona",
     "addressCountry": "ES"
   },
-  "areaServed": ["Barcelona", "Calafell", "Cataluña"],
-  "serviceType": ["Project Management", "Alquiler de Trasteros", "Intermediación Inmobiliaria"],
-  "sameAs": ["https://blacknova.es"]
+  "areaServed": ["Barcelona", "Calafell", "Alt Penedès", "Tarragona", "Cataluña"],
+  "sameAs": ["https://www.instagram.com/blacknova", "https://www.linkedin.com/company/blacknova"]
 }
-</script>
-
-<!-- ============================================================
-     RGPD / LSSI-CE: Google Tag Manager y Analytics se cargan
-     SOLO si el usuario ha dado su consentimiento explícito.
-     No se ejecuta ningún script de tracking antes de ese momento.
-     ============================================================ -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-
-  function bnLoadGTM(){
-    if(document.getElementById('gtm-script')) return;
-    // GTM
-    var s=document.createElement('script');
-    s.id='gtm-script'; s.async=true;
-    s.src='https://www.googletagmanager.com/gtm.js?id=GTM-TBB2N38J';
-    document.head.appendChild(s);
-    // GA4
-    var g=document.createElement('script');
-    g.id='ga-script'; g.async=true;
-    g.src='https://www.googletagmanager.com/gtag/js?id=G-DTP5WXLB81';
-    document.head.appendChild(g);
-    gtag('js', new Date());
-    gtag('config', 'G-DTP5WXLB81');
-  }
-  if(localStorage.getItem('bn_cookie_consent')==='all'){ bnLoadGTM(); }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/base.css"/>
 
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-:root {
-  --white: #ffffff; --off-white: #f7f5f0; --cream: #f0ece3;
-  --black: #0d0d0d; --dark: #141414; --text: #1a1a1a;
-  --muted: #666666; --muted2: #999999;
-  --gold: #b8965a; --gold2: #d4ad75;
-  --border: #e2ddd4; --border-dark: #2a2a2a;
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  background: var(--bn-black); color: var(--bn-cream); overflow: hidden; padding-top: 90px;
 }
-body { font-family: 'Jost', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+.hero .nova-glow.g1 { width: 640px; height: 640px; top: -220px; right: -160px; }
+.hero .nova-glow.g2 { width: 460px; height: 460px; bottom: -180px; left: -140px; opacity: .6; }
+.hero-content { position: relative; z-index: 2; max-width: 780px; }
+.hero-title { font-size: clamp(40px, 6vw, 74px); color: var(--bn-white); margin-bottom: 26px; }
+.hero-title em { font-style: italic; color: var(--bn-amber-light); }
+.hero-sub { font-size: 18px; color: rgba(247,244,238,0.75); max-width: 56ch; margin-bottom: 42px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 70px; }
+.hero .stat-grid { max-width: 720px; padding-top: 40px; border-top: 1px solid var(--bn-border-dark); }
 
-/* ── HEADER ── */
-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(13,13,13,0.96); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-dark); transition: all 0.3s;
-}
-.header-inner {
-  max-width: 1400px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px; height: 80px;
-}
-.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.logo img { height: 36px; width: auto; object-fit: contain; filter: brightness(0) invert(1); }
-nav { display: flex; align-items: center; gap: 32px; }
-nav a {
-  font-size: 12px; font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; color: rgba(255,255,255,0.7);
-  text-decoration: none; transition: color 0.2s; position: relative;
-}
-nav a:hover, nav a.active { color: var(--white); }
-nav a::after {
-  content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px;
-  background: var(--gold); transform: scaleX(0); transition: transform 0.25s;
-}
-nav a:hover::after, nav a.active::after { transform: scaleX(1); }
-.nav-dropdown { position: relative; }
-.nav-dropdown-menu {
-  position: absolute; top: calc(100% + 24px); left: 50%;
-  transform: translateX(-50%); background: var(--dark);
-  border: 1px solid var(--border-dark); min-width: 180px; padding: 10px 0;
-  opacity: 0; pointer-events: none; transition: all 0.2s;
-}
-.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: auto; }
-.nav-dropdown-menu a { display: block; padding: 10px 20px; font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.6); }
-.nav-dropdown-menu a:hover { color: var(--gold); background: rgba(255,255,255,0.04); }
-.nav-dropdown-menu a::after { display: none; }
-.header-cta {
-  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  background: var(--gold); color: var(--black); padding: 12px 28px;
-  text-decoration: none; transition: background 0.2s; white-space: nowrap;
-}
-.header-cta:hover { background: var(--gold2); }
-/* Hamburger */
-.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
-.menu-toggle span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
-.mobile-nav { display: none; position: fixed; inset: 0; background: var(--dark); z-index: 999; padding: 100px 32px 48px; flex-direction: column; gap: 0; }
-.mobile-nav.open { display: flex; }
-.mobile-nav a { font-size: 14px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; padding: 18px 0; border-bottom: 1px solid var(--border-dark); }
-.mobile-nav a:hover { color: var(--gold); }
-.mobile-nav-close { position: absolute; top: 28px; right: 28px; background: none; border: none; color: var(--white); font-size: 28px; cursor: pointer; }
+.services-head { max-width: 640px; margin: 0 auto 60px; }
+.service-card-link { display: block; }
+.service-card-link .card { height: 100%; }
+.service-card-link .learn { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: 13.5px; color: var(--bn-amber-dark); font-weight: 500; }
+.service-card-link:hover .learn { gap: 10px; }
 
-/* ── HERO ── */
-.hero { height: 100vh; min-height: 700px; position: relative; overflow: hidden; }
-.hero-slides { width: 100%; height: 100%; position: relative; }
-.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; display: flex; align-items: center; }
-.hero-slide.active { opacity: 1; }
-.hero-slide-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  transform: scale(1.06); transition: transform 8s ease;
-}
-.hero-slide.active .hero-slide-bg { transform: scale(1); }
-.hero-slide-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(110deg, rgba(13,13,13,0.85) 0%, rgba(13,13,13,0.45) 60%, rgba(13,13,13,0.2) 100%);
-}
-.hero-content { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; padding: 0 48px; width: 100%; }
-.hero-eyebrow {
-  display: flex; align-items: center; gap: 14px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.35em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
-  opacity: 0; transform: translateY(20px); transition: all 0.8s 0.3s;
-}
-.hero-slide.active .hero-eyebrow { opacity: 1; transform: translateY(0); }
-.hero-eyebrow::before { content: ''; display: block; width: 48px; height: 1px; background: var(--gold); }
-.hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(56px, 7.5vw, 108px); font-weight: 600;
-  line-height: 0.95; color: var(--white); letter-spacing: -0.01em; margin-bottom: 28px;
-  opacity: 0; transform: translateY(30px); transition: all 0.9s 0.5s;
-}
-.hero-slide.active .hero-title { opacity: 1; transform: translateY(0); }
-.hero-title em { font-style: italic; color: var(--gold); }
-.hero-desc {
-  font-size: 16px; font-weight: 300; line-height: 1.85;
-  color: rgba(255,255,255,0.72); max-width: 540px; margin-bottom: 44px;
-  opacity: 0; transform: translateY(20px); transition: all 0.8s 0.7s;
-}
-.hero-slide.active .hero-desc { opacity: 1; transform: translateY(0); }
-.hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; opacity: 0; transition: all 0.8s 0.9s; }
-.hero-slide.active .hero-actions { opacity: 1; }
-.btn-gold {
-  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--black); background: var(--gold); padding: 15px 36px;
-  text-decoration: none; display: inline-block; transition: background 0.2s;
-}
-.btn-gold:hover { background: var(--gold2); }
-.btn-ghost {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--white); border: 1px solid rgba(255,255,255,0.35); padding: 15px 36px;
-  text-decoration: none; display: inline-block; transition: all 0.2s;
-}
-.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.hero-controls {
-  position: absolute; bottom: 52px; left: 0; right: 0; z-index: 10;
-  max-width: 1400px; margin: 0 auto; padding: 0 48px;
-  display: flex; align-items: center; gap: 24px;
-}
-.hero-dots { display: flex; gap: 10px; }
-.hero-dot { width: 40px; height: 2px; background: rgba(255,255,255,0.25); cursor: pointer; transition: background 0.3s; border: none; padding: 0; }
-.hero-dot.active { background: var(--gold); }
-.hero-counter { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; color: rgba(255,255,255,0.45); }
-.hero-counter strong { color: var(--gold); font-weight: 600; }
-.hero-scroll-hint {
-  position: absolute; right: 48px; bottom: 52px; z-index: 10;
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-size: 9px; font-weight: 600; letter-spacing: 0.35em;
-  text-transform: uppercase; color: rgba(255,255,255,0.4);
-}
-.hero-scroll-line {
-  width: 1px; height: 56px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scrollPulse 2.5s ease-in-out infinite;
-}
-@keyframes scrollPulse { 0%,100%{opacity:0.3}50%{opacity:1} }
+.value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 32px; }
+@media (max-width: 900px) { .value-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .value-grid { grid-template-columns: 1fr; } }
+.value-item .num { font-family: var(--font-display); font-size: 34px; color: var(--bn-amber); margin-bottom: 10px; }
 
-/* ── TICKER ── */
-.ticker { background: var(--gold); overflow: hidden; padding: 16px 0; display: flex; }
-.ticker-inner { display: flex; animation: tickerMove 30s linear infinite; white-space: nowrap; }
-.ticker-item {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--black); padding: 0 44px; display: flex; align-items: center; gap: 22px;
-}
-.ticker-item::after { content: '◆'; font-size: 7px; opacity: 0.5; }
-@keyframes tickerMove { from{transform:translateX(0)}to{transform:translateX(-50%)} }
+.spotlight { position: relative; overflow: hidden; }
+.spotlight-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+@media (max-width: 900px) { .spotlight-grid { grid-template-columns: 1fr; } }
+.spotlight-list li { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--bn-border-dark); font-size: 15px; }
+.spotlight-list li::before { content: '✦'; color: var(--bn-amber-light); }
+.spotlight-card { background: rgba(247,244,238,0.04); border: 1px solid var(--bn-border-dark); border-radius: var(--radius-lg); padding: 40px; }
 
-/* ── COMMON ── */
-.section-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
-.section-eyebrow {
-  display: flex; align-items: center; gap: 14px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.35em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
-}
-.section-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
-.section-title-main {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(40px, 4.5vw, 64px); font-weight: 600;
-  line-height: 1.05; letter-spacing: -0.01em; color: var(--text);
-}
-.section-title-main em { font-style: italic; color: var(--gold); }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; counter-reset: step; }
+@media (max-width: 900px) { .process-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .process-steps { grid-template-columns: 1fr; } }
+.process-step { counter-increment: step; position: relative; padding-top: 8px; }
+.process-step::before { content: counter(step, decimal-leading-zero); font-family: var(--font-display); font-size: 42px; color: var(--bn-border); display: block; margin-bottom: 14px; }
 
-/* ── SERVICIOS PRINCIPALES (2 columnas destacadas) ── */
-.services-highlight { background: var(--white); padding: 120px 0 100px; }
-.services-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
-.link-arrow {
-  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px;
-  border-bottom: 1px solid var(--text); padding-bottom: 4px; transition: color 0.2s, border-color 0.2s;
-}
-.link-arrow:hover { color: var(--gold); border-color: var(--gold); }
-.link-arrow::after { content: '→'; }
-/* 2 tarjetas principales grandes */
-.services-main-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 4px;
-}
-.service-main-card {
-  padding: 60px 52px; background: var(--dark); position: relative; overflow: hidden;
-  min-height: 420px; display: flex; flex-direction: column; justify-content: flex-end;
-  text-decoration: none;
-}
-.service-main-card::before {
-  content: ''; position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  opacity: 0.18; transition: opacity 0.5s;
-}
-.service-main-card:hover::before { opacity: 0.28; }
-.service-main-card.pm::before { background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&q=80'); }
-.service-main-card.trasteros::before { background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80'); }
-.service-main-card::after {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.5s;
-}
-.service-main-card:hover::after { transform: scaleX(1); }
-.service-main-tag {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 20px; position: relative; z-index: 2;
-}
-.service-main-heading {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(34px, 3.5vw, 52px); font-weight: 600;
-  color: var(--white); line-height: 1.1; margin-bottom: 20px; position: relative; z-index: 2;
-}
-.service-main-heading em { font-style: italic; color: var(--gold); }
-.service-main-desc {
-  font-size: 14px; font-weight: 300; line-height: 1.8;
-  color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 420px; position: relative; z-index: 2;
-}
-.service-main-list { list-style: none; margin-bottom: 36px; display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 2; }
-.service-main-list li { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); padding-left: 18px; position: relative; }
-.service-main-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 8px; height: 1px; background: var(--gold); }
-.service-main-cta {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); text-decoration: none; position: relative; z-index: 2;
-  transition: gap 0.2s;
-}
-.service-main-cta::after { content: '→'; }
-.service-main-card:hover .service-main-cta { gap: 16px; }
-/* 2 tarjetas secundarias */
-.services-secondary-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
-}
-.service-card {
-  padding: 48px 44px; background: var(--off-white); position: relative; overflow: hidden; transition: background 0.3s;
-}
-.service-card:hover { background: var(--cream); }
-.service-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.5s;
-}
-.service-card:hover::before { transform: scaleX(1); }
-.service-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 72px; font-weight: 300; color: var(--border); line-height: 1; margin-bottom: 24px;
-}
-.service-heading {
-  font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
-}
-.service-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.service-list li {
-  font-size: 14px; font-weight: 300; color: var(--muted);
-  padding-left: 18px; position: relative; line-height: 1.5;
-}
-.service-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 1px; background: var(--gold); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+@media (max-width: 780px) { .team-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; } }
+.team-card { text-align: center; }
+.team-photo { width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 22px; background: var(--bn-cream-2); }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; }
+.team-card h3 { font-size: 22px; margin-bottom: 4px; }
+.team-card span { font-size: 13.5px; color: var(--bn-amber-dark); letter-spacing: 0.03em; }
 
-/* ── COUNTERS ── */
-.counters-section { background: var(--dark); padding: 80px 0; border-top: 1px solid var(--border-dark); }
-.counters-grid {
-  max-width: 1400px; margin: 0 auto; padding: 0 48px;
-  display: grid; grid-template-columns: repeat(4,1fr);
-  border-left: 1px solid var(--border-dark);
-}
-.counter-item { padding: 40px 48px; text-align: center; border-right: 1px solid var(--border-dark); }
-.counter-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 72px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 10px;
-}
-.counter-label { font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr; } }
+.blog-card { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--bn-border); }
+.blog-card .tag { display: inline-block; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--bn-amber-dark); margin-bottom: 12px; }
+.blog-card-body { padding: 30px; }
+.blog-card h3 { font-size: 20px; margin-bottom: 12px; }
+.blog-card a.read { font-size: 13.5px; color: var(--bn-ink); font-weight: 500; }
 
-/* ── TRASTEROS CALLOUT ── */
-.trasteros-section { background: var(--white); padding: 120px 0; }
-.trasteros-layout {
-  max-width: 1400px; margin: 0 auto; padding: 0 48px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-}
-.trasteros-img-wrap { position: relative; }
-.trasteros-img-wrap img { width: 100%; height: 520px; object-fit: cover; display: block; }
-.trasteros-badge {
-  position: absolute; bottom: -24px; right: -24px;
-  background: var(--gold); width: 140px; height: 140px; border-radius: 50%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-  z-index: 3;
-}
-.trasteros-badge-top { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--black); line-height: 1; }
-.trasteros-badge-bot { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); line-height: 1.4; }
-.trasteros-content { padding-left: 20px; }
-.trasteros-location {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 12px;
-}
-.trasteros-location::before { content: '📍'; font-size: 13px; }
-.trasteros-headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 3.5vw, 54px); font-weight: 600; line-height: 1.1;
-  color: var(--text); margin-bottom: 24px;
-}
-.trasteros-headline em { font-style: italic; color: var(--gold); }
-.trasteros-desc { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--muted); margin-bottom: 36px; }
-.trasteros-features { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
-.trasteros-feature { display: flex; align-items: flex-start; gap: 16px; }
-.trasteros-feature-icon {
-  width: 40px; height: 40px; border: 1px solid var(--gold); flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center; font-size: 16px;
-}
-.trasteros-feature-text strong { display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text); margin-bottom: 3px; }
-.trasteros-feature-text span { font-size: 13px; font-weight: 300; color: var(--muted); }
-.trasteros-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── PM SECTION ── */
-.pm-section { background: var(--dark); padding: 120px 0; }
-.pm-layout {
-  max-width: 1400px; margin: 0 auto; padding: 0 48px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-}
-.pm-content {}
-.pm-headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 3.5vw, 54px); font-weight: 600; line-height: 1.1;
-  color: var(--white); margin-bottom: 24px;
-}
-.pm-headline em { font-style: italic; color: var(--gold); }
-.pm-desc { font-size: 15px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.55); margin-bottom: 40px; }
-.pm-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-.pm-tag {
-  font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); border: 1px solid rgba(184,150,90,0.35); padding: 8px 18px;
-}
-.pm-steps { display: flex; flex-direction: column; gap: 0; }
-.pm-step { display: flex; gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--border-dark); }
-.pm-step:first-child { padding-top: 0; }
-.pm-step-num {
-  font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300;
-  color: rgba(184,150,90,0.2); line-height: 1; flex-shrink: 0; width: 48px;
-}
-.pm-step-title { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); margin-bottom: 6px; }
-.pm-step-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.7; }
-
-/* ── ABOUT ── */
-.about-section { background: var(--white); padding: 120px 0; }
-.about-layout {
-  max-width: 1400px; margin: 0 auto; padding: 0 48px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;
-}
-.about-images { position: relative; height: 600px; }
-.about-img-1 { position: absolute; top: 0; left: 0; width: 70%; height: 68%; object-fit: cover; }
-.about-img-2 { position: absolute; bottom: 0; right: 0; width: 54%; height: 54%; object-fit: cover; border: 5px solid var(--white); }
-.about-badge-wrap {
-  position: absolute; top: 50%; left: 54%; transform: translate(-50%,-50%);
-  z-index: 3; background: var(--gold); width: 130px; height: 130px; border-radius: 50%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-}
-.about-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: var(--black); line-height: 1; }
-.about-badge-text { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); line-height: 1.3; }
-.about-headline { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 400; font-style: italic; color: var(--text); margin-bottom: 28px; line-height: 1.25; }
-.about-text { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--muted); margin-bottom: 20px; }
-.about-qualities { display: flex; gap: 32px; margin-top: 40px; }
-.quality-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.quality-icon { width: 50px; height: 50px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 18px; }
-.quality-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-
-/* ── TEAM ── */
-.team-section { background: var(--off-white); padding: 120px 0; }
-.team-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
-.team-subtitle { font-size: 14px; font-weight: 300; font-style: italic; color: var(--muted); max-width: 480px; line-height: 1.8; }
-.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 4px; }
-.team-member { position: relative; overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
-.team-member img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: grayscale(30%); transition: all 0.6s; }
-.team-member:hover img { filter: grayscale(0%); transform: scale(1.03); }
-.team-info { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(13,13,13,0.88), transparent); padding: 40px 28px 28px; }
-.team-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
-.team-role { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-
-/* ── PROCESS ── */
-.process-section { background: var(--dark); padding: 120px 0; }
-.process-steps {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  border-left: 1px solid var(--border-dark); margin-top: 72px;
-}
-.process-step { padding: 48px 36px; border-right: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); position: relative; }
-.process-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.5s; }
-.process-step:hover::before { transform: scaleX(1); }
-.process-step-num { font-family: 'Cormorant Garamond', serif; font-size: 88px; font-weight: 300; color: rgba(184,150,90,0.12); line-height: 1; margin-bottom: 20px; }
-.process-step-title { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 16px; }
-.process-step-desc { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.85; }
-
-/* ── LEGACY BANNER ── */
-.legacy-banner {
-  background: var(--dark); padding: 96px 48px;
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark);
-}
-.legacy-banner blockquote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 4vw, 60px); font-weight: 400; font-style: italic;
-  color: var(--white); line-height: 1.15; max-width: 900px;
-}
-
-/* ── BLOG ── */
-.news-section { background: var(--off-white); padding: 120px 0; }
-.news-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
-.news-subtitle { font-size: 14px; font-weight: 300; font-style: italic; color: var(--muted); max-width: 440px; line-height: 1.8; }
-.news-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4px; }
-.news-card { background: var(--white); overflow: hidden; cursor: pointer; }
-.news-img-wrap { overflow: hidden; aspect-ratio: 16/9; }
-.news-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-.news-card:hover .news-card-img { transform: scale(1.04); }
-.news-body { padding: 28px 28px 32px; }
-.news-meta { display: flex; gap: 14px; margin-bottom: 12px; align-items: center; }
-.news-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
-.news-date { font-size: 12px; color: var(--muted2); }
-.news-title-link {
-  font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
-  color: var(--text); text-decoration: none; line-height: 1.25; display: block; transition: color 0.2s;
-}
-.news-title-link:hover { color: var(--gold); }
-.news-card:not(:first-child) .news-title-link { font-size: 17px; }
-
-/* ── FOOTER ── */
-footer { background: var(--black); color: rgba(255,255,255,0.55); padding: 80px 0 40px; border-top: 1px solid var(--border-dark); }
-.footer-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
-.footer-top { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--border-dark); margin-bottom: 36px; }
-.footer-logo-text { font-weight: 700; font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); display: block; margin-bottom: 20px; }
-.footer-logo-text span { color: var(--gold); }
-.footer-desc { font-size: 14px; font-weight: 300; line-height: 1.85; margin-bottom: 8px; }
-.footer-address { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.6; margin-bottom: 8px; }
-.footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 13px; }
-.footer-col ul a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-.footer-col ul a:hover { color: var(--white); }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; flex-wrap: wrap; gap: 12px; }
-.footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
-.footer-bottom a:hover { color: var(--gold); }
-.footer-legal { display: flex; gap: 24px; flex-wrap: wrap; }
-
-/* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.75s ease, transform 0.75s ease; }
-.reveal.in { opacity: 1; transform: translateY(0); }
-
-/* ── WHATSAPP ── */
-.whatsapp-float {
-  position: fixed; bottom: 88px; right: 28px; z-index: 8000;
-  width: 54px; height: 54px; background: #25d366; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-}
-.whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
-.whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
-
-/* ── COOKIE BANNER ── */
-#cookie-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #0d0d0d; border-top: 1px solid #2a2a2a; padding: 20px 32px;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  flex-wrap: wrap; box-shadow: 0 -4px 32px rgba(0,0,0,0.4);
-}
-#cookie-banner.hidden { display: none; }
-#cookie-banner .cookie-text { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 680px; }
-#cookie-banner .cookie-text a { color: var(--gold); text-decoration: none; }
-#cookie-banner .cookie-text a:hover { text-decoration: underline; }
-#cookie-banner .cookie-text strong { color: #fff; font-weight: 500; }
-#cookie-banner .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
-#cookie-banner .cookie-btn-accept { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: var(--gold); color: #0d0d0d; border: none; padding: 12px 28px; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
-#cookie-banner .cookie-btn-accept:hover { background: var(--gold2); }
-#cookie-banner .cookie-btn-reject { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; background: none; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
-#cookie-banner .cookie-btn-reject:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
-#cookie-banner .cookie-btn-config { font-size: 11px; font-weight: 400; letter-spacing: 0.1em; background: none; color: rgba(255,255,255,0.35); border: none; padding: 12px 16px; cursor: pointer; text-decoration: underline; white-space: nowrap; }
-#cookie-banner .cookie-btn-config:hover { color: rgba(255,255,255,0.7); }
-
-/* ── RESPONSIVE ── */
-@media(max-width:1100px){
-  .header-inner,.hero-content,.section-inner,.footer-inner,.counters-grid{ padding-left:32px; padding-right:32px; }
-  .services-main-grid,.services-secondary-grid { grid-template-columns: 1fr; }
-  .trasteros-layout,.pm-layout,.about-layout { grid-template-columns: 1fr; gap: 60px; }
-  .about-images { height: 400px; }
-  .counters-grid { grid-template-columns: repeat(2,1fr); }
-  .process-steps { grid-template-columns: 1fr 1fr; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
-  .news-grid { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .trasteros-badge { right: 0; }
-}
-@media(max-width:700px){
-  .header-inner { padding: 0 20px; height: 64px; }
-  nav,.header-cta { display: none; }
-  .menu-toggle { display: flex; }
-  .hero-content { padding: 0 20px; }
-  .service-main-card { padding: 40px 28px; min-height: 300px; }
-  .counters-grid,.process-steps,.team-grid { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; }
-  .hero-controls,.hero-scroll-hint { display: none; }
-  #cookie-banner { padding: 16px 20px; }
-  #cookie-banner .cookie-btns { width: 100%; }
-  #cookie-banner .cookie-btn-accept, #cookie-banner .cookie-btn-reject { flex: 1; text-align: center; }
-  .whatsapp-float { bottom: 80px; right: 16px; width: 50px; height: 50px; }
-  .trasteros-badge { display: none; }
-  .pm-layout { padding: 0 20px; }
-}
+.cta-banner { position: relative; background: var(--bn-ink); border-radius: var(--radius-lg); padding: 80px 60px; overflow: hidden; text-align: center; }
+.cta-banner h2 { color: var(--bn-white); margin-bottom: 20px; }
+.cta-banner p { color: rgba(247,244,238,0.72); max-width: 54ch; margin: 0 auto 36px; }
+@media (max-width: 640px) { .cta-banner { padding: 56px 26px; } }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header id="header">
-<div class="header-inner">
-  <a class="logo" href="index.html" aria-label="Blacknova - Inicio">
-    <img alt="Blacknova" src="logo_blacknova.jpeg" style="height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);"/>
-  </a>
-  <nav aria-label="Navegación principal">
-    <a href="index.html" class="active">Inicio</a>
-    <div class="nav-dropdown">
-      <a href="que-hacemos.html">Servicios</a>
-      <div class="nav-dropdown-menu">
-        <a href="que-hacemos.html#project-management">Project Management</a>
-        <a href="trasteros.html">Trasteros Calafell</a>
-        <a href="que-hacemos.html#intermediacion">Intermediación</a>
-      </div>
-    </div>
-    <a href="trasteros.html">Trasteros</a>
-    <a href="sobre-nosotros.html">Nosotros</a>
-    <a href="blog.html">Blog</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
-  <a class="header-cta" href="contacto.html">Consulta Gratuita</a>
-  <button class="menu-toggle" aria-label="Abrir menú" onclick="document.getElementById('mobileNav').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
+<a class="skip-link" href="#main">Ir al contenido principal</a>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros para analizar el uso del sitio y mejorar tu experiencia. Puedes aceptarlas, rechazar las no esenciales o consultar nuestra <a href="politica-cookies.html" style="text-decoration:underline">política de cookies</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-primary" id="cookieAccept">Aceptar todas</button>
+    <button class="btn btn-outline" id="cookieReject">Solo esenciales</button>
+  </div>
 </div>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html" aria-label="Blacknova — Inicio">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="navGrad" x1="2" y1="2" x2="98" y2="98" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F0B15C"/><stop offset="0.55" stop-color="#C9822E"/><stop offset="1" stop-color="#8A4A22"/></linearGradient></defs><path d="M50,2 L59.9,40.1 L98,50 L59.9,59.9 L50,98 L40.1,59.9 L2,50 L40.1,40.1 Z" fill="url(#navGrad)"/></svg>
+      <span class="logo-word">Black<b>nova</b></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="que-hacemos.html">Qué hacemos</a>
+      <a href="trasteros.html">Trasteros</a>
+      <a href="propietarios.html">Propietarios</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-phone" href="tel:+34630879206">📞 630 87 92 06</a>
+      <a class="btn btn-gold" href="contacto.html">Consulta gratuita</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
 
-<!-- MENÚ MÓVIL -->
 <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
-  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Cerrar menú">✕</button>
   <a href="index.html">Inicio</a>
-  <a href="que-hacemos.html">Servicios</a>
-  <a href="trasteros.html">Trasteros Calafell</a>
-  <a href="sobre-nosotros.html">Nosotros</a>
+  <a href="que-hacemos.html">Qué hacemos</a>
+  <a href="trasteros.html">Trasteros</a>
+  <a href="propietarios.html">Propietarios</a>
+  <a href="sobre-nosotros.html">Sobre nosotros</a>
   <a href="blog.html">Blog</a>
   <a href="faq.html">FAQ</a>
   <a href="contacto.html">Contacto</a>
 </nav>
 
-<!-- HERO SLIDER -->
-<section class="hero" aria-label="Hero principal">
-<div class="hero-slides">
+<main id="main">
 
-  <!-- SLIDE 1: Project Management -->
-  <div class="hero-slide active" id="slide-0">
-    <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1800&q=85')"></div>
-    <div class="hero-slide-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">Project Management · PMI · Agile · Barcelona</div>
-      <h1 class="hero-title">Proyectos<br/><em>con Propósito</em></h1>
-      <p class="hero-desc">Gestionamos tus proyectos complejos con metodología PMI y Agile. Planificación, control y entrega de resultados reales, desde Barcelona.</p>
-      <div class="hero-actions">
-        <a class="btn-gold" href="que-hacemos.html">Ver servicios PM</a>
-        <a class="btn-ghost" href="contacto.html">Consulta gratuita</a>
-      </div>
+<section class="hero">
+  <div class="nova-glow g1"></div>
+  <div class="nova-glow g2"></div>
+  <div class="container hero-content">
+    <div class="eyebrow" data-animate>Barcelona · Calafell · Catalunya</div>
+    <h1 class="hero-title" data-animate>Gestionamos tus proyectos, <em>tus espacios</em> y tus activos con precisión</h1>
+    <p class="hero-sub" data-animate>Project management con metodología PMI/Agile, trasteros en alquiler en Calafell y gestión de naves industriales, e intermediación inmobiliaria para propietarios. Un único equipo de confianza en Barcelona y Catalunya.</p>
+    <div class="hero-actions" data-animate>
+      <a class="btn btn-gold btn-lg" href="contacto.html">Consulta gratuita</a>
+      <a class="btn btn-outline-light btn-lg" href="#servicios">Ver servicios</a>
+    </div>
+    <div class="stat-grid" data-animate>
+      <div class="stat"><b>50+</b><span>Clientes satisfechos</span></div>
+      <div class="stat"><b>80+</b><span>Proyectos gestionados</span></div>
+      <div class="stat"><b>15+</b><span>Activos intermediados</span></div>
+      <div class="stat"><b>3</b><span>Líneas de negocio</span></div>
     </div>
   </div>
-
-  <!-- SLIDE 2: Trasteros Calafell -->
-  <div class="hero-slide" id="slide-1">
-    <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=85')"></div>
-    <div class="hero-slide-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">Trasteros · Calafell · Disponibilidad Inmediata</div>
-      <h1 class="hero-title">Trasteros en<br/><em>Calafell</em></h1>
-      <p class="hero-desc">Alquiler de trasteros en Calafell para particulares y empresas. Contratos flexibles, gestión profesional y acceso cómodo. Consulta disponibilidad ahora.</p>
-      <div class="hero-actions">
-        <a class="btn-gold" href="trasteros.html">Ver trasteros disponibles</a>
-        <a class="btn-ghost" href="contacto.html">Preguntar disponibilidad</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 3: Intermediación -->
-  <div class="hero-slide" id="slide-2">
-    <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1800&q=85')"></div>
-    <div class="hero-slide-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">Compraventa · Activos Inmobiliarios · Intermediación</div>
-      <h1 class="hero-title">Tu Activo,<br/><em>Nuestra Misión</em></h1>
-      <p class="hero-desc">Intermediamos en la compraventa de activos inmobiliarios con rigor, discreción y conocimiento del mercado catalán. Acompañamiento en cada fase.</p>
-      <div class="hero-actions">
-        <a class="btn-gold" href="contacto.html">Iniciar operación</a>
-        <a class="btn-ghost" href="que-hacemos.html">Qué hacemos</a>
-      </div>
-    </div>
-  </div>
-
-</div>
-<div class="hero-controls">
-  <div class="hero-dots">
-    <button class="hero-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
-    <button class="hero-dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
-    <button class="hero-dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
-  </div>
-  <span class="hero-counter"><strong id="slideNum">01</strong> / 03</span>
-</div>
-<div class="hero-scroll-hint">
-  <div class="hero-scroll-line"></div>
-  <span>Scroll</span>
-</div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-inner">
-    <span class="ticker-item">Project Management</span>
-    <span class="ticker-item">Trasteros Calafell</span>
-    <span class="ticker-item">Metodología PMI</span>
-    <span class="ticker-item">Agile · Scrum</span>
-    <span class="ticker-item">Activos Inmobiliarios</span>
-    <span class="ticker-item">Barcelona · Cataluña</span>
-    <span class="ticker-item">Project Management</span>
-    <span class="ticker-item">Trasteros Calafell</span>
-    <span class="ticker-item">Metodología PMI</span>
-    <span class="ticker-item">Agile · Scrum</span>
-    <span class="ticker-item">Activos Inmobiliarios</span>
-    <span class="ticker-item">Barcelona · Cataluña</span>
-  </div>
-</div>
-
-<!-- SERVICIOS PRINCIPALES -->
-<section class="services-highlight" id="servicios">
-<div class="section-inner">
-  <div class="services-header-row reveal">
-    <div>
-      <div class="section-eyebrow">Especialización</div>
-      <h2 class="section-title-main">En qué nos <em>especializamos</em></h2>
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="services-head text-center mx-auto">
+      <div class="eyebrow" style="justify-content:center">Qué hacemos</div>
+      <h2 style="font-size:clamp(30px,4vw,42px)">Tres especialidades, un mismo estándar de exigencia</h2>
     </div>
-    <a class="link-arrow" href="que-hacemos.html">Todos los servicios</a>
-  </div>
-  <!-- Las 2 tarjetas grandes: PM y Trasteros -->
-  <div class="services-main-grid reveal">
-    <a class="service-main-card pm" href="que-hacemos.html#project-management">
-      <div class="service-main-tag">Servicio principal · 01</div>
-      <h3 class="service-main-heading">Project<br/><em>Management</em></h3>
-      <p class="service-main-desc">Gestión integral de proyectos con metodología PMI y Agile. Planificación, seguimiento y entrega de resultados reales.</p>
-      <ul class="service-main-list">
-        <li>Gestión de alcance, plazo y coste</li>
-        <li>Coordinación de equipos multidisciplinares</li>
-        <li>Reporting ejecutivo y gestión de riesgos</li>
-        <li>Implantación de Scrum en organizaciones</li>
-      </ul>
-      <span class="service-main-cta">Saber más</span>
-    </a>
-    <a class="service-main-card trasteros" href="trasteros.html">
-      <div class="service-main-tag">Servicio principal · 02</div>
-      <h3 class="service-main-heading">Trasteros en<br/><em>Calafell</em></h3>
-      <p class="service-main-desc">Alquiler de trasteros gestionados con profesionalidad en Calafell. Soluciones flexibles para particulares y empresas.</p>
-      <ul class="service-main-list">
-        <li>Disponibilidad inmediata en Calafell</li>
-        <li>Contratos flexibles mes a mes</li>
-        <li>Gestión profesional de comunidades</li>
-        <li>Acceso cómodo y seguro</li>
-      </ul>
-      <span class="service-main-cta">Ver disponibilidad</span>
-    </a>
-  </div>
-  <!-- 2 tarjetas secundarias -->
-  <div class="services-secondary-grid reveal">
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-heading">Alquiler de Naves Industriales</div>
-      <ul class="service-list">
-        <li>Naves en el área metropolitana de Barcelona</li>
-        <li>Asesoramiento en la búsqueda del espacio</li>
-        <li>Gestión de contratos y arrendamientos</li>
-      </ul>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <div class="service-heading">Intermediación Inmobiliaria</div>
-      <ul class="service-list">
-        <li>Compraventa de activos inmobiliarios</li>
-        <li>Due diligence y valoración de activos</li>
-        <li>Acompañamiento en negociación y cierre</li>
-      </ul>
+    <div class="grid-3" data-animate>
+      <a class="service-card-link" href="que-hacemos.html">
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><path d="M12 3v3M21 12h-3"/></svg></div>
+          <h3>Project Management</h3>
+          <p style="color:var(--bn-muted); font-size:14.5px; margin-top:10px;">Metodología PMI y Agile para planificar, ejecutar y controlar proyectos con reporting ejecutivo y gestión de riesgos.</p>
+          <span class="learn">Ver el servicio →</span>
+        </div>
+      </a>
+      <a class="service-card-link" href="trasteros.html">
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
+          <h3>Trasteros en Calafell</h3>
+          <p style="color:var(--bn-muted); font-size:14.5px; margin-top:10px;">Alquiler de trasteros sin permanencia mínima para particulares y empresas, y búsqueda de naves en el área de Barcelona.</p>
+          <span class="learn">Ver el servicio →</span>
+        </div>
+      </a>
+      <a class="service-card-link" href="propietarios.html">
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M3 21h18"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>Intermediación inmobiliaria</h3>
+          <p style="color:var(--bn-muted); font-size:14.5px; margin-top:10px;">Gestión integral de naves industriales para propietarios: búsqueda de inquilino, contratos, mantenimiento y reporting.</p>
+          <span class="learn">Ver el servicio →</span>
+        </div>
+      </a>
     </div>
   </div>
-</div>
 </section>
 
-<!-- COUNTERS -->
-<div class="counters-section" aria-label="Cifras clave">
-<div class="counters-grid">
-  <div class="counter-item">
-    <div class="counter-val">50+</div>
-    <div class="counter-label">Clientes Satisfechos</div>
-  </div>
-  <div class="counter-item">
-    <div class="counter-val">80+</div>
-    <div class="counter-label">Proyectos Gestionados</div>
-  </div>
-  <div class="counter-item">
-    <div class="counter-val">15+</div>
-    <div class="counter-label">Activos Intermediados</div>
-  </div>
-  <div class="counter-item">
-    <div class="counter-val">BCN</div>
-    <div class="counter-label">Base de Operaciones</div>
-  </div>
-</div>
-</div>
-
-<!-- TRASTEROS CALAFELL HIGHLIGHT -->
-<section class="trasteros-section" id="trasteros">
-<div class="trasteros-layout">
-  <div class="trasteros-img-wrap reveal">
-    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Trasteros en alquiler Calafell - Blacknova" loading="lazy"/>
-    <div class="trasteros-badge">
-      <div class="trasteros-badge-top">📦</div>
-      <div class="trasteros-badge-bot">Disponibles<br/>Ahora</div>
+<section class="section section-alt">
+  <div class="container">
+    <div class="services-head" style="max-width:640px;">
+      <div class="eyebrow">Por qué Blacknova</div>
+      <h2 style="font-size:clamp(28px,3.6vw,38px)">Los principios que guían cada proyecto</h2>
+    </div>
+    <div class="value-grid" data-animate>
+      <div class="value-item"><div class="num">01</div><h3 style="font-size:19px; margin-bottom:8px;">Adaptabilidad</h3><p style="color:var(--bn-muted); font-size:14.5px;">Cada cliente y cada activo son distintos; adaptamos metodología y equipo a cada caso.</p></div>
+      <div class="value-item"><div class="num">02</div><h3 style="font-size:19px; margin-bottom:8px;">Eficiencia</h3><p style="color:var(--bn-muted); font-size:14.5px;">Procesos claros y decisiones rápidas para proteger plazos y presupuestos.</p></div>
+      <div class="value-item"><div class="num">03</div><h3 style="font-size:19px; margin-bottom:8px;">Seguridad</h3><p style="color:var(--bn-muted); font-size:14.5px;">Contratos claros, cumplimiento normativo y protección de datos en cada gestión.</p></div>
+      <div class="value-item"><div class="num">04</div><h3 style="font-size:19px; margin-bottom:8px;">Innovación</h3><p style="color:var(--bn-muted); font-size:14.5px;">Herramientas digitales y metodologías ágiles aplicadas a sectores tradicionales.</p></div>
+      <div class="value-item"><div class="num">05</div><h3 style="font-size:19px; margin-bottom:8px;">Compromiso</h3><p style="color:var(--bn-muted); font-size:14.5px;">Acompañamos cada proyecto hasta el cierre, con soporte continuo después.</p></div>
+      <div class="value-item"><div class="num">06</div><h3 style="font-size:19px; margin-bottom:8px;">Transparencia</h3><p style="color:var(--bn-muted); font-size:14.5px;">Honorarios claros desde la propuesta inicial, sin sorpresas ni letra pequeña.</p></div>
     </div>
   </div>
-  <div class="trasteros-content reveal">
-    <div class="trasteros-location">Calafell, Tarragona</div>
-    <div class="section-eyebrow">Trasteros en Alquiler</div>
-    <h2 class="trasteros-headline">Tu espacio de<br/>almacenamiento en<br/><em>Calafell</em></h2>
-    <p class="trasteros-desc">Ofrecemos trasteros en alquiler en Calafell gestionados de forma profesional. Ideales para particulares que necesitan espacio extra o empresas que buscan almacenamiento flexible cerca de la costa.</p>
-    <div class="trasteros-features">
-      <div class="trasteros-feature">
-        <div class="trasteros-feature-icon">📍</div>
-        <div class="trasteros-feature-text">
-          <strong>Ubicación Calafell</strong>
-          <span>Fácil acceso desde Barcelona y Tarragona por AP-7</span>
-        </div>
-      </div>
-      <div class="trasteros-feature">
-        <div class="trasteros-feature-icon">📋</div>
-        <div class="trasteros-feature-text">
-          <strong>Contratos Flexibles</strong>
-          <span>Mensualidades sin permanencia mínima obligatoria</span>
-        </div>
-      </div>
-      <div class="trasteros-feature">
-        <div class="trasteros-feature-icon">🔑</div>
-        <div class="trasteros-feature-text">
-          <strong>Acceso y Seguridad</strong>
-          <span>Acceso cómodo y gestión profesional de la comunidad</span>
-        </div>
-      </div>
-      <div class="trasteros-feature">
-        <div class="trasteros-feature-icon">💼</div>
-        <div class="trasteros-feature-text">
-          <strong>Para Empresas y Particulares</strong>
-          <span>Adaptamos el contrato a tus necesidades específicas</span>
-        </div>
-      </div>
-    </div>
-    <div class="trasteros-actions">
-      <a class="btn-gold" href="trasteros.html">Ver trasteros disponibles</a>
-      <a class="btn-ghost" href="https://wa.me/34630879206?text=Hola%2C%20me%20interesa%20información%20sobre%20los%20trasteros%20en%20Calafell" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
-    </div>
-  </div>
-</div>
 </section>
 
-<!-- PROJECT MANAGEMENT HIGHLIGHT -->
-<section class="pm-section" id="project-management">
-<div class="pm-layout">
-  <div class="pm-content reveal">
-    <div class="section-eyebrow" style="color:var(--gold)">Project Management</div>
-    <h2 class="pm-headline">Proyectos gestionados<br/>con <em>metodología y rigor</em></h2>
-    <p class="pm-desc">En Blacknova aplicamos metodología PMI y Agile para gestionar proyectos complejos de principio a fin. Coordinamos equipos, controlamos plazos y costes, y reportamos con transparencia total.</p>
-    <div class="pm-tags">
-      <span class="pm-tag">PMI</span>
-      <span class="pm-tag">Agile</span>
-      <span class="pm-tag">Scrum</span>
-      <span class="pm-tag">PMP</span>
-      <span class="pm-tag">Risk Management</span>
-      <span class="pm-tag">Barcelona</span>
+<section class="section section-dark spotlight">
+  <div class="nova-glow" style="width:500px;height:500px;top:-160px;left:-140px;"></div>
+  <div class="container">
+    <div class="spotlight-grid">
+      <div data-animate>
+        <div class="eyebrow">Trasteros en Calafell</div>
+        <h2 style="font-size:clamp(28px,3.6vw,40px); margin-bottom:20px;">Espacio de almacenaje sin complicaciones, a 50 minutos de Barcelona</h2>
+        <p style="color:rgba(247,244,238,0.72); max-width:52ch; margin-bottom:30px;">Gestionamos trasteros en Calafell (Tarragona) para particulares y empresas, con acceso por AP-7/N-340 y estación de Rodalies R2 Sud a pocos minutos.</p>
+        <ul class="spotlight-list">
+          <li>Contrato mensual, sin permanencia mínima</li>
+          <li>Alta y contrato 100% digital</li>
+          <li>Facturación a nombre de empresa disponible</li>
+          <li>Sin fianzas abusivas ni letra pequeña</li>
+        </ul>
+        <div style="margin-top:32px;">
+          <a class="btn btn-gold btn-lg" href="trasteros.html">Consultar disponibilidad</a>
+        </div>
+      </div>
+      <div class="spotlight-card" data-animate>
+        <div class="eyebrow">También gestionamos</div>
+        <h3 style="color:var(--bn-white); font-size:24px; margin-bottom:16px;">Naves industriales en alquiler</h3>
+        <p style="color:rgba(247,244,238,0.68); font-size:14.5px; margin-bottom:24px;">Buscamos y negociamos naves industriales en el área metropolitana de Barcelona por encargo de empresas que necesitan espacio operativo, y gestionamos la relación con la propiedad de principio a fin.</p>
+        <a class="btn btn-outline-light" href="propietarios.html">Soy propietario de una nave →</a>
+      </div>
     </div>
-    <a class="btn-gold" href="contacto.html">Consulta gratuita sin compromiso</a>
   </div>
-  <div class="pm-steps reveal">
-    <div class="pm-step">
-      <div class="pm-step-num">1.</div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="services-head text-center mx-auto">
+      <div class="eyebrow" style="justify-content:center">Cómo trabajamos</div>
+      <h2 style="font-size:clamp(28px,3.6vw,38px)">Un proceso claro, de principio a fin</h2>
+    </div>
+    <div class="process-steps" data-animate>
+      <div class="process-step"><h3 style="font-size:18px; margin-bottom:10px;">Consulta gratuita</h3><p style="color:var(--bn-muted); font-size:14px;">Analizamos tu proyecto, activo o necesidad de espacio sin compromiso.</p></div>
+      <div class="process-step"><h3 style="font-size:18px; margin-bottom:10px;">Propuesta a medida</h3><p style="color:var(--bn-muted); font-size:14px;">Alcance, metodología y honorarios claros antes de empezar.</p></div>
+      <div class="process-step"><h3 style="font-size:18px; margin-bottom:10px;">Ejecución y seguimiento</h3><p style="color:var(--bn-muted); font-size:14px;">Gestión activa con reporting periódico y control de riesgos.</p></div>
+      <div class="process-step"><h3 style="font-size:18px; margin-bottom:10px;">Cierre y soporte</h3><p style="color:var(--bn-muted); font-size:14px;">Entrega, lecciones aprendidas y acompañamiento continuo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="services-head text-center mx-auto">
+      <div class="eyebrow" style="justify-content:center">El equipo</div>
+      <h2 style="font-size:clamp(28px,3.6vw,38px)">Las personas detrás de Blacknova</h2>
+    </div>
+    <div class="team-grid" data-animate>
+      <div class="team-card">
+        <div class="team-photo"><img src="assets/img/team/berta.jpg" alt="Berta Suau, Directora General de Blacknova" loading="lazy" width="700" height="933"/></div>
+        <h3>Berta Suau</h3>
+        <span>Directora General</span>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="assets/img/team/bruna.jpg" alt="Bruna Suau, Socia en Blacknova" loading="lazy" width="700" height="1050"/></div>
+        <h3>Bruna Suau</h3>
+        <span>Socia</span>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="assets/img/team/jana.jpg" alt="Jana Suau, Socia en Blacknova" loading="lazy" width="700" height="933"/></div>
+        <h3>Jana Suau</h3>
+        <span>Socia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="services-head text-center mx-auto">
+      <div class="eyebrow" style="justify-content:center">Blog</div>
+      <h2 style="font-size:clamp(28px,3.6vw,38px)">Recursos sobre naves, trasteros y gestión de proyectos</h2>
+    </div>
+    <div class="blog-grid" data-animate>
+      <a class="blog-card" href="blog_articles/naves-industriales-catalunya-guia.html">
+        <div class="blog-card-body">
+          <span class="tag">Naves industriales</span>
+          <h3>Naves industriales en Catalunya: todo lo que necesitas saber en 2026</h3>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+      <a class="blog-card" href="blog_articles/trasteros-calafell.html">
+        <div class="blog-card-body">
+          <span class="tag">Trasteros</span>
+          <h3>Trasteros en Calafell: qué saber antes de contratar</h3>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+      <a class="blog-card" href="blog_articles/project-manager-catalunya.html">
+        <div class="blog-card-body">
+          <span class="tag">Project Management</span>
+          <h3>Project Manager en Catalunya: cuándo y por qué contratar uno</h3>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-lg"><a class="btn btn-outline" href="blog.html">Ver todos los artículos</a></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-banner" data-animate>
+      <div class="nova-glow" style="width:420px;height:420px;top:-140px;right:-100px;"></div>
+      <h2>¿Hablamos de tu proyecto, tu trastero o tu nave?</h2>
+      <p>Consulta gratuita y sin compromiso. Te respondemos en menos de 24 horas.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; z-index:2;">
+        <a class="btn btn-gold btn-lg" href="contacto.html">Consulta gratuita</a>
+        <a class="btn btn-outline-light btn-lg" href="https://wa.me/34630879206" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
       <div>
-        <div class="pm-step-title">Diagnóstico inicial</div>
-        <p class="pm-step-desc">Analizamos el proyecto, el equipo y los recursos disponibles. Identificamos riesgos y oportunidades antes de empezar.</p>
-      </div>
-    </div>
-    <div class="pm-step">
-      <div class="pm-step-num">2.</div>
-      <div>
-        <div class="pm-step-title">Planificación detallada</div>
-        <p class="pm-step-desc">Definimos alcance, cronograma, presupuesto y métricas de éxito. Todo documentado y validado con el cliente.</p>
-      </div>
-    </div>
-    <div class="pm-step">
-      <div class="pm-step-num">3.</div>
-      <div>
-        <div class="pm-step-title">Ejecución y control</div>
-        <p class="pm-step-desc">Gestionamos el día a día con reportes periódicos, reuniones de seguimiento y ajuste proactivo ante desviaciones.</p>
-      </div>
-    </div>
-    <div class="pm-step">
-      <div class="pm-step-num">4.</div>
-      <div>
-        <div class="pm-step-title">Cierre y lecciones aprendidas</div>
-        <p class="pm-step-desc">Documentamos resultados, entregamos informe final y compartimos aprendizajes para mejorar en futuros proyectos.</p>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section class="about-section" id="nosotros">
-<div class="about-layout">
-  <div class="about-images reveal">
-    <img class="about-img-1" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Oficinas Blacknova Barcelona"/>
-    <img class="about-img-2" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Equipo Blacknova gestión proyectos" loading="lazy"/>
-    <div class="about-badge-wrap">
-      <div class="about-badge-num">BCN</div>
-      <div class="about-badge-text">Base de<br/>Operaciones</div>
-    </div>
-  </div>
-  <div class="reveal">
-    <div class="section-eyebrow">Sobre Nosotros</div>
-    <h2 class="section-title-main">Blacknova,<br/><em>a tu lado</em></h2>
-    <p class="about-headline">"Rigor, transparencia y compromiso en cada operación"</p>
-    <p class="about-text">Blacknova nace en Barcelona de la mano de profesionales con experiencia en gestión de proyectos, el sector inmobiliario y la gestión de espacios industriales. Nos especializamos en Project Management con metodología PMI/Agile y en la gestión de trasteros en Calafell.</p>
-    <p class="about-text">Operamos con un equipo compacto y experto, lo que nos permite ofrecer un trato cercano, ágil y personalizado. No somos una gran agencia: somos tu socio de confianza.</p>
-    <div class="about-qualities">
-      <div class="quality-item">
-        <div class="quality-icon">⚡</div>
-        <div class="quality-label">Agilidad</div>
-      </div>
-      <div class="quality-item">
-        <div class="quality-icon">⚙️</div>
-        <div class="quality-label">Rigor</div>
-      </div>
-      <div class="quality-item">
-        <div class="quality-icon">🛡️</div>
-        <div class="quality-label">Confianza</div>
-      </div>
-    </div>
-    <br/>
-    <a class="btn-ghost" href="sobre-nosotros.html">Conoce el equipo</a>
-  </div>
-</div>
-</section>
-
-<!-- TEAM -->
-<section class="team-section">
-<div class="section-inner">
-  <div class="team-header-row reveal">
-    <div>
-      <div class="section-eyebrow">El Equipo</div>
-      <h2 class="section-title-main">El equipo <em>detrás de Blacknova</em></h2>
-    </div>
-    <p class="team-subtitle">Un equipo compacto, experto y comprometido. Profesionales con experiencia en gestión de proyectos, mercado inmobiliario y espacios industriales.</p>
-  </div>
-  <div class="team-grid reveal">
-    <div class="team-member">
-      <img alt="Berta Suau - Directora General Blacknova" src="berta.jpg" loading="lazy"/>
-      <div class="team-info">
-        <div class="team-name">Berta Suau</div>
-        <div class="team-role">Directora General</div>
-      </div>
-    </div>
-    <div class="team-member">
-      <img alt="Bruna Suau - Socia Blacknova" src="bruna.jpg" loading="lazy"/>
-      <div class="team-info">
-        <div class="team-name">Bruna Suau</div>
-        <div class="team-role">Socia</div>
-      </div>
-    </div>
-    <div class="team-member">
-      <img alt="Jana Suau - Socia Blacknova" src="jana.jpg" loading="lazy"/>
-      <div class="team-info">
-        <div class="team-name">Jana Suau</div>
-        <div class="team-role">Socia</div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- PROCESS -->
-<section class="process-section">
-<div class="section-inner">
-  <div class="reveal">
-    <div class="section-eyebrow" style="color:var(--gold)">Metodología</div>
-    <h2 class="section-title-main" style="color:var(--white)">Cómo <em>Trabajamos</em></h2>
-  </div>
-  <div class="process-steps reveal">
-    <div class="process-step">
-      <div class="process-step-num">1.</div>
-      <div class="process-step-title">Primera consulta gratuita</div>
-      <p class="process-step-desc">Nos reunimos contigo para entender tu necesidad: proyecto a gestionar, trastero en Calafell, nave industrial o activo inmobiliario. Sin compromiso.</p>
-    </div>
-    <div class="process-step">
-      <div class="process-step-num">2.</div>
-      <div class="process-step-title">Propuesta a medida</div>
-      <p class="process-step-desc">Elaboramos una propuesta personalizada con alcance, honorarios y metodología claramente definidos. Transparencia total desde el primer momento.</p>
-    </div>
-    <div class="process-step">
-      <div class="process-step-num">3.</div>
-      <div class="process-step-title">Ejecución y seguimiento</div>
-      <p class="process-step-desc">Ponemos en marcha el servicio con reportes periódicos, comunicación directa y total disponibilidad. Tu tranquilidad es nuestra prioridad.</p>
-    </div>
-    <div class="process-step">
-      <div class="process-step-num">4.</div>
-      <div class="process-step-title">Cierre y soporte continuo</div>
-      <p class="process-step-desc">Entregamos resultados, cerramos la operación y seguimos disponibles. Construimos relaciones a largo plazo, no transacciones puntuales.</p>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- QUOTE -->
-<div class="legacy-banner reveal">
-  <blockquote>"Construyendo valor, proyecto a proyecto"</blockquote>
-</div>
-
-<!-- BLOG -->
-<section class="news-section">
-<div class="section-inner">
-  <div class="news-header-row reveal">
-    <div>
-      <div class="section-eyebrow">Conocimiento</div>
-      <h2 class="section-title-main">Últimos <em>artículos</em></h2>
-    </div>
-    <p class="news-subtitle">Guías y recursos sobre project management, trasteros e inversión inmobiliaria en Cataluña.</p>
-  </div>
-  <div class="news-grid reveal">
-    <div class="news-card">
-      <div class="news-img-wrap">
-        <img class="news-card-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80" alt="Project Manager Catalunya" loading="lazy"/>
-      </div>
-      <div class="news-body">
-        <div class="news-meta">
-          <span class="news-cat">Project Management</span>
-          <span class="news-date">2026</span>
+        <a class="logo" href="index.html" style="margin-bottom:18px;">
+          <svg viewBox="0 0 100 100" aria-hidden="true" width="30" height="30"><path d="M50,2 L59.9,40.1 L98,50 L59.9,59.9 L50,98 L40.1,59.9 L2,50 L40.1,40.1 Z" fill="#C9822E"/></svg>
+          <span class="logo-word">Black<b>nova</b></span>
+        </a>
+        <p style="font-size:14px; max-width:34ch; margin-top:14px; color:rgba(247,244,238,0.6)">Project management, trasteros e intermediación inmobiliaria en Barcelona y Catalunya.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/blacknova" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.linkedin.com/company/blacknova" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
         </div>
-        <a class="news-title-link" href="blog_articles/project-manager-catalunya.html">Project Manager en Catalunya: Cuándo y Por Qué Contratar Uno</a>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="que-hacemos.html">Project Management</a></li>
+          <li><a href="trasteros.html">Trasteros en Calafell</a></li>
+          <li><a href="propietarios.html">Naves industriales</a></li>
+          <li><a href="propietarios.html">Intermediación inmobiliaria</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">Preguntas frecuentes</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+34630879206">+34 630 87 92 06</a></li>
+          <li><a href="mailto:direccion@blacknova.es">direccion@blacknova.es</a></li>
+          <li>Sant Sadurní d'Anoia, Barcelona</li>
+          <li>Lun–Vie 9:00–19:00</li>
+        </ul>
       </div>
     </div>
-    <div class="news-card">
-      <div class="news-img-wrap">
-        <img class="news-card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Rentabilizar nave industrial" loading="lazy"/>
-      </div>
-      <div class="news-body">
-        <div class="news-meta">
-          <span class="news-cat">Trasteros</span>
-          <span class="news-date">2026</span>
-        </div>
-        <a class="news-title-link" href="blog_articles/rentabilizar-nave-industrial.html">Cómo Rentabilizar tu Nave Industrial</a>
-      </div>
-    </div>
-    <div class="news-card">
-      <div class="news-img-wrap">
-        <img class="news-card-img" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Invertir naves industriales" loading="lazy"/>
-      </div>
-      <div class="news-body">
-        <div class="news-meta">
-          <span class="news-cat">Inversión</span>
-          <span class="news-date">2026</span>
-        </div>
-        <a class="news-title-link" href="blog_articles/invertir-naves-industriales-espana.html">Invertir en Naves Industriales en España</a>
-      </div>
+    <div class="footer-bottom">
+      <span>© 2026 Blacknova S.L. Todos los derechos reservados.</span>
+      <span style="display:flex; gap:18px; flex-wrap:wrap;">
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="politica-privacidad.html">Privacidad</a>
+        <a href="politica-cookies.html">Cookies</a>
+      </span>
     </div>
   </div>
-  <div style="text-align:center;margin-top:48px">
-    <a class="btn-ghost" href="blog.html">Ver todos los artículos</a>
-  </div>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<div class="footer-inner">
-  <div class="footer-top">
-    <div>
-      <span class="footer-logo-text">Blackno<span>va</span></span>
-      <p class="footer-desc">Project Management con metodología PMI/Agile, trasteros en Calafell e intermediación inmobiliaria. Barcelona, Cataluña.</p>
-      <p class="footer-address">📍 Barcelona, Cataluña · Trasteros en Calafell (Tarragona)<br/>📞 <a href="tel:+34630879206" style="color:rgba(255,255,255,0.35);text-decoration:none">+34 630 879 206</a></p>
-    </div>
-    <div class="footer-col">
-      <h5>Navegación</h5>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="que-hacemos.html">Servicios</a></li>
-        <li><a href="trasteros.html">Trasteros Calafell</a></li>
-        <li><a href="sobre-nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Servicios</h5>
-      <ul>
-        <li><a href="que-hacemos.html">Project Management</a></li>
-        <li><a href="trasteros.html">Trasteros en Calafell</a></li>
-        <li><a href="que-hacemos.html">Alquiler de Naves</a></li>
-        <li><a href="que-hacemos.html">Intermediación Inmobiliaria</a></li>
-        <li><a href="contacto.html">Consulta gratuita</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Legal</h5>
-      <ul>
-        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
-        <li><a href="politica-cookies.html">Política de Cookies</a></li>
-        <li><a href="aviso-legal.html">Aviso Legal</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>Blacknova © 2026 · Todos los derechos reservados</span>
-    <div class="footer-legal">
-      <a href="politica-privacidad.html">Privacidad</a>
-      <a href="politica-cookies.html">Cookies</a>
-      <a href="aviso-legal.html">Aviso Legal</a>
-    </div>
-  </div>
-</div>
 </footer>
 
-<!-- WHATSAPP FLOTANTE -->
-<a class="whatsapp-float" href="https://wa.me/34630879206?text=Hola%2C%20me%20interesa%20información%20de%20Blacknova" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a class="wa-float" href="https://wa.me/34630879206?text=Hola%20Blacknova%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.5 4 3.83 7.66 3.83 12.2c0 1.44.38 2.85 1.1 4.08L3.75 20.5l4.35-1.14a8.83 8.83 0 0 0 4.2 1.07h0c4.55 0 8.22-3.66 8.22-8.2a8.17 8.17 0 0 0-2.92-5.9Z"/></svg>
 </a>
 
-<!-- ============================================================
-     COOKIE BANNER — RGPD / LSSI-CE
-     Cumple: art. 22 LSSI-CE + RGPD Reglamento (UE) 2016/679
-     - Consentimiento previo, libre, informado y específico
-     - Posibilidad de rechazar cookies no esenciales
-     - Enlace a política de cookies y privacidad
-     ============================================================ -->
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
-  <p class="cookie-text">
-    <strong>Usamos cookies</strong> propias y de terceros para mejorar tu experiencia y analizar el tráfico. Puedes aceptar todas, rechazar las no esenciales o gestionar tus preferencias. Más información en nuestra <a href="politica-cookies.html">Política de Cookies</a> y <a href="politica-privacidad.html">Política de Privacidad</a>.
-  </p>
-  <div class="cookie-btns">
-    <button class="cookie-btn-config" onclick="bnOpenCookieConfig()">Configurar</button>
-    <button class="cookie-btn-reject" onclick="bnRejectCookies()">Solo esenciales</button>
-    <button class="cookie-btn-accept" onclick="bnAcceptCookies()">Aceptar todas</button>
-  </div>
-</div>
-
-<script>
-// ── HERO SLIDER ──
-let cur = 0;
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.hero-dot');
-const nums = ['01','02','03'];
-function goToSlide(n){
-  slides[cur].classList.remove('active');
-  dots[cur].classList.remove('active');
-  cur = n;
-  slides[cur].classList.add('active');
-  dots[cur].classList.add('active');
-  document.getElementById('slideNum').textContent = nums[cur];
-}
-setInterval(()=>goToSlide((cur+1)%slides.length), 6500);
-
-// ── SCROLL REVEAL ──
-const obs = new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('in'), i*70); obs.unobserve(e.target); }
-  });
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// ── COOKIES RGPD / LSSI-CE ──
-(function(){
-  var K = 'bn_cookie_consent';
-  window.bnAcceptCookies = function(){
-    localStorage.setItem(K,'all');
-    document.getElementById('cookie-banner').classList.add('hidden');
-    bnLoadGTM(); // carga GA/GTM solo tras consentimiento
-  };
-  window.bnRejectCookies = function(){
-    localStorage.setItem(K,'essential');
-    document.getElementById('cookie-banner').classList.add('hidden');
-  };
-  window.bnOpenCookieConfig = function(){
-    window.location.href = 'politica-cookies.html';
-  };
-  if(localStorage.getItem(K)){
-    document.getElementById('cookie-banner').classList.add('hidden');
-  }
-})();
-</script>
-
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

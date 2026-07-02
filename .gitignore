@@ -4,6 +4,8 @@
 # Informes y datos
 *.pdf
 *.json
+*.txt
+!robots.txt
 
 # Carpetas de trabajo
 seo_reports/
