@@ -151,6 +151,8 @@
   <a href="contacto.html">Contacto</a>
 </nav>
 
+<div class="grain-overlay" aria-hidden="true"></div>
+
 <main id="main">
 
 <section class="hero">
@@ -161,17 +163,32 @@
     <h1 class="hero-title" data-animate>Gestionamos tus proyectos, <em>tus espacios</em> y tus activos con precisión</h1>
     <p class="hero-sub" data-animate>Project management con metodología PMI/Agile, trasteros en alquiler en Calafell y gestión de naves industriales, e intermediación inmobiliaria para propietarios. Un único equipo de confianza en Barcelona y Catalunya.</p>
     <div class="hero-actions" data-animate>
-      <a class="btn btn-gold btn-lg" href="contacto.html">Consulta gratuita</a>
-      <a class="btn btn-outline-light btn-lg" href="#servicios">Ver servicios</a>
+      <a class="btn btn-gold btn-lg btn-magnetic" href="contacto.html">Consulta gratuita</a>
+      <a class="btn btn-outline-light btn-lg btn-magnetic" href="#servicios">Ver servicios</a>
     </div>
     <div class="stat-grid" data-animate>
-      <div class="stat"><b>50+</b><span>Clientes satisfechos</span></div>
-      <div class="stat"><b>80+</b><span>Proyectos gestionados</span></div>
-      <div class="stat"><b>15+</b><span>Activos intermediados</span></div>
-      <div class="stat"><b>3</b><span>Líneas de negocio</span></div>
+      <div class="stat"><b data-count="50" data-suffix="+">0</b><span>Clientes satisfechos</span></div>
+      <div class="stat"><b data-count="80" data-suffix="+">0</b><span>Proyectos gestionados</span></div>
+      <div class="stat"><b data-count="15" data-suffix="+">0</b><span>Activos intermediados</span></div>
+      <div class="stat"><b data-count="3">0</b><span>Líneas de negocio</span></div>
     </div>
   </div>
 </section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span><b>✦</b>Project Management PMI/Agile</span>
+    <span><b>✦</b>Trasteros en Calafell</span>
+    <span><b>✦</b>Naves industriales en alquiler</span>
+    <span><b>✦</b>Intermediación inmobiliaria</span>
+    <span><b>✦</b>Barcelona · Catalunya</span>
+    <span><b>✦</b>Project Management PMI/Agile</span>
+    <span><b>✦</b>Trasteros en Calafell</span>
+    <span><b>✦</b>Naves industriales en alquiler</span>
+    <span><b>✦</b>Intermediación inmobiliaria</span>
+    <span><b>✦</b>Barcelona · Catalunya</span>
+  </div>
+</div>
 
 <section class="section" id="servicios">
   <div class="container">
@@ -181,7 +198,7 @@
     </div>
     <div class="grid-3" data-animate>
       <a class="service-card-link" href="que-hacemos.html">
-        <div class="card">
+        <div class="card tilt-card">
           <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><path d="M12 3v3M21 12h-3"/></svg></div>
           <h3>Project Management</h3>
           <p style="color:var(--bn-muted); font-size:14.5px; margin-top:10px;">Metodología PMI y Agile para planificar, ejecutar y controlar proyectos con reporting ejecutivo y gestión de riesgos.</p>
@@ -189,7 +206,7 @@
         </div>
       </a>
       <a class="service-card-link" href="trasteros.html">
-        <div class="card">
+        <div class="card tilt-card">
           <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
           <h3>Trasteros en Calafell</h3>
           <p style="color:var(--bn-muted); font-size:14.5px; margin-top:10px;">Alquiler de trasteros sin permanencia mínima para particulares y empresas, y búsqueda de naves en el área de Barcelona.</p>
@@ -197,7 +214,7 @@
         </div>
       </a>
       <a class="service-card-link" href="propietarios.html">
-        <div class="card">
+        <div class="card tilt-card">
           <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M3 21h18"/><path d="M9 21v-6h6v6"/></svg></div>
           <h3>Intermediación inmobiliaria</h3>
           <p style="color:var(--bn-muted); font-size:14.5px; margin-top:10px;">Gestión integral de naves industriales para propietarios: búsqueda de inquilino, contratos, mantenimiento y reporting.</p>
@@ -240,7 +257,7 @@
           <li>Sin fianzas abusivas ni letra pequeña</li>
         </ul>
         <div style="margin-top:32px;">
-          <a class="btn btn-gold btn-lg" href="trasteros.html">Consultar disponibilidad</a>
+          <a class="btn btn-gold btn-lg btn-magnetic" href="trasteros.html">Consultar disponibilidad</a>
         </div>
       </div>
       <div class="spotlight-card" data-animate>
@@ -334,8 +351,8 @@
       <h2>¿Hablamos de tu proyecto, tu trastero o tu nave?</h2>
       <p>Consulta gratuita y sin compromiso. Te respondemos en menos de 24 horas.</p>
       <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; z-index:2;">
-        <a class="btn btn-gold btn-lg" href="contacto.html">Consulta gratuita</a>
-        <a class="btn btn-outline-light btn-lg" href="https://wa.me/34630879206" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        <a class="btn btn-gold btn-lg btn-magnetic" href="contacto.html">Consulta gratuita</a>
+        <a class="btn btn-outline-light btn-lg btn-magnetic" href="https://wa.me/34630879206" target="_blank" rel="noopener">Escribir por WhatsApp</a>
       </div>
     </div>
   </div>

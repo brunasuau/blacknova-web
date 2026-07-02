@@ -210,6 +210,32 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 /* Reveal animation */
 [data-animate] { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 [data-animate].in-view { opacity: 1; transform: translateY(0); }
+[data-animate-group].in-view [data-stagger] { opacity: 1; transform: translateY(0); }
+[data-stagger] { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+[data-stagger].in-view { opacity: 1; transform: translateY(0); }
+
+/* Grain / editorial texture overlay */
+.grain-overlay {
+  position: fixed; inset: 0; z-index: 9998; pointer-events: none; opacity: 0.035; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Magnetic buttons */
+.btn-magnetic { will-change: transform; }
+
+/* Tilt cards */
+.tilt-card { transform-style: preserve-3d; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+
+/* Marquee ticker */
+.ticker { overflow: hidden; border-top: 1px solid var(--bn-border-dark); border-bottom: 1px solid var(--bn-border-dark); background: var(--bn-black); padding: 22px 0; }
+.ticker-track { display: flex; width: max-content; animation: ticker-scroll 32s linear infinite; }
+.ticker-track span { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: 20px; color: rgba(247,244,238,0.55); padding: 0 36px; white-space: nowrap; }
+.ticker-track span b { color: var(--bn-amber-light); font-weight: 600; margin-right: 12px; }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+/* Animated stat counter cursor cue */
+.stat b[data-count] { font-variant-numeric: tabular-nums; }
 
 /* Footer */
 .site-footer { background: var(--bn-black); color: rgba(247,244,238,0.75); padding: 90px 0 0; }
