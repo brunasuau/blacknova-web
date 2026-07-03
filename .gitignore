@@ -17,3 +17,10 @@ posts_instagram/
 # Archivos temporales
 __pycache__/
 *.pyc
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
