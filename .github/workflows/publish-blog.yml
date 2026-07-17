@@ -1,4 +1,4 @@
-name: Publicar blog (Sanity → Cloudflare)
+name: Publicar blog (Sanity → web)
 
 on:
   workflow_dispatch:
@@ -10,8 +10,11 @@ on:
       - "_cms/**"
       - ".github/workflows/publish-blog.yml"
 
+permissions:
+  contents: write
+
 jobs:
-  build-deploy:
+  build-commit:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repo
@@ -34,10 +37,14 @@ jobs:
           SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
         run: node build.mjs --source=sanity --out=..
 
-      - name: Desplegar en Cloudflare
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: '4.86.0'
-          command: deploy
+      - name: Guardar cambios (Cloudflare despliega solo con el push)
+        run: |
+          git config user.name "blacknova-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Sin cambios que publicar."
+          else
+            git commit -m "Rebuild blog desde Sanity"
+            git push
+          fi
