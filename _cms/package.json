@@ -1,0 +1,22 @@
+{
+  "name": "blacknova-cms-build",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Motor de publicación de Blacknova: trae de Sanity los artículos de blog y las naves industriales, y genera el HTML estático (páginas de artículo + blog.html + fichas de nave + naves.html + sitemap.xml).",
+  "scripts": {
+    "build": "node build.mjs --source=sanity --out=..",
+    "preview": "node build.mjs --source=sample --out=_preview",
+    "preview:site": "bash preview-site.sh",
+    "import": "bash import.sh",
+    "deploy:preview": "bash deploy-preview.sh"
+  },
+  "dependencies": {
+    "@portabletext/to-html": "^2.0.13",
+    "@sanity/client": "^6.21.3",
+    "node-html-parser": "^9.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.114.1"
+  }
+}

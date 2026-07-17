@@ -1,0 +1,59 @@
+[
+  {
+    "slug": "nave-ejemplo-vilafranca-del-penedes",
+    "title": "Nave industrial Vilafranca del Penedès (ficha de ejemplo)",
+    "zona": "Vilafranca del Penedès",
+    "operacion": "Alquiler",
+    "estado": "Próximamente",
+    "superficieM2": 600,
+    "precio": "A consultar",
+    "alturaLibre": "7 m",
+    "muelleCarga": true,
+    "numMuelles": 1,
+    "oficinas": true,
+    "oficinasM2": 60,
+    "caracteristicas": [
+      "Suelo de hormigón pulido",
+      "Instalación eléctrica trifásica",
+      "Parking para camiones",
+      "Acceso directo desde carretera"
+    ],
+    "descripcion": [
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "text": "Esta ficha es un EJEMPLO para comprobar que el listado y la página de detalle de naves se generan correctamente con el diseño de Blacknova. Sustitúyela o bórrala en cuanto tengas tu primera nave real.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          { "_type": "span", "text": "Nave diáfana con acceso directo para vehículos pesados.", "marks": [] }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          { "_type": "span", "text": "Zona de oficinas independiente en planta baja.", "marks": [] }
+        ]
+      }
+    ],
+    "gallery": [],
+    "destacada": false,
+    "publishedAt": "2026-07-17"
+  }
+]

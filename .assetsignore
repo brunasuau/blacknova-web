@@ -1,0 +1,10 @@
+# Archivos que NO deben publicarse como parte de la web (solo son herramientas del CMS).
+_cms
+node_modules
+.github
+tools
+seo_reports
+blacknova-deploy
+*.py
+*.md
+.wrangler

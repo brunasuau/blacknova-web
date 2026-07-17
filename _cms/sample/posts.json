@@ -1,0 +1,61 @@
+[
+  {
+    "slug": "como-elegir-trastero-barcelona",
+    "title": "Cómo elegir el trastero perfecto en Barcelona",
+    "category": "Trasteros",
+    "metaDescription": "Guía práctica para elegir el trastero adecuado en Barcelona. Tamaño, ubicación, seguridad, precio y contrato: todo lo que debes revisar antes de firmar.",
+    "excerpt": "Tamaño, ubicación, seguridad y contrato: todo lo que debes revisar antes de firmar tu trastero en Barcelona.",
+    "focusKeyword": "trastero Barcelona",
+    "publishedAt": "2026-05-04",
+    "body": [
+      { "_type": "block", "style": "normal", "markDefs": [], "children": [
+        { "_type": "span", "text": "Elegir un trastero en Barcelona sin pensarlo bien puede costarte caro. Un trastero demasiado pequeño, mal ubicado o con humedad puede convertirse en un problema en lugar de una solución. En esta guía te explicamos paso a paso cómo elegir el trastero perfecto para tus necesidades.", "marks": [] }
+      ]},
+      { "_type": "block", "style": "h2", "markDefs": [], "children": [
+        { "_type": "span", "text": "Paso 1: Define cuánto espacio necesitas realmente", "marks": [] }
+      ]},
+      { "_type": "block", "style": "normal", "markDefs": [], "children": [
+        { "_type": "span", "text": "Antes de buscar trastero, haz una lista de todo lo que quieres almacenar y calcula el volumen aproximado. Recuerda que en un trastero puedes apilar en altura, lo que multiplica el espacio útil.", "marks": [] }
+      ]},
+      { "_type": "block", "style": "h2", "markDefs": [], "children": [
+        { "_type": "span", "text": "Paso 2: Elige bien la ubicación", "marks": [] }
+      ]},
+      { "_type": "block", "style": "normal", "listItem": "bullet", "level": 1, "markDefs": [], "children": [
+        { "_type": "span", "text": "Cerca de tu casa o empresa: ", "marks": ["strong"] },
+        { "_type": "span", "text": "reducirás el tiempo y coste de cada visita.", "marks": [] }
+      ]},
+      { "_type": "block", "style": "normal", "listItem": "bullet", "level": 1, "markDefs": [], "children": [
+        { "_type": "span", "text": "En zona segura: ", "marks": ["strong"] },
+        { "_type": "span", "text": "el precio más bajo no vale si el entorno no te da confianza.", "marks": [] }
+      ]},
+      { "_type": "block", "style": "h2", "markDefs": [], "children": [
+        { "_type": "span", "text": "Paso 3: Comprueba la seguridad", "marks": [] }
+      ]},
+      { "_type": "block", "style": "normal", "markDefs": [{ "_key": "l1", "_type": "link", "href": "https://blacknova.es/contacto.html" }], "children": [
+        { "_type": "span", "text": "Un buen trastero debe tener cerradura individual, alarma y cámaras. Si tienes dudas, ", "marks": [] },
+        { "_type": "span", "text": "contacta con nosotros", "marks": ["l1"] },
+        { "_type": "span", "text": " y te asesoramos sin compromiso.", "marks": [] }
+      ]}
+    ]
+  },
+  {
+    "slug": "naves-industriales-catalunya-guia-2026",
+    "title": "Naves industriales en Catalunya: guía 2026",
+    "category": "Naves industriales",
+    "metaDescription": "Guía completa sobre naves industriales en Catalunya en 2026: zonas, precios, rentabilidad y cómo gestionar tu activo de forma profesional.",
+    "excerpt": "Zonas, precios y rentabilidad de las naves industriales en Catalunya, y cómo gestionar tu activo de forma profesional.",
+    "focusKeyword": "naves industriales Catalunya",
+    "publishedAt": "2026-06-01",
+    "body": [
+      { "_type": "block", "style": "normal", "markDefs": [], "children": [
+        { "_type": "span", "text": "El mercado de naves industriales en Catalunya vive un momento de fuerte demanda. En esta guía repasamos las zonas clave, los precios de referencia y cómo sacar el máximo rendimiento a tu nave.", "marks": [] }
+      ]},
+      { "_type": "block", "style": "h2", "markDefs": [], "children": [
+        { "_type": "span", "text": "Las zonas con más demanda", "marks": [] }
+      ]},
+      { "_type": "block", "style": "normal", "markDefs": [], "children": [
+        { "_type": "span", "text": "El Penedès, el Baix Llobregat y el Vallès concentran gran parte de la actividad logística e industrial de la provincia de Barcelona.", "marks": [] }
+      ]}
+    ]
+  }
+]
