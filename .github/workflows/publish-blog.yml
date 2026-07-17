@@ -1,0 +1,42 @@
+name: Publicar blog (Sanity → Cloudflare)
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [sanity-publish]
+  push:
+    branches: [main]
+    paths:
+      - "_cms/**"
+      - ".github/workflows/publish-blog.yml"
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repo
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias del motor
+        working-directory: _cms
+        run: npm ci
+
+      - name: Generar el blog desde Sanity
+        working-directory: _cms
+        env:
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET: production
+          SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
+        run: node build.mjs --source=sanity --out=..
+
+      - name: Desplegar en Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
