@@ -12,6 +12,10 @@
 
 const SITE = "https://blacknova.es";
 
+// Version de los assets: se anade a base.css y main.js para que un cambio llegue
+// a los navegadores que ya tienen la version anterior guardada. Subirla al tocarlos.
+const ASSET_V = "20260908";
+
 const MESES = [
   "enero", "febrero", "marzo", "abril", "mayo", "junio",
   "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
@@ -139,7 +143,7 @@ function footer(base) {
   <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.5 4 3.83 7.66 3.83 12.2c0 1.44.38 2.85 1.1 4.08L3.75 20.5l4.35-1.14a8.83 8.83 0 0 0 4.2 1.07h0c4.55 0 8.22-3.66 8.22-8.2a8.17 8.17 0 0 0-2.92-5.9Z"/></svg>
 </a>
 
-<script src="${base}assets/js/main.js" defer></script>`;
+<script src="${base}assets/js/main.js?v=${ASSET_V}" defer></script>`;
 }
 
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -184,7 +188,7 @@ ${JSON.stringify(jsonld, null, 2)}
 </script>
 
 ${FONTS}
-<link rel="stylesheet" href="${base}assets/css/base.css"/>
+<link rel="stylesheet" href="${base}assets/css/base.css?v=${ASSET_V}"/>
 
 <style>
 .article-hero { position: relative; background: var(--bn-black); color: var(--bn-cream); padding: 168px 0 74px; overflow: hidden; }
@@ -302,7 +306,7 @@ export function blogIndex(posts) {
 <meta property="og:locale" content="es_ES"/>
 
 ${FONTS}
-<link rel="stylesheet" href="assets/css/base.css"/>
+<link rel="stylesheet" href="assets/css/base.css?v=${ASSET_V}"/>
 
 <style>
 .page-hero { position: relative; background: var(--bn-black); color: var(--bn-cream); padding: 170px 0 80px; overflow: hidden; }
@@ -534,7 +538,7 @@ ${cards}
 <meta property="og:locale" content="es_ES"/>
 
 ${FONTS}
-<link rel="stylesheet" href="assets/css/base.css"/>
+<link rel="stylesheet" href="assets/css/base.css?v=${ASSET_V}"/>
 
 ${NAVES_STYLE}
 </head>
@@ -650,7 +654,7 @@ ${JSON.stringify(jsonld, null, 2)}
 </script>
 
 ${FONTS}
-<link rel="stylesheet" href="${base}assets/css/base.css"/>
+<link rel="stylesheet" href="${base}assets/css/base.css?v=${ASSET_V}"/>
 
 <style>
 .nave-hero { position: relative; background: var(--bn-black); color: var(--bn-cream); padding: 168px 0 60px; overflow: hidden; }
