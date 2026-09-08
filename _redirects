@@ -1,0 +1,10 @@
+# Reglas de Netlify (que es quien sirve blacknova.es; Cloudflare solo hace de DNS).
+#
+# El repositorio entero se publica tal cual, asi que el motor del CMS y la
+# documentacion interna eran descargables desde la web. Esto los cierra.
+# Antes lo intentaba .assetsignore, pero ese fichero solo lo entiende
+# Cloudflare Workers, que ya no se usa aqui.
+
+# El "!" fuerza la regla: sin el, Netlify sirve el fichero porque existe.
+/_cms/*             /404.html   404!
+/IMPLEMENTACION.md  /404.html   404!
