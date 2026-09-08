@@ -263,6 +263,24 @@ function blogCard(post) {
       </a>`;
 }
 
+// Tarjetas de "últimos artículos" de la home (index.html).
+// Mismo marcado que el que ya había escrito a mano allí: sin resumen y con h3,
+// porque la home usa .blog-card h3 y el índice del blog usa h2.
+export function homeCards(posts, cuantos = 3) {
+  return posts
+    .slice(0, cuantos)
+    .map(
+      (post) => `      <a class="blog-card" href="blog_articles/${post.slug}.html">
+        <div class="blog-card-body">
+          <span class="tag">${esc(post.category)}</span>
+          <h3>${esc(post.title)}</h3>
+          <span class="read">Leer artículo →</span>
+        </div>
+      </a>`,
+    )
+    .join("\n");
+}
+
 export function blogIndex(posts) {
   const base = "";
   const cards = posts.map(blogCard).join("\n\n");

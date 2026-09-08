@@ -9,13 +9,16 @@
 //   <out>/blog.html                   índice del blog con una tarjeta por artículo
 //   <out>/sitemap.xml                 sitemap completo
 //
+// Y actualiza en <out>/index.html el bloque "últimos artículos" (entre los
+// marcadores ULTIMOS-ARTICULOS:INICIO / :FIN) con los 3 artículos más nuevos.
+//
 // Los artículos se ordenan por fecha de publicación (más nuevo primero).
 
 import { writeFile, mkdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { toHTML } from "@portabletext/to-html";
-import { articlePage, blogIndex, sitemap, navesIndex, navePage } from "./lib/templates.mjs";
+import { articlePage, blogIndex, sitemap, navesIndex, navePage, homeCards } from "./lib/templates.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -156,6 +159,42 @@ async function getPostsFromSanity() {
   return client.fetch(query);
 }
 
+// --- Home ------------------------------------------------------------------
+// Sustituye las tarjetas entre los marcadores de index.html por los artículos
+// más recientes. Si los marcadores no están, no toca nada y avisa: es preferible
+// a reescribir la home a ciegas.
+const HOME_INICIO = "<!-- ULTIMOS-ARTICULOS:INICIO";
+const HOME_FIN = "<!-- ULTIMOS-ARTICULOS:FIN -->";
+
+async function actualizarHome(posts) {
+  const ruta = resolve(OUT, "index.html");
+  let html;
+  try {
+    html = await readFile(ruta, "utf8");
+  } catch {
+    return "index.html no encontrado, no se toca";
+  }
+
+  const i = html.indexOf(HOME_INICIO);
+  const j = html.indexOf(HOME_FIN, i);
+  if (i === -1 || j === -1) {
+    console.warn("⚠️  index.html no tiene los marcadores ULTIMOS-ARTICULOS: la home no se actualiza.");
+    return "sin marcadores, no se toca";
+  }
+
+  const finComentarioInicio = html.indexOf("-->", i) + 3;
+  const nuevo =
+    html.slice(0, finComentarioInicio) +
+    "\n" +
+    homeCards(posts, 3) +
+    "\n      " +
+    html.slice(j);
+
+  if (nuevo === html) return "ya estaba al día";
+  await writeFile(ruta, nuevo, "utf8");
+  return `actualizada con ${posts.slice(0, 3).map((p) => p.slug).join(", ")}`;
+}
+
 // --- Build -----------------------------------------------------------------
 async function main() {
   const rawPosts =
@@ -171,6 +210,14 @@ async function main() {
     SOURCE === "sanity" ? await getNavesFromSanity() : await getNavesFromSample().catch(() => []);
 
   if (!rawPosts.length) {
+    // Con Sanity como origen, cero artículos casi siempre significa token caducado,
+    // red caída o consulta rota. Si siguiéramos, publicaríamos un blog vacío y
+    // borraríamos el que ya está en la web: mejor fallar y dejarlo como está.
+    if (SOURCE === "sanity") {
+      throw new Error(
+        "Sanity no ha devuelto ningún artículo publicado. Se aborta el build para no vaciar el blog.",
+      );
+    }
     console.warn("⚠️  No se han encontrado artículos publicados. Nada que generar.");
   }
   if (!rawNaves.length) {
@@ -210,7 +257,11 @@ async function main() {
   // 4) sitemap.xml
   await writeFile(resolve(OUT, "sitemap.xml"), sitemap(posts, naves), "utf8");
 
+  // 5) "últimos artículos" de la home
+  const homeActualizada = await actualizarHome(posts);
+
   console.log(`✅ Generados ${posts.length} artículos + ${naves.length} naves + blog.html + naves.html + sitemap.xml`);
+  console.log(`   Home: ${homeActualizada}`);
   console.log(`   Origen: ${SOURCE}  →  Salida: ${OUT}`);
   for (const p of posts) console.log(`   · blog_articles/${p.slug}.html`);
   for (const n of naves) console.log(`   · naves/${n.slug}.html`);
