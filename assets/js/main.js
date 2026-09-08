@@ -55,7 +55,10 @@
           }
         });
       },
-      { threshold: 0.15 }
+      // threshold 0 + margen inferior: el bloque se revela en cuanto su borde
+      // superior entra en pantalla. Con threshold en % nunca se revelaban los
+      // bloques mas altos que la pantalla (p. ej. la rejilla del blog en movil).
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
     );
     animated.forEach(function (el) { io.observe(el); });
   } else {
